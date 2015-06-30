@@ -1,0 +1,44 @@
+.accordion {  
+  > li > a {
+    font-weight: normal;
+  }
+
+  ul.submenu {
+    display: none;
+  }
+
+  .is-expanded {
+    > a {
+      color: red;
+    }
+
+    display: block;
+  }
+}
+
+.js-accordion-trigger {
+  -ms-transform: scale(0.65);
+  -webkit-transform: scale(0.65);
+  transform: scale(0.65);
+      position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+
+  .tcon-remove::after, .tcon-remove::before {
+    background: #888;
+  }
+}
+
+.menu-nav {
+  .js-accordion-trigger {
+  -ms-transform: scale(0.45);
+  -webkit-transform: scale(0.45);
+  transform: scale(0.45);
+      position: absolute;
+    top: -5px;
+    right: 0;
+    width: 50px;
+
+  }
+}

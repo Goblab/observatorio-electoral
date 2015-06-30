@@ -1,0 +1,42 @@
+.search-form {
+	display: block;
+
+
+	.field {
+		width: 100%;
+		display: inline-block;
+		padding: 9px 8px 9px 18px;
+		outline: 0 none;
+		border: 1px solid #ddd;
+	}
+
+	.action {
+		width: 60px;
+		text-align: center;
+		background: #0083ff;
+		padding: 12px;
+		color: #fff;
+		line-height: 1;
+		position: absolute;
+		top: 0;
+		right: 0;
+		cursor: pointer;
+	}
+
+	&.-short { 
+
+	}
+
+	&.-disabled { 
+
+	}
+
+}
+
+.section-content {
+
+	.search-form {
+		position: relative;
+		margin-bottom: 1.5em;
+	}
+}

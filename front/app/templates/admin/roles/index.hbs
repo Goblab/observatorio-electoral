@@ -1,0 +1,45 @@
+<h1>Roles list</h1>
+
+<p>
+  {{link-to "New Role" "admin.roles.new" }}
+</p>
+
+{{#if model.length}}
+  <table class="table-minimal">
+    <thead>
+      <tr>
+        <th>
+          Nombre
+        </th>
+        <th>
+          Descripcion
+        </th>
+        <th colspan="3">
+          Actiones
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each role in model}}
+        <tr>
+          <td>
+            {{role.name}}
+          </td>
+          <td>
+            {{role.description}}
+          </td>
+          <td>
+            {{link-to "Editar" "admin.roles.edit" role}}
+          </td>
+          <td>
+            <a href="#" {{action "remove" role}}>Eliminar</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <div class="loading">
+  {{loading-bubbles color='#0083ff' size=100}}
+</div>
+{{/if}}

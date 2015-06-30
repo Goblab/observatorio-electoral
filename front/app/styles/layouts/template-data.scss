@@ -1,0 +1,920 @@
+$mobile: new-breakpoint(max-width 800px 6);
+$tablet: new-breakpoint(max-width 992px 6);
+
+.menu-wrap {
+	&.-data {
+		-webkit-transform: translate3d(305px, 0, 0);
+  		transform: translate3d(305px, 0, 0);
+	}
+}
+
+.content {
+
+	&.-data {
+		  margin-right: 0;
+	}
+	
+}
+
+.leaflet-clickable,
+.leaflet-interactive {
+	cursor: pointer;
+//	stroke: #0083ff;
+	stroke-width: 1px;
+//	fill-opacity: 0.21;
+	@include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
+}
+
+.leaflet-clickable:hover, .leaflet-interactive:hover  {
+	fill-opacity: 0.6;
+}
+
+.panel-wrap {
+	width: 450px;
+	overflow-y: scroll;
+	@include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
+	@include box-shadow;
+
+
+
+    @include media($mobile) {
+        width: 100%;
+        right: -100%;
+    }
+
+	position: fixed;
+	z-index: 60;
+	height: 100%;
+	background: #f1f1f1;
+	top: 0;
+	right: 0;
+	opacity: 1;
+	z-index: 5001;
+
+	article {
+		margin: 0;
+		width: 100%;
+		padding: 0;
+		min-height: 143px;
+		background: #0083ff;
+
+		h1 {
+			padding: 62px 0px 0px 20px;
+			margin: 0;
+			color: #fff;
+			font-weight: 400;
+			font-size: 30px;
+		}
+
+		.stats {
+			padding: 15px 15px 0 15px;
+			text-align: center;
+			height: auto;
+		}
+
+		.province-list {
+			padding: 0;
+
+			.province-result {
+				width: 65px;
+				display: inline-block;
+				position: absolute;
+			}
+
+			.province-candidate {
+				display: inline-block;
+				width: 100%;
+				padding-left: 80px;
+			}
+
+		}
+
+	}
+
+	.stats {
+	  $base-spacing: 1.5em !default;
+	  $dark-gray: #fff !default;
+	  $base-font-color: #333 !default;
+	  $action-color: #477dca !default;
+	  $stats-color: #333;
+
+	  padding: 0px;
+	  height: 40px;
+
+	  ul {
+		padding: 0;
+		width: 100%;
+	  }
+
+	  li {
+	    border-right: 1px solid transparentize($base-font-color, 0.8);
+	    color: $stats-color;
+	    display: inline;
+	    float: left;
+	    font-size: 1.2em;
+	    font-weight: 800;
+	    line-height: 1.1em;
+	    padding: 0 0.7em;
+	    width: 25%;
+
+	    &:first-child {
+	      padding-left: 0;
+	    }
+
+	    &:last-child {
+	      border-right: 0;
+	    }
+	  }
+
+	  span {
+	    color: $base-font-color;
+	    display: block;
+	    font-size: 0.7em;
+	    font-weight: normal;
+	  }
+	}
+}
+
+.province-list {
+	margin: 0;
+	height: 100%;
+	padding-bottom: 150px !important;
+	overflow-y: scroll;
+
+	h3 {
+		padding: 15px;
+		border-bottom: 1px solid #ddd;
+	}
+	
+	.province-item {
+		margin: 0;
+		padding: 13px 20px;
+		border-bottom: 1px solid #ddd;
+		position: relative;
+
+		h4 {
+			  margin: 0;
+			  color: #555;
+			  font-size: 17px;
+			  font-weight: 600;
+		}
+
+		p {
+			margin: 0px;
+			font-size: 14px;
+			color: #666;
+		}
+
+
+
+		small {
+			font-family: $font-sans-caption;
+		}
+
+		&:last-child {
+			border: none;
+		}
+	}
+
+
+}
+
+
+.leaflet-container .leaflet-control-attribution {
+	display: none;
+}
+
+.panel-header {
+	background: #0083ff;
+
+	.stats {
+		li {
+			color: #fff;
+
+
+		}
+
+		span {
+			color: #fff;
+		}
+	}
+
+	.political-party {
+		padding: 0px 15px 10px 20px;
+		font-family: $font-sans-narrow;
+
+		p {
+			font-size: 14px;
+			margin: 0px;
+			opacity: 1;
+			font-weight: 600;
+			color: #fff;
+			line-height: 16px;
+		}
+
+		span {
+			font-size: 14px;
+			opacity: 0.75;
+			text-transform: uppercase;
+		}
+	}
+}
+
+.content.-data {
+
+	.ivy-tab-list {
+		padding: 20px 20px 14px;
+		margin: 0;
+		text-align: left;
+	}
+
+	.ivy-tab-panel {
+		
+	}
+
+	.ivy-tabs {
+		padding: 0;
+	}
+
+	.ivy-tab {
+		
+		display: inline;
+		font-size: 19px;
+		margin: 0 30px 0 0;
+		font-family: "PT Sans Narrow", sans-serif;
+		cursor: pointer;
+		color: #888;
+		width: auto;
+		opacity: 0.8;
+
+		&:hover {
+			opacity: 1;
+		}
+		
+		&.active {
+			color: #333;
+			border-bottom: 4px solid #333;
+			padding: 0px 0px 10px;
+			opacity: 1;
+		}
+	}
+}
+
+.panel-gobernor {
+	padding: 15px 15px 5px 15px;
+	background: #ddd;
+
+	h4 {
+		margin: 0 0 15px 0;
+	}
+
+	
+}
+
+.action-expand,
+.action-back,
+.action-search {
+	position: absolute;
+	z-index: 6000;
+	top: 10px;
+	background: none repeat scroll 0% 0% transparent;
+	color: blue;
+	border: 2px solid #fff;
+	font-size: 20px;
+	border-radius: 50%;
+	padding: 6px 5px;
+	width: 45px;
+	height: 45px;
+	opacity: 0.8;
+	@include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
+}
+
+.action-expand {
+	right: 20px;
+	 transform: rotate(45deg);
+	
+	@include media($mobile) {
+       transform: rotate(0);
+
+		.fa-compress:before {
+			 content: "\f00d";
+		}
+
+		.fa-expand:before {
+			   content: "\f0c9";
+		}
+	}
+
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.action-back {
+	left: 20px;
+	line-height: 0;
+
+	a {
+		color: #fff;
+		width: 29px;
+		display: block;
+		height: 30px;
+		line-height: 27px;
+		text-align: center;
+		margin: 0;
+	}
+
+	@include media($mobile) {
+       transform: rotate(0);
+	
+		i:before {
+			
+		}
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.action-search {
+	right: 75px;
+	line-height: 0;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.panel-wrap .container {
+	padding: 0;
+}
+
+.panel-wrap.-expand-full {
+	width: 100%;
+	right: 0px;
+
+	.container {
+
+
+		  @include transition(all 0.3s cubic-bezier(0.7,0,0.3,1));
+
+			@include span-columns(8);
+			@include shift(2);
+
+			@include media($tablet) {
+				@include span-columns(6);
+				@include shift(0);
+			}
+
+	}
+
+	@include media($mobile) {
+       width: 100%;
+ 	   top: 0;
+	}
+}
+
+.panel-actions {
+
+	&.-expand {
+		button {
+			color: #fff;
+			border: 2px solid #fff;
+		}
+
+		.search-container.show-search {
+			width: 100%;
+			margin: 0px auto;
+		}
+	}
+
+	button {
+		color: #fff;
+
+		@include media($mobile) {
+			color: #0083ff;
+			border: 2px solid #0083ff;
+		}
+	}
+
+}
+
+.palet-color {
+	position: relative;
+
+	> div {
+		position: relative;
+		height: 15px;
+		width: 15px;
+		border-radius: 50%;
+	}
+}
+
+.panel-renovation {
+	display: block;
+	width: 100%;
+	float: left;
+	padding: 0 20px;
+
+	h4 {
+		margin: 10px 0 0 0;
+		text-align: center;
+		font-size: 20px;
+	}
+
+	ul {
+		padding: 0px;
+		float: left;
+		width: 100%;
+	}
+
+	li {
+		position: relative;
+	}
+
+	.highlight-person {
+			position: relative;
+			display: block;
+			background-color: #f8f8f8;
+			padding: 0 15px 10px 15px;
+			
+			.name {
+				position: relative;	
+				width: 300px;
+				display: inline-block;
+
+			}
+
+			h4 {
+				position: relative;	
+				text-align: left;
+
+			}
+
+			small {
+				position: relative;	
+
+			}
+
+			.role {
+				position: relative;
+				width: 300px;
+				display: inline-block;
+
+			}
+
+			time {
+				position: relative;	
+
+			}
+
+	}
+
+
+
+	.slat-list {
+		position: relative;
+		float: left;
+		width: 100%;
+
+		&.-renovation {
+			.palet-color {
+			position: absolute;
+			margin-top: 5px;
+			}
+		}
+	}
+
+	
+
+}
+
+
+
+.search-container {
+	@include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
+	position: fixed;
+	top: 143px;
+	right: 0px;
+	padding: 0;
+	background: #F1F1F1;
+	z-index: 6000;
+	width: 1px;
+	opacity: 0;
+	bottom: 0;
+
+	h2 {
+	    margin: 0 0 15px 0;
+	    line-height: 30px;
+	    font-size: 23px;
+	    border-bottom: 1px solid #ddd;
+	}
+
+	@include media($mobile) {
+		width: 1px;
+		padding-top: 80px;
+	}
+
+	.search-form {
+		position: relative;
+
+		.search-clear {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 45px;
+			height: 38px;
+			background: none;
+			color: #ccc;
+			border: none;
+		}		
+	}
+
+	.field {
+		position: relative;
+	}
+
+	.search-results {
+		height: 0;
+		margin: 0;
+		padding: 15px 0 0 0;
+		display: none;
+		position: relative;
+		@include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
+		
+		.fa {
+			border-radius: 50%;
+			display: inline-block;
+			margin: 0 15px 0 0;
+			width: 27px;
+			text-align: center;
+			height: 27px;
+			line-height: 26px;
+			font-size: 13px;
+		}
+
+		.-person {
+			.fa {
+				background: #0092c2; 
+				color: #fff;
+			}
+		}
+
+		.-province {
+			.fa {
+				background: #3ccef0; 
+				color: #fff;
+			}
+		}
+
+		.-town {
+			.fa {
+				background: #007092; 
+				color: #fff;
+			}
+		}
+	}
+
+	li {
+		padding: 15px;
+
+		a {
+			width: 100%;
+		}
+	}
+
+	&.show-search {
+		opacity: 1;
+		display: block;
+		width: 450px;
+		padding: 20px;
+
+		.-grey {
+			color: #333;
+			border: 2px solid #333;
+		}
+
+		.search-results {
+			height: auto;
+			display: block;
+		}
+
+		@include media($mobile) {
+			width: 100%;
+			top: 0;
+		}
+	}
+
+}
+
+
+.panel-people {
+	display: inline-block;
+	width: 100%;
+	padding: 0 0;
+}
+
+.election-list {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+
+	.electoral-province {
+		background: #fff;
+		position: relative;
+
+		h3 {
+			    margin: 0;
+    padding: 20px;
+
+		}
+
+		.stat {
+			    position: absolute;
+    right: 70px;
+    top: 30px;
+    font-size: 18px;
+
+		}
+
+		.js-accordion-trigger {
+			    top: 20px;
+		}
+	}
+
+	.election-meta {
+    padding: 19px 0 19px 19px;
+    background: #f9f9f9;
+
+	    .election-stats {
+			    position: absolute;
+	    right: 20px;
+	    top: 20px;
+		}
+
+	    .stat {
+			    margin: 0 10px;
+    font-size: 22px;
+    font-weight: 100;
+    color: #0083ff;  
+        display: inline-block; 	
+
+        .fa {
+        	font-size: 18px;
+        }
+	    }
+	}
+
+
+
+	 h2 {
+	position: relative;
+	margin: 0px;
+	font-size: 20px;
+	font-weight: 600;
+	 max-width: 210px;
+	 }
+
+	 span {
+		color: #777;
+	 }
+
+	 .name {
+		position: relative;
+
+		&.-expanded {
+	 		position: absolute;
+			width: 250px;
+	 	}
+	 }
+
+	 .votes-poll {
+	 	position: relative;
+
+		canvas {
+			margin-top: 10px;
+		}
+	 	
+	 	p {
+			position: relative;
+	 	}
+
+	 	&.-expanded {
+	 		display: block;
+			padding: 0px 0px 0px 260px;
+			position: relative;
+	 	}
+	 }
+
+	 ul {
+	 	padding: 0;
+	 }
+
+	 .electoral-time {
+	 	position: relative;
+	 	margin-top: 5px;
+	 	margin-bottom: 15px;
+
+		&.-expanded {
+	 		display: block;
+			padding: 0px 0px 0px 260px;
+			position: relative;
+			min-height: 90px;
+	 	}
+ 		
+ 		small {
+ 			color: #777;
+ 		}
+	 }
+}
+
+
+.electoral-container {
+    position: relative;
+    padding: 0px 20px 100px;
+    border-top: 0;
+	.electoral-election {
+		position: relative;
+
+		.chart-container {
+			    text-align: center;
+    padding: 15px;
+    background-color: #f9f9f9;
+		}
+	}
+
+
+
+	.electoral-name {
+		position: relative;
+		    border-bottom: 3px solid #777;
+		h3 {
+			    position: relative;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    display: inline-block;
+    text-align: left;
+    padding: 0;
+		}
+
+		.meta {
+    position: relative;
+    display: inline-block;
+    text-align: right;
+    float: right;
+    margin: 9px;
+    font-size: 21px;
+    span {
+    	color: #0083ff;
+    }
+		}
+
+		.tooltipstered {
+			position: relative;
+			cursor: help;
+		}
+	}
+
+
+
+	.electoral-candidates {
+		position: relative;
+
+		.candidate-container {
+			    position: relative;
+    margin: 15px 0;
+
+    h4 {
+    	    margin: 45px 0 0 0;
+    border-bottom: 1px solid #999;
+    padding-bottom: 14px;
+    }
+
+			p {
+				margin: 0;
+			}
+
+			ul {
+				background: #eee;
+			}
+
+			.sortable-item {
+				    width: 100%;
+    display: block;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+			}
+
+			.is-dragging {
+				opacity: 0.5;
+				background: lighten(yellow, 10%);
+			}
+
+			.is-dropping {
+				opacity: 0.2;
+			}
+
+			.handle {
+				        position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+			}
+		}
+
+
+	}
+}
+
+.destination {
+	.candidate-lenght {
+			       width: 30%;
+    display: inline-block;
+    height: 70px;
+    text-align: left;
+    margin: 15px 0 0 1%;
+
+			span {
+				    display: block;
+    text-align: left;
+    font-size: 45px;
+			}
+		}
+}
+
+.panel-renovation .-stats-tab {
+
+	position: relative;
+	padding: 20px 0 0 0 !important;
+
+	li {
+		position: relative;
+		width: 49% !important;
+		display: inline-block !important;
+		text-align: center;
+		margin: 0 !important;
+
+		&.active {
+
+			border-bottom: 4px solid #0083ff !important;
+
+			span {
+		  		color: #0083ff;
+			}
+
+			p {
+				  color: #0083ff;
+			}
+		}
+
+	}
+
+	span {
+		  font-size: 24px;
+
+
+	}
+
+	p {
+		  margin: 2px 0;
+	}
+
+}
+
+.slat-content {
+	  display: inline-block;
+  width: 100%;
+  padding: 0 0 0 30px;
+	.name {
+		  width: 40%;
+  display: inline-block;
+	}
+
+	.role {
+		  width: 58%;
+  			display: inline-block;
+	}
+
+	p {
+		position: relative;
+		margin: 0;
+	}
+
+	small {
+		position: relative;
+		
+	}
+
+
+}

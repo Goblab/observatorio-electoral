@@ -1,0 +1,45 @@
+<section>
+  <div class="section-header">
+    <h1>Personas Fisicas</h1>
+    {{link-to "Agregar" "data-entry.municipabilities.people.new" classNames="btn"}}
+  </div>
+    <div class="section-content">
+  <div class="search-form">
+      {{input type="text" value=query class="field"}}
+      <a {{action 'search'}} class="action">
+        {{fa-icon "search"}}
+      </a>
+  </div>
+
+
+{{#if model.length}}
+  
+      <div class="slat-list">
+      {{#each person in model}}
+        
+
+          <div class="slat-item -image">
+            <div class="slat-img">
+              {{#if person.avatar.url}}
+                <img {{bind-attr src=person.avatar.url}} width="45">
+              {{/if}}  
+            </div>
+            <div class="slat-content">
+              <h4> {{person.fullNameProperty}}</h4>
+            </div>
+            <div class="slat-action">
+               {{link-to "Editar" "data-entry.municipabilities.people.edit" person classNames="btn"}}
+              <a href="#" class="btn" {{action "remove" politicalparty}}>Eliminar</a>
+            </div>
+          </div>
+        {{/each}}
+        {{infinity-loader infinityModel=model}}
+      </div>
+   
+{{else}}
+   <div class="loading">
+    {{loading-bubbles color='#0083ff' size=100}}
+  </div>
+{{/if}}
+ </div>
+</section>

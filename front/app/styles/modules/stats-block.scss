@@ -1,0 +1,75 @@
+.stats {
+  $base-spacing: 1.5em !default;
+  $dark-gray: #f1f1f1 !default;
+  $base-font-color: $dark-gray !default;
+  $base-accent-color: #477dca !default;
+  $stats-color: lighten($base-accent-color, 10%);
+  $mobile: new-breakpoint(max-width 800px 6);
+
+  //padding: $base-spacing / 2;
+  padding: 1.2em 0;
+  height: 70px;
+  @include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
+
+  &.-renovation {
+      bottom: 0;
+  height: auto;
+
+    h3 {
+      font-size: 12px;
+    }
+
+    ul {
+      position: relative;
+    }
+
+    li {
+      position: relative;
+      text-align: center;
+    }
+    
+
+
+  }
+
+
+   
+  
+
+  ul {
+    padding: 0;
+      display: inline-block;
+  }
+
+  li {
+    border-right: 1px solid transparentize($base-font-color, 0.8);
+    color: #fff;
+    display: inline;
+    float: left;
+    font-size: 1.2em;
+    font-weight: 800;
+    line-height: 1.1em;
+    width: 100px;
+
+    @include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
+     @include media($mobile) {
+     width: 70px;
+    }
+
+    &:first-child {
+      //padding-left: 0;
+    }
+
+    &:last-child {
+      border-right: 0;
+      //padding-right: 0;
+    }
+  }
+
+  span {
+    color: $base-font-color;
+    display: block;
+    font-size: 0.7em;
+    font-weight: normal;
+  }
+}

@@ -1,0 +1,94 @@
+{{#if session.isAuthenticated}}
+	<nav {{bind-attr class=":change-app-container isShowApps:is-visible"}}>
+		<ul>
+			<li {{bind-attr class="isHome:active"}}>
+				{{#link-to 'index'}} 
+					{{fa-icon "home"}}
+					<span>Inicio</span>
+				{{/link-to}}
+			</li>		
+
+			{{#if (can 'view admin')}}
+			<li {{bind-attr class="isAdmin:active"}} >
+				{{#link-to 'admin.users.index'}} 
+					{{fa-icon "wrench"}}
+					<span>Administración</span>
+				{{/link-to}}
+			</li>
+			{{/if}}
+			{{#if (can 'view data-entry')}}
+			<li {{bind-attr class="isDataEntry:active"}} >
+				{{#link-to 'data-entry.municipabilities.people.index'}} 
+					{{fa-icon "user-plus"}}
+					<span>Manejo de datos</span>
+				{{/link-to}}
+			</li>
+			{{/if}}
+		</ul>
+	</nav> <!-- .change-app-container -->
+
+
+	<header {{bind-attr class="isShowApps:is-visible isHome:-red isDataEntry:-admin isAdmin:-admin"}}>
+		{{#if isHome}}
+			<button class="logo" {{action 'toggleApps' target="view"}}>
+				<img src="assets/images/logo-irreversible.svg">
+			</button>
+		{{/if}}
+
+		{{#if isAdmin}}
+			<button class="logo" {{action 'toggleApps' target="view"}}>
+				<img src="assets/images/logo-irreversible.svg">
+			</button>
+			<h3>Administración</h3>
+			<button {{bind-attr class=":menu-button :cbutton :cbutton--effect-nikola isShowClick:cbutton--click"}} {{action 'toggleMenu' target="view"}}>
+				{{fa-icon "bars"}}
+			</button>
+		{{/if}}
+
+		{{#if isDataEntry}}
+			<button class="logo" {{action 'toggleApps' target="view"}}>
+				<img src="assets/images/logo-irreversible.svg">
+			</button>
+			<h3>Manejo de datos</h3>
+			<button {{bind-attr class=":menu-button :cbutton :cbutton--effect-nikola isShowClick:cbutton--click"}} {{action 'toggleMenu' target="view"}}>
+				{{fa-icon "bars"}}
+			</button>
+		{{/if}}
+	</header>
+
+
+	<div {{bind-attr class=":menu-wrap isShowMenu:show isData:-data isDataEntry:-admin isRed:-red isCalendar:-calendar isAdmin:-admin"}}> 
+		<ul class="menu-nav fa-ul">
+			{{#if session.isAuthenticated}}
+				{{#if isAdmin}}
+					{{#if (can 'view admin')}}
+					<li>
+					{{#link-to 'admin.users.index'}} {{fa-icon "user"}} <span>Usuarios</span> {{/link-to}}
+					</li>
+					<li>
+					{{#link-to 'admin.roles.index'}} {{fa-icon "sliders"}} <span>Roles</span> {{/link-to}}
+					</li>
+					{{/if}}
+				{{/if}}	
+				{{#if isDataEntry}}
+					<li>
+						{{#link-to 'data-entry.municipabilities.people.index'}} {{fa-icon "user"}} <span>Personas</span> {{/link-to}}
+					</li>
+				{{/if}}			
+			{{/if}}
+		</ul>
+
+		<ul class="menu-bottom">
+			<li>
+				<a {{ action 'invalidateSession' }}>
+					Salir {{fa-icon "sign-out"}}
+				</a>
+			</li>
+		</ul>
+	</div><!-- main-nav-wrap -->
+
+{{/if}}
+
+<div {{bind-attr class=":content isHome:-red isShowMenu:show isShowApps:is-visible isDataEntry:-admin isAdmin:-admin"}}>
+	{{outlet}}
+</div>

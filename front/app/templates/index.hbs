@@ -1,0 +1,24 @@
+  {{#if session.isAuthenticated}}
+  <nav>
+    <ul>
+      {{#if (can 'view admin')}}
+        <li {{bind-attr class="isAdmin:active"}} >
+          {{#link-to 'admin.users.index'}} 
+            {{fa-icon "wrench"}}
+            <span>Administración</span>
+          {{/link-to}}
+        </li>
+      {{/if}}
+      {{#if (can 'view data-entry')}}
+          <li {{bind-attr class="isDataEntry:active"}} >
+            {{#link-to 'data-entry.municipabilities.people.index'}} 
+              {{fa-icon "user-plus"}}
+              <span>Manejo de datos</span>
+            {{/link-to}}
+          </li>
+      {{/if}}
+    </ul>
+  </nav>
+  {{/if}}
+
+  <div>Sitio en construccion</div>

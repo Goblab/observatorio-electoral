@@ -1,0 +1,42 @@
+.entry-list.-groups,
+.entry-list.-events {
+
+  @include span-columns(8);
+  @include shift(2);
+  
+  $tv: new-breakpoint(min-width 1200px 12);
+
+     @include media($mobile) {
+       @include span-columns(6);
+      @include shift(0);
+    }
+
+   @include media($tv) {
+      width: 700px;
+      margin: 0 auto !important;
+      float: none;
+    }
+
+	.section-header, .section-content {
+		width: 100%;
+		margin: 0;
+	}
+
+  li {
+  	   width: 100%;
+		  display: inline-block;
+		  margin: 0;
+  }
+
+  .btn {
+  	float: right;
+  }
+
+  
+
+  .-no-user path {
+    fill: #000;
+  }
+
+
+}

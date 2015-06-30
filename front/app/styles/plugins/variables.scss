@@ -1,0 +1,65 @@
+// Font Variables
+$font-sans: 'PT Sans', sans-serif;
+$font-sans-narrow: 'PT Sans Narrow', sans-serif;
+$font-sans-caption: 'PT Sans Caption', sans-serif;
+$font-serif: 'PT Serif', serif;
+$font-serif-caption: 'PT Serif Caption', serif;
+$font-mono: 'PT Mono', ;
+
+$blue-primary: #0083ff;
+
+@mixin box-shadow {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+@function set-button-text-color($color) {
+
+  @if (lightness( $color ) > 40) {
+    @return black;
+  }
+  @else {
+    @return white;
+  }
+  
+}
+
+$button_confirm: green;
+$button_warning: #ffc53a;
+$button_error: red;
+
+.btn.-confirm {
+  background: $button_confirm;
+  color: set-button-text-color($button_confirm);
+}
+
+.btn.-warning {
+  background: $button_warning;
+  color: set-button-text-color($button_warning);
+}
+
+.btn.-error {
+  background: $button_error;
+  color: set-button-text-color($button_error);
+}
+
+.btn {
+	font-family: $font-sans-caption;
+	font-size: 12px;
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}

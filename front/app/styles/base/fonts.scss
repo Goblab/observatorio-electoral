@@ -1,0 +1,458 @@
+@font-face {
+  font-family: 'PT Sans';
+  src:url('fonts/PT_Sans-Web-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  src:url('fonts/PT_Sans-Web-Italic.ttf');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  src:url('fonts/PT_Sans-Web-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  src:url('fonts/PT_Sans-Web-BoldItalic.ttf');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'PT Sans Caption';
+  src:url('fonts/PT_Sans-Caption-Web-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Sans Caption';
+  src:url('fonts/PT_Sans-Caption-Web-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  src:url('fonts/PT_Sans-Narrow-Web-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  src:url('fonts/PT_Sans-Narrow-Web-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'PT Serif';
+  src:url('fonts/PT_Serif-Web-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Serif';
+  src:url('fonts/PT_Serif-Web-Italic.ttf');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'PT Serif';
+  src:url('fonts/PT_Serif-Web-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Serif';
+  src:url('fonts/PT_Serif-Web-BoldItalic.ttf');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'PT Serif Caption';
+  src:url('fonts/PT_Serif-Caption-Web-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Serif Caption';
+  src:url('fonts/PT_Serif-Caption-Web-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Mono';
+  src:url('fonts/PTM55FT.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Styles
+body {
+  font-family: $font-sans;
+  font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-sans-narrow;
+  font-weight: normal;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+h4 {
+    font-size: 26px;
+}
+
+h5 {
+    font-size: 24px;
+}
+
+h6 {
+    font-size: 22px;
+}
+
+
+article.type-system-sans {
+
+  @include span-columns(8);
+  @include shift(2);
+  -moz-transition: all 0.3s cubic-bezier(0.7,0,0.3,1);
+  -webkit-transition: all 0.3s cubic-bezier(0.7,0,0.3,1);
+  -o-transition: all 0.3s cubic-bezier(0.7,0,0.3,1);
+  transition: all 0.3s cubic-bezier(0.7,0,0.3,1);
+
+  $mobile: new-breakpoint(max-width 950px 6);
+
+  @include media($mobile) {
+    @include span-columns(6);
+    @include shift(0);
+    
+  }
+
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-border-radius: 3px !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $base-accent-color: #477DCA !default;
+  $base-link-color: $base-accent-color !default;
+  $dark-gray: #333 !default;
+  $light-gray: #DDD !default;
+  $medium-screen: em(640) !default;
+  $base-font-color: $dark-gray !default;
+  
+  h1, h2, h3, p {
+    margin: 0;
+  }
+
+  hr {
+    border-bottom: 1px solid $light-gray;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin: $base-spacing 0;
+  }
+
+  p {
+    color: $base-font-color;
+    line-height: $base-line-height;
+  }
+
+  a {
+    color: $base-link-color;
+    text-decoration: none;
+  }
+  //////////////////////////////////////////////////////////////////////////////////
+
+
+  @include clearfix;
+  text-align: left;
+
+  .type {
+    border-bottom: 1px solid;
+    display: inline-block;
+    font-family: $font-sans;
+    font-size: 0.7em;
+    font-weight: 600;
+    margin-bottom: 2em;
+    padding: 0.1em 0;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-family: $font-sans-narrow;
+    font-size: 1.6em;
+    font-weight: 400;
+    margin-bottom: 0.6em;
+
+    @include media($medium-screen) {
+      font-size: 2.4em;
+    }
+  }
+
+  h2 {
+    font-family: $font-sans;
+    font-size: 1.1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    margin-bottom: 1.2em;
+
+    @include media($medium-screen) {
+      font-size: 1.3em;
+    }
+  }
+
+  code {
+    background: #F7F7F7;
+    border-radius: $base-border-radius * 1.5;
+    border: 1px solid #E0E0E0;
+    font-size: 0.8em;
+    font-style: normal;
+    padding: 0.1em 0.4em;
+    white-space: nowrap;
+  }
+
+  h3 {
+   font-family: $font-sans;
+   font-size: 1em;
+   font-weight: 600;
+   line-height: 1.4em;
+   margin-bottom: 0.5em; 
+   text-transform: uppercase;
+  }
+
+  p.date {
+    color: transparentize($base-font-color, 0.6);
+    font-family: $font-sans;
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    font-family: $font-sans;
+    font-weight: 300;
+    letter-spacing: 1;
+    margin-bottom: 1.5em;
+
+    span {
+      font-family: $font-sans;
+      font-size: 0.8em;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  a.read-more {
+    display: inline-block;
+    font-family: $font-sans;
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-left: 0.2em;
+    position: relative;
+    text-transform: uppercase;
+
+    span {
+      font-size: 1.8em;
+      position: absolute;
+      right: -12px;
+      top: -2px;
+    }
+  }
+
+  hr {
+    width: 3em;
+  }
+
+  p.author {
+    font-family: $font-sans;
+  }
+
+  .btn {
+    color: #fff;
+  }
+}
+
+
+article.type-system-serif {
+
+  @include span-columns(8);
+  @include shift(2);
+  -moz-transition: all 0.3s cubic-bezier(0.7,0,0.3,1);
+  -webkit-transition: all 0.3s cubic-bezier(0.7,0,0.3,1);
+  -o-transition: all 0.3s cubic-bezier(0.7,0,0.3,1);
+  transition: all 0.3s cubic-bezier(0.7,0,0.3,1);
+
+  $mobile: new-breakpoint(max-width 950px 6);
+
+  @include media($mobile) {
+    @include span-columns(6);
+    @include shift(0);
+    
+  }
+
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-border-radius: 3px !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $base-accent-color: #477DCA !default;
+  $base-link-color: $base-accent-color !default;
+  $dark-gray: #333 !default;
+  $light-gray: #DDD !default;
+  $medium-screen: em(640) !default;
+  $base-font-color: $dark-gray !default;
+  
+  h1, h2, h3, p {
+    margin: 0;
+  }
+
+  hr {
+    border-bottom: 1px solid $light-gray;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin: $base-spacing 0;
+  }
+
+  p {
+    color: $base-font-color;
+    line-height: $base-line-height;
+  }
+
+  a {
+    color: $base-link-color;
+    text-decoration: none;
+  }
+  //////////////////////////////////////////////////////////////////////////////////
+
+
+  @include clearfix;
+  text-align: left;
+
+  .type {
+    border-bottom: 1px solid;
+    display: inline-block;
+    font-family: $font-serif;
+    font-size: 0.7em;
+    font-weight: 600;
+    margin-bottom: 2em;
+    padding: 0.1em 0;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-family: $font-serif;
+    font-size: 1.6em;
+    font-weight: 400;
+    margin-bottom: 0.6em;
+
+    @include media($medium-screen) {
+      font-size: 2.4em;
+    }
+  }
+
+  h2 {
+    font-family: $font-serif;
+    font-size: 1.1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    margin-bottom: 1.2em;
+
+    @include media($medium-screen) {
+      font-size: 1.3em;
+    }
+  }
+
+  code {
+    background: #F7F7F7;
+    border-radius: $base-border-radius * 1.5;
+    border: 1px solid #E0E0E0;
+    font-size: 0.8em;
+    font-style: normal;
+    padding: 0.1em 0.4em;
+    white-space: nowrap;
+  }
+
+  h3 {
+   font-family: $font-serif;
+   font-size: 1em;
+   font-weight: 600;
+   line-height: 1.4em;
+   margin-bottom: 0.5em; 
+   text-transform: uppercase;
+  }
+
+  p.date {
+    color: transparentize($base-font-color, 0.6);
+    font-family: $font-serif;
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    font-family: $font-serif;
+    font-weight: 300;
+    letter-spacing: 1;
+    margin-bottom: 1.5em;
+
+    span {
+      font-family: $font-serif;
+      font-size: 0.8em;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  a.read-more {
+    display: inline-block;
+    font-family: $font-serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-left: 0.2em;
+    position: relative;
+    text-transform: uppercase;
+
+    span {
+      font-size: 1.8em;
+      position: absolute;
+      right: -12px;
+      top: -2px;
+    }
+  }
+
+  hr {
+    width: 3em;
+  }
+
+  p.author {
+    font-family: $font-serif;
+  }
+}

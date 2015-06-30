@@ -1,0 +1,15 @@
+@import "plugins/plugins";
+@import "base/base";
+@import "modules/modules";
+@import "layouts/layouts";
+
+.pace .pace-progress {
+  background: #ffffff;
+  position: fixed;
+  z-index: 8000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 2px;
+}
+

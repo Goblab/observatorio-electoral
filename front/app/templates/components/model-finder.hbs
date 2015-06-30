@@ -1,0 +1,35 @@
+{{#if sigle}}
+	{{#if list}}
+		<label>{{list.name}}</label> <a {{action 'delete'}}>X</a>
+	{{else}}
+		{{input type="text" value=query}}
+		<ul>
+			{{#each model in queryContent}}
+				<li>
+					<a {{action 'add' model}}>
+						{{#if model.name}}
+							{{model.name}} {{model.lastName}} 
+						{{else}}
+							{{model.fullName}}
+						{{/if}}
+					</a>
+				</li>
+			{{/each}}
+		</ul>	
+	{{/if}}
+{{else}}
+	{{input type="text" value=query}}
+	<ul>
+		{{#each model in queryContent}}
+			<li>
+				<a {{action 'add' model}}>
+					{{#if model.name}}
+						{{model.name}} {{model.lastName}} 
+					{{else}}
+						{{model.fullName}}
+					{{/if}}
+				</a>
+			</li>
+		{{/each}}
+	</ul>
+{{/if}}

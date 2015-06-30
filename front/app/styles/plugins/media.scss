@@ -1,0 +1,84 @@
+.video {
+  position: relative;
+  @include span-columns(8);
+  @include shift(2);
+  -moz-transition: all 0.3s cubic-bezier(0.7,0,0.3,1);
+  -webkit-transition: all 0.3s cubic-bezier(0.7,0,0.3,1);
+  -o-transition: all 0.3s cubic-bezier(0.7,0,0.3,1);
+  transition: all 0.3s cubic-bezier(0.7,0,0.3,1);
+  padding-bottom: 30px;
+
+  $mobile: new-breakpoint(max-width 950px 6);
+
+  @include media($mobile) {
+    @include span-columns(6);
+    @include shift(0);
+    
+  }
+
+  &.expand {
+    @include span-columns(12);
+    @include shift(0);
+
+    button {
+
+    }
+
+  }
+
+  button {
+    border: 0px none;
+    background: none repeat scroll 0px center transparent;
+    position: absolute;
+    right: -40px;
+    top: 0;
+    color: #999;
+    font-size: 19px;
+
+      @include media($mobile) {
+        opacity: 0;
+      }
+
+  }
+
+}
+
+.video-wrapper {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
+  position: relative;
+
+  embed,
+  object,
+  iframe {
+    @include position(absolute, 0px null null 0px);
+    @include size(100%);
+  }
+}
+
+.leaflet-container {
+  height: 400px;
+  width: 100%;
+}
+
+.leaflet-container img { 
+  max-width: none; 
+// to prevent UI control bug
+}
+
+.leaflet-container .content {
+  padding: 0 0.5em 1em 0.5em;
+}
+
+.leaflet-container .firstHeading {
+  font-size: 1em;
+  line-height: 1em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.leaflet-container #bodyContent p {
+  font-size: 1em;
+  margin: 0;
+}

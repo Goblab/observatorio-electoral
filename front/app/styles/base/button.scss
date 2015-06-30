@@ -1,0 +1,32 @@
+@mixin btn {
+
+  -webkit-font-smoothing: antialiased;
+  background-color: #0083ff;
+  border-radius:6px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1em;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+button {
+  @include appearance(none);
+
+  &:hover,
+  &:focus {
+
+    color: #fff;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,109 @@
+.create-entry {
+  @include span-columns(12);
+  @include shift(0);
+  @include transition(all 0.3s cubic-bezier(0.7,0,0.3,1));
+
+  @include media($mobile) {
+      @include span-columns(6);
+      @include shift(0);
+      
+  }
+
+  input {
+  	  border: none;
+  padding: 16px 0;
+  }
+
+  .entry-publish {
+		top: 0;
+		position: fixed;
+		width: 50%;
+		color: #0083ff;
+		padding: 10px 30px;
+		-webkit-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+		border: none;
+		background: none;
+		font-family: 'PT Sans', sans-serif;
+		text-align: right;
+		right: 0 !important;
+		opacity: 0.8;
+		outline: 0;
+
+		&[disabled] {
+			color: #999;
+
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+  }
+
+}
+
+.create-entry  {
+	.ivy-tabs {
+		margin: 0; 
+	}
+
+	.ivy-tab-list {
+		  border-bottom: none;
+  margin: 0;
+  text-align: left;
+  padding: 0;
+
+		  li.active {
+			
+
+			a {
+				color: #0083ff
+			}
+
+		  }
+
+		   a {
+		  	margin: 0;
+		  	color: #999;
+		  }
+	}
+
+	.ivy-tab-panel {
+		p {
+			  margin: 0 0 5px 0px;
+				text-align: center;
+				font-size: 15px;
+				font-weight: 600;
+		}
+	}
+	
+}
+
+
+
+.type-entry {
+	position: absolute;
+	left: 0;
+	width: 60%;
+	text-align: left;
+	top: -50px;
+
+	.tooltipstered {
+		width: 25px;
+		display: inline-block;
+		margin: 0 30px 0 0;
+	}
+
+	a {
+		opacity: 0.5;
+		font-size: 30px;
+		margin: 0 35px 0 0;
+		display: inline-block;
+		cursor: pointer;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+}

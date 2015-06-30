@@ -1,0 +1,75 @@
+.slat-list {
+	position: relative;
+	
+	.slat-item { 
+		border-bottom: 1px solid #ddd;
+		position: relative;
+		padding-left: 25px;
+
+		small {
+			text-transform: uppercase;
+		    color: #555;
+		}
+
+		&.-image {
+			padding: 0.6em 1em 1.5em 4em;
+			margin: 0 0 0.5em 0;
+		}
+	}
+	
+	.slat-content {
+		position: relative;
+		display: inline-block;
+	}
+
+	.slat-action {
+
+	}
+
+	.slat-img {
+		position: absolute;
+		display: inline-block;
+		border: 1px solid #ddd;
+		margin: 0;
+		border-radius: 50%;
+		height: 45px;
+		width: 45px;
+		overflow: hidden;
+		top: 0;
+		left: 0;
+	}
+
+	h4 {
+		font-size: 20px;
+		margin: 0;
+	}
+
+	.dropdown,
+	.slat-action {
+		position: absolute;
+		display: inline-block;
+		top: 10px;
+		right: -15px;
+		width: 150px;
+
+	}
+
+	.palet-color {
+		    position: absolute;
+    display: inline-block;
+    border: 1px solid #ccc;
+    margin: 0 10px 0 0;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    top: 15px;
+    left: 0px;
+    background-color: #ddd;
+	}
+
+}
+
+.slat-item {
+	display: block;
+	padding: 0.75em;
+}

@@ -1,0 +1,43 @@
+$mobile: new-breakpoint(max-width 800px 6);
+
+.simple-form {
+
+	fieldset {
+		@include span-columns(6);
+		@include shift(3);
+
+		@include media($mobile) {
+			@include span-columns(4);
+			@include shift(1);
+			
+		}
+	}
+
+	label {
+		padding: 16px 20px 16px 0;
+		color: #999;
+	}
+
+	textarea {
+		width: 100%;
+		resize: vertical;
+		min-height: 140px;
+		padding: 15px;
+	}
+
+	input {
+		width: 100%;
+		padding: 16px 20px;
+		border: 1px solid #d2d8d8;
+
+		@include placeholder {
+		    color: #777;
+		  }
+	}
+
+	button {
+		width: 100%;
+		padding: 16px 0;
+	}
+
+}

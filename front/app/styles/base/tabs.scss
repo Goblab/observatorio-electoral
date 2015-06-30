@@ -1,0 +1,41 @@
+.ivy-tabs {
+
+	width: 100%;
+
+
+	.ivy-tab-list {
+		display: inline-block;
+		@include transition(all 0.3s ease-in-out);
+		text-align: center;
+		 padding: 20px 0 5px 0;
+	    margin: 10px 0 30px 0;
+		border-bottom: 1px solid #ddd;
+		width: 100%;
+
+		
+
+		@include media($mobile) {
+			@include span-columns(6);
+			@include shift(0);
+
+		}
+
+		.ivy-tab {
+
+			 display: inline;
+			   font-size: 26px;
+			   margin: 0 30px 0 0;
+			   font-family: $font-sans-narrow;
+			   cursor: pointer;
+
+			&.active {
+				  color: #0083ff;
+					border-bottom: 4px solid #0083ff;
+					padding: 0 0 3px 0;
+			}
+
+		}
+
+	}
+
+}

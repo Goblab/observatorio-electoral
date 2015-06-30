@@ -1,0 +1,87 @@
+header {
+	width: 100%;
+	height: 90px;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
+	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	background: #0083ff;
+	position: fixed;
+	z-index: 4002;
+	top: 0;
+	@include box-shadow;
+
+	&.-red {
+		background: #0083ff;
+	}
+
+	&.-calendar {
+		background: #3CCEF0;
+	}
+
+	&.-data {
+		background: none;
+		box-shadow: none;
+
+		.logo {
+			@include box-shadow;
+
+			@include media($mobile) {
+				margin: 1em;
+				-ms-transform: scale(1);
+				-webkit-transform: scale(1);
+				transform: scale(1);
+
+			}
+		}
+	}
+
+	&.-admin {
+		background: #dc5f50;
+	}
+
+	h3 {
+	position: fixed;
+	width: auto;
+	text-align: left;
+	padding: 0 15px 0 100px;
+	color: #fff;
+	font-size: 35px;
+	margin: 20px 0;
+	@include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
+
+		a, a:hover, a:active, a:focus{
+			color: #fff;
+		}
+
+
+		@include media($mobile) {
+			margin: 7px 0;
+			font-size: 30px;
+			padding: 0 15px 0 70px;
+		}
+
+	  	$text-header-app: new-breakpoint(max-width 500px 6);
+
+		@include media($text-header-app) {
+			display: none;
+		}
+	}
+
+	@include media($mobile) {
+		height: 60px;
+
+		.logo {
+			margin: 0;
+			-ms-transform: scale(0.65);
+			-webkit-transform: scale(0.65);
+			transform: scale(0.65);
+		}
+
+		.search-button, .menu-button {
+			margin: 0.3em;
+		}
+	}
+}

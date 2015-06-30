@@ -1,0 +1,95 @@
+$mobile: new-breakpoint(max-width 800px 6);
+$tablet: new-breakpoint(max-width 992px 6);
+$desktop: new-breakpoint(max-width 1200px 12);
+$jumbo: new-breakpoint(min-width 1201px 12);
+
+.map-container {
+  float: left;
+  width: calc(100% - 450px);
+  height: 100%;
+
+   @include media($mobile) {
+        width: 100%;
+    }
+}
+
+.full-map {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+  .half-map {
+    @include calc(width, "100% - 450px");
+
+      @include media($mobile) {
+        height: 350px;
+        width: 100%;
+    }
+  }
+
+.leaflet-container {
+  height: 100%;
+}
+
+
+
+.leaflet-container img { 
+  max-width: none; // to prevent UI control bug
+}
+
+.leaflet-container .content {
+  padding: 0 0.5em 1em 0.5em;
+}
+
+.leaflet-container .firstHeading {
+  font-size: 1em;
+  line-height: 1em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.leaflet-container #bodyContent p {
+  font-size: 1em;
+  margin: 0;
+}
+
+
+
+.leaflet-top {
+  top: 100px;
+}
+
+.leaflet-left {
+  left: 20px;
+}
+
+.maps-loading {
+position: absolute;
+text-align: center;
+width: calc(100% - 450px);
+background: #fff;
+top: 0;
+bottom: 0;
+z-index: 12;
+opacity: 0.7;
+
+@include media($mobile) {
+      width: 100%;
+    }
+
+  .maps-loader {
+    -webkit-transform: translateY(320px);
+    -ms-transform: translateY(320px);
+    transform: translateY(320px);
+
+    @include media($mobile) {
+      -webkit-transform: translateY(150px);
+      -ms-transform: translateY(150px);
+      transform: translateY(150px);
+    }
+  }
+}
+
+
+
