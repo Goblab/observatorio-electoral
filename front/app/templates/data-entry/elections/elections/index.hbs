@@ -1,0 +1,34 @@
+<section>
+  <div class="section-header">
+    <h1>Elecciones</h1>
+    {{link-to "Agregar" "data-entry.elections.elections.new" classNames="btn"}}
+  </div>
+  <div class="section-content">
+    <div class="search-form">
+      {{input type="text" value=query class="field"}}
+      <a {{action 'search'}} class="action">
+        {{fa-icon "search"}}
+      </a>
+    </div>
+    {{#if model.length}}
+      <div class="slat-list">
+        {{#each electoralElection in model}}
+          <div class="slat-item">
+            <div class="slat-content">
+              <h4>{{electoralElection.name}}</h4>
+            </div>
+            <div class="slat-action">
+              {{link-to "Editar" "data-entry.elections.elections.edit" electoralElection classNames="btn"}}
+              <a href="#" class="btn" {{action "remove" electoralElection}}>Eliminar</a>
+            </div>
+          </div>
+        {{/each}}
+        {{infinity-loader infinityModel=model}}
+      </div>
+    {{else}}
+      <div class="loading">
+        {{loading-bubbles color='#0083ff' size=100}}
+      </div>
+    {{/if}}
+  </div>
+</section>

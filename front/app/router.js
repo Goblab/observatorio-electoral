@@ -30,7 +30,64 @@ Router.map(function() {
   });
 
   this.route('data-entry', function() {
-    this.route('municipabilities', function() {
+    this.route('elections', function() {
+      this.route('political-forces', function() {
+        this.route('new');
+        this.route('edit', {
+          path: ":political-force_id/edit",
+        });
+        this.route('show', {
+          path: ":political-force_id/show",
+        });
+      });        
+      this.route('charges', function() {
+        this.route('new');
+        this.route('edit', {
+          path: ":charge_id/edit",
+        });
+        this.route('show', {
+          path: ":charge_id/show",
+        });
+      });  
+      this.route('countries', function() {
+        this.route('new');
+        this.route('edit', {
+          path: ":country_id/edit",
+        });
+        this.route('show', {
+          path: ":country_id/show",
+        });
+      });  
+
+      this.route('elections', function() {
+        this.route('new');
+        this.route('edit', {
+          path: ":election_id/edit",
+        });
+        this.route('show', {
+          path: ":election_id/show",
+        });
+      });  
+
+
+      this.route('election-types', function() {
+        this.route('new');
+        this.route('edit', {
+          path: ":election_type_id/edit",
+        });
+        this.route('show', {
+          path: ":election_type_id/show",
+        });
+      });                        
+      this.route('candidates', function() {
+        this.route('new');
+        this.route('edit', {
+          path: ":candidate_id/edit",
+        });
+        this.route('show', {
+          path: ":candidate_id/show",
+        });
+      });      
       this.route('people', function() {
         this.route('index');
         this.route('new');

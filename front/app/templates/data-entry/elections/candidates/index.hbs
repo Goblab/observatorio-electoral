@@ -1,0 +1,69 @@
+<h1>Candidatos</h1>
+
+<p>
+  {{link-to "Agregar" "data-entry.elections.candidates.new" }}
+</p>
+
+{{#if model.length}}
+  <table class="table-minimal">
+    <thead>
+      <tr>
+        <th>
+          Nombre
+        </th>
+        <th>
+          Comentario
+        </th>
+        <th>
+          Partido Politico
+        </th>    
+        <th>
+          Cargo
+        </th>
+        <th>
+          Eleccion
+        </th>        
+        <th colspan="3">
+          Actiones
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each candidate in model}}
+        <tr>
+          <td>
+            {{candidate.list.name}}
+          </td>
+          <td>
+          	{{#if candidate.person.name}}
+            	{{candidate.person.name}}
+            {{else}}
+            	{{candidate.person.fullName}}
+            {{/if}}
+          </td>
+          <td>
+            {{candidate.comment}}
+          </td>
+          <td>
+            {{candidate.politicalForce.name}}
+          </td>  
+          <td>
+            {{candidate.charge.name}}
+          </td> 
+          <td>
+           {{candidate.election.name}}
+          </td>         
+          <td>
+            {{link-to "Editar" "data-entry.elections.candidates.edit" candidate}}
+            <a href="#" {{action "remove" candidate}}>Eliminar</a>
+          </td>
+        </tr>
+      {{/each}}
+      {{infinity-loader infinityModel=model}}
+    </tbody>
+  </table>
+{{else}}
+  <p id="blankslate">
+    No candidates found
+  </p>
+{{/if}}

@@ -18,7 +18,7 @@
 			{{/if}}
 			{{#if (can 'view data-entry')}}
 			<li {{bind-attr class="isDataEntry:active"}} >
-				{{#link-to 'data-entry.municipabilities.people.index'}} 
+				{{#link-to 'data-entry.elections.people.index'}} 
 					{{fa-icon "user-plus"}}
 					<span>Manejo de datos</span>
 				{{/link-to}}
@@ -72,8 +72,23 @@
 				{{/if}}	
 				{{#if isDataEntry}}
 					<li>
-						{{#link-to 'data-entry.municipabilities.people.index'}} {{fa-icon "user"}} <span>Personas</span> {{/link-to}}
+						{{#link-to 'data-entry.elections.people.index'}} {{fa-icon "user"}} <span>Personas</span> {{/link-to}}
 					</li>
+					<li>
+						{{#link-to 'data-entry.elections.countries.index'}} {{fa-icon "user"}} <span>Pais</span> {{/link-to}}
+					</li>
+					<li>
+						{{#link-to 'data-entry.elections.elections.index'}} {{fa-icon "user"}} <span>Elecciones</span> {{/link-to}}
+					</li>
+					<li>
+						{{#link-to 'data-entry.elections.election-types.index'}} {{fa-icon "user"}} <span>Tipo de elecciones</span> {{/link-to}}
+					</li>	
+					<li>
+						{{#link-to 'data-entry.elections.candidates.index'}} {{fa-icon "user"}} <span>Candidatos</span> {{/link-to}}
+					</li>		
+					<li>
+						{{#link-to 'data-entry.elections.charges.index'}} {{fa-icon "user"}} <span>Cargos</span> {{/link-to}}
+					</li>																							
 				{{/if}}			
 			{{/if}}
 		</ul>

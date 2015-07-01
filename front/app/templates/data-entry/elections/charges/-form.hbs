@@ -1,0 +1,18 @@
+<form {{action "save" on="submit"}} class="create-event">
+  <fieldset>
+    <label>
+      Nombre
+      {{input type="text" value=model.name}}
+    </label>
+  </fieldset>
+  <fieldset>
+    <label>
+      Nivel (Nacional, Provincial, Districtal)
+      {{input type="text" value=model.scope}}
+    </label>
+  </fieldset>  
+  <fieldset>
+    <input type="submit" value="Guardar">
+  </fieldset>
+</form>
+    

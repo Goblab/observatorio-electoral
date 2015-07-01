@@ -1,0 +1,41 @@
+<form {{action "save" on="submit"}} class="create-event">
+  <fieldset>
+    <label>
+      Persona Fisica
+      {{model-finder modelName='person' list=model.person labelPath="name" sigle=true}}
+    </label>
+  </fieldset> 
+
+  <fieldset>
+    <label>
+      Fuerza Politico (EJ: Frente para la victoria)
+      {{model-finder modelName='political-force' list=model.politicalForce labelPath="name" sigle=true}}
+    </label>
+  </fieldset> 
+
+  <fieldset>
+    <label>
+      Comentario
+      {{input type="text" value=model.comment}}
+    </label>
+  </fieldset>
+
+  <fieldset>
+    <label>
+      Cargo
+      {{model-finder modelName='charge' list=model.charge labelPath="name" sigle=true}}
+    </label>
+  </fieldset>          
+
+   <fieldset>
+    <label>
+      Eleccion
+      {{model-finder modelName='electoral-section' filter=model.province list=model.election labelPath="name" sigle=true}}
+    </label>
+  </fieldset>  
+  
+  <fieldset>
+    <input type="submit" value="Guardar">
+  </fieldset>
+</form>
+    

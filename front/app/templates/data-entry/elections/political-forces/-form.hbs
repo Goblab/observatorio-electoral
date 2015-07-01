@@ -1,0 +1,24 @@
+<form {{action "save" on="submit"}} class="create-event">
+  <fieldset>
+    <label>
+      Nombre
+      {{input type="text" value=model.name}}
+    </label>
+  </fieldset>
+  <fieldset>
+    <label>
+      Sigla
+      {{input type="text" value=model.initials}}
+    </label>
+  </fieldset>  
+  <fieldset>
+    <label>
+      Color
+      {{spectrum-color-picker color=color preferredFormat="hex" clickoutFiresChange=true showInput=true moveFiresChange=true showButtons=false}}
+    </label>
+  </fieldset>
+  <fieldset>
+    <input type="submit" value="Guardar">
+  </fieldset>
+</form>
+    

@@ -1,0 +1,32 @@
+<form {{action "save" on="submit"}} class="create-event">
+  <fieldset>
+    <label>
+      Tipo
+      {{model-finder modelName='electionType' list=model.type labelPath="name" sigle=true}}
+    </label>
+  </fieldset>   
+  <fieldset>
+    <label>
+      Nombre
+      {{input type="text" value=model.name}}
+    </label>
+  </fieldset>
+  <fieldset>
+    <label>
+      Fecha
+    </label>
+    <div class="date-picker-container">
+      {{date-picker date=model.date valueFormat='YYYY-MM-DD' utc=true }}
+    </div>
+  </fieldset>   
+  <fieldset>
+    <label>
+      Pais
+      {{model-finder modelName='province' list=model.province labelPath="name" sigle=true}}
+    </label>
+  </fieldset>     
+  <fieldset>
+    <input type="submit" value="Guardar">
+  </fieldset>
+</form>
+    
