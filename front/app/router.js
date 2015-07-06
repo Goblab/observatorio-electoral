@@ -78,7 +78,18 @@ Router.map(function() {
         this.route('show', {
           path: ":election_type_id/show",
         });
-      });                        
+      });  
+
+      this.route('election-levels', function() {
+        this.route('new');
+        this.route('edit', {
+          path: ":election_level_id/edit",
+        });
+        this.route('show', {
+          path: ":election_level_id/show",
+        });
+      });  
+
       this.route('candidates', function() {
         this.route('new');
         this.route('edit', {

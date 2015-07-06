@@ -1,0 +1,15 @@
+{{#if filesUpluad}}
+	{{asset-preview files=filesUpluad isNew=true delete='delete'}}
+{{else}}
+	<form {{bind-attr id=formId}}>
+		<div class="formRow">
+			{{input type="hidden" value=folder name="folder"}}
+			{{input type="file" value=url name="file" multiple=multiple accept=accept}}
+		</div>
+	</form>
+	{{#if showLoader}}
+		<div class="progress-bar">
+		  <span class="meter" style="width: 0%"></span>
+		</div>	
+	{{/if}}
+{{/if}}

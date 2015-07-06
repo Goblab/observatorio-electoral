@@ -1,39 +1,52 @@
 <form {{action "save" on="submit"}} class="create-event">
   <fieldset>
     <label>
-      Persona Fisica
-      {{model-finder modelName='person' list=model.person labelPath="name" sigle=true}}
+      Nombre
+      {{input type="text" value=model.name}}
     </label>
-  </fieldset> 
+  </fieldset>
+  <fieldset>
+    <label>
+      Apellido
+      {{input type="text" value=model.lastName}}
+    </label>
+  </fieldset>
+  <fieldset>
+    <label>
+      Apodo | Alias
+      {{input type="text" value=model.alias}}
+    </label>
+  </fieldset>
+  <fieldset>
+    <label>
+      Pais
+      {{model-finder modelName='country' list=model.country labelPath="name" sigle=true}}
+    </label>
+  </fieldset>  
 
   <fieldset>
     <label>
-      Fuerza Politico (EJ: Frente para la victoria)
-      {{model-finder modelName='political-force' list=model.politicalForce labelPath="name" sigle=true}}
-    </label>
-  </fieldset> 
-
-  <fieldset>
-    <label>
-      Comentario
-      {{input type="text" value=model.comment}}
+      Historia
+      {{input type="text" value=model.history}}
     </label>
   </fieldset>
 
   <fieldset>
     <label>
-      Cargo
-      {{model-finder modelName='charge' list=model.charge labelPath="name" sigle=true}}
+      Fuerza Politico (EJ: Frente para la victoria)
+      {{model-finder modelName='political-force' filterValue=model.country filterField="country" list=model.politicalForce labelPath="name" sigle=true}}
     </label>
-  </fieldset>          
+  </fieldset>
 
-   <fieldset>
-    <label>
-      Eleccion
-      {{model-finder modelName='electoral-section' filter=model.province list=model.election labelPath="name" sigle=true}}
-    </label>
-  </fieldset>  
-  
+  <div class="hero-logo -profile">
+      {{#if model.pincture.url}}
+        <div class="img-container">
+          <img {{bind-attr src=model.pincture.url}}>
+        </div>
+      {{/if}}
+      {{file-uploader file=model.pincture multiple=false}}
+  </div>   
+
   <fieldset>
     <input type="submit" value="Guardar">
   </fieldset>

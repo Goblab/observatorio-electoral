@@ -1,16 +1,23 @@
 <form {{action "save" on="submit"}} class="create-event">
+
   <fieldset>
     <label>
-      Tipo
-      {{model-finder modelName='electionType' list=model.type labelPath="name" sigle=true}}
+      Pais <!-- Select -->
+      {{model-finder modelName='country' list=model.country labelPath="name" sigle=true}}
+    </label>
+  </fieldset>     
+  <fieldset>
+    <label>
+      Nivel <!-- Select -->
+      {{model-finder modelName='election-level' list=model.level labelPath="name" sigle=true}}
+    </label>
+  </fieldset> 
+  <fieldset>
+    <label>
+      Tipo <!-- Select -->
+      {{model-finder modelName='election-type' list=model.type labelPath="name" sigle=true}}
     </label>
   </fieldset>   
-  <fieldset>
-    <label>
-      Nombre
-      {{input type="text" value=model.name}}
-    </label>
-  </fieldset>
   <fieldset>
     <label>
       Fecha
@@ -18,13 +25,44 @@
     <div class="date-picker-container">
       {{date-picker date=model.date valueFormat='YYYY-MM-DD' utc=true }}
     </div>
+  </fieldset>  
+  <fieldset>
+    <label>
+      Nombre (EJ: Legislativa 2015)
+      {{input type="text" value=model.name}}
+    </label>
+  </fieldset>     
+  <fieldset>
+    <label>
+      Instancia <!-- Select Primera vuelta | Segunda vuelta | Directa -->
+      {{model-finder modelName='election-instance' list=model.instance labelPath="name" sigle=true}}
+    </label>
   </fieldset>   
   <fieldset>
     <label>
-      Pais
-      {{model-finder modelName='province' list=model.province labelPath="name" sigle=true}}
+      Categoria <!-- Select Primarias | Generales -->
+      {{model-finder modelName='election-category' list=model.category labelPath="name" sigle=true}}
     </label>
-  </fieldset>     
+  </fieldset>    
+
+  <fieldset>
+    <label>
+      Vinculante <!-- Select Si | No  (Si es referendum) -->
+    </label>
+  </fieldset>   
+
+  <fieldset>
+    <label>
+      Camara legislativa <!-- Select Unicameral | Bicameral (Si es Legislativa) -->
+    </label>
+  </fieldset> 
+
+  <fieldset>
+    <label>
+      Participacion <!-- Select Obligatoria | Opcional -->
+    </label>
+  </fieldset> 
+        
   <fieldset>
     <input type="submit" value="Guardar">
   </fieldset>

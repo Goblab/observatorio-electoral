@@ -7,9 +7,18 @@
   </fieldset>
   <fieldset>
     <label>
+      Polygono
       {{input type="text" value=model.polygon}}
     </label>
-  </fieldset>  
+  </fieldset> 
+  <div class="hero-logo -profile">
+      {{#if model.flag.url}}
+        <div class="img-container">
+          <img {{bind-attr src=model.flag.url}}>
+        </div>
+      {{/if}}
+      {{file-uploader file=model.flag multiple=false}}
+  </div>    
   <fieldset>
     <input type="submit" value="Guardar">
   </fieldset>

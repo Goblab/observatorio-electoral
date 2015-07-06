@@ -13,10 +13,33 @@
   </fieldset>  
   <fieldset>
     <label>
+      Historia
+       {{textarea type="text" value=model.history}}
+    </label>
+  </fieldset>  
+    
+   <fieldset>
+    <label>
+      Pais
+      {{model-finder modelName='country' list=model.country labelPath="name" sigle=true}}
+    </label>
+  </fieldset>  
+ 
+  <div class="hero-logo -profile">
+      {{#if model.logo.url}}
+        <div class="img-container">
+          <img {{bind-attr src=model.logo.url}}>
+        </div>
+      {{/if}}
+      {{file-uploader file=model.logo multiple=false}}
+  </div>    
+  <fieldset>
+    <label>
       Color
       {{spectrum-color-picker color=color preferredFormat="hex" clickoutFiresChange=true showInput=true moveFiresChange=true showButtons=false}}
     </label>
   </fieldset>
+
   <fieldset>
     <input type="submit" value="Guardar">
   </fieldset>

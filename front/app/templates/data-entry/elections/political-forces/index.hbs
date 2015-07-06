@@ -1,7 +1,7 @@
 <section>
   <div class="section-header">
     <h1>Partidos politicos</h1>
-    {{link-to "Agregar" "data-entry.elections.political-parties.new" classNames="btn"}}
+    {{link-to "Agregar" "data-entry.elections.political-forces.new" classNames="btn"}}
   </div>
   <div class="section-content">
     <div class="search-form">
@@ -12,16 +12,16 @@
     </div>
     {{#if model.length}}
       <div class="slat-list">
-        {{#each politicalparty in model}}
+        {{#each politicalForce in model}}
           <div class="slat-item">
             <div class="palet-color">
-              {{{color-div politicalparty.color}}}
+              {{{color-div politicalForce.color}}}
             </div>
             <div class="slat-content">
-              <h4>{{politicalparty.name}}</h4>
+              <h4>{{politicalForce.name}}</h4>
             </div>
             <div class="slat-action">
-              {{link-to "Editar" "data-entry.elections.political-parties.edit" politicalparty classNames="btn"}}
+              {{link-to "Editar" "data-entry.elections.political-forces.edit" politicalparty classNames="btn"}}
               <a href="#" class="btn" {{action "remove" politicalparty}}>Eliminar</a>
             </div>
           </div>
