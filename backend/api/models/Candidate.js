@@ -8,10 +8,10 @@
 module.exports = {
 
   attributes: {
-    name: DS.attr('string'),
-    lastName: DS.attr('string'),
-    alias: DS.attr('string'),
-    history: DS.attr('string'),
+    name: 'string',
+    lastName: 'string',
+    alias: 'string',
+    history: 'string',
 
     picture: {
       model: 'asset',
