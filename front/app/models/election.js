@@ -9,4 +9,5 @@ export default DS.Model.extend({
     instance: DS.belongsTo('election-instance', {async: true}),
     category: DS.belongsTo('election-category', {async: true}),
     vinculated: DS.attr('boolean'),
+    participation: DS.attr('election-participation', {async: true}),
 });

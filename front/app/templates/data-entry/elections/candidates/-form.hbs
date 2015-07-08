@@ -38,6 +38,13 @@
     </label>
   </fieldset>
 
+  <fieldset>
+    <label>
+      Cargo
+      {{model-finder modelName='charge' filterValue=model.country filterField="country" list=model.charge labelPath="name" sigle=true}}
+    </label>
+  </fieldset>
+
   <div class="hero-logo -profile">
       {{#if model.pincture.url}}
         <div class="img-container">

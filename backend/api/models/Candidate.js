@@ -8,25 +8,17 @@
 module.exports = {
 
   attributes: {
+    name: DS.attr('string'),
+    lastName: DS.attr('string'),
+    alias: DS.attr('string'),
+    history: DS.attr('string'),
 
-  	person: {
-  		model: 'person',
-  	},
-
-  	politicalForce: {
-  		model: 'politicalForce',
-  	},
-
-  	election: {
-  		model: 'election',
-  	},
+    picture: {
+      model: 'asset',
+    },
 
     charge: {
       model: 'charge',
-    },
-
-    comment: {
-      type: 'string'
-    }
+    },    
   }
 };

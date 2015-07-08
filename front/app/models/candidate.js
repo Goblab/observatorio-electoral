@@ -6,5 +6,6 @@ export default DS.Model.extend({
   alias: DS.attr('string'),	
   history: DS.attr('string'),
   picture: DS.belongsTo('asset', {async: true}),
+  charge: DS.belongsTo('charge', {async: true}),
   country: DS.belongsTo('country', {async: true}),
 });

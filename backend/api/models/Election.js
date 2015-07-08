@@ -14,7 +14,7 @@ module.exports = {
 
     date: {
     	type: 'datetime'
-    }, 
+    },  
     
     country: {
       model: 'country',
@@ -22,6 +22,24 @@ module.exports = {
 
     type: {
     	model: 'electionType'
+    },
+
+    level: {
+      model: 'electionLevel'
+    },
+    
+    instance: {
+      model: 'electionInstance'
+    },
+
+    category: {
+      model: 'electionCategory'
+    }, 
+
+    vinculated: 'boolean',
+
+    participation: {
+      model: 'electionParticipation'
     } 
   }
 };
