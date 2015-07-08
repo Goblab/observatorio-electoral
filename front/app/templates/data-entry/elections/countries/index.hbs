@@ -9,6 +9,11 @@
         {{#each country in model}}
           <div class="slat-item">
             <div class="slat-content">
+              {{#if country.flag.url}}
+                <div class="img-container">
+                  <img {{bind-attr src=country.flag.url}} width="120px">
+                </div>
+              {{/if}}            
               <h4>{{country.name}}</h4>
             </div>
             <div class="slat-action">

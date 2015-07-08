@@ -46,12 +46,12 @@
   </fieldset>
 
   <div class="hero-logo -profile">
-      {{#if model.pincture.url}}
+      {{#if model.picture.url}}
         <div class="img-container">
-          <img {{bind-attr src=model.pincture.url}}>
+          <img {{bind-attr src=model.picture.url}}>
         </div>
       {{/if}}
-      {{file-uploader file=model.pincture multiple=false}}
+      {{file-uploader file=model.picture multiple=false}}
   </div>   
 
   <fieldset>

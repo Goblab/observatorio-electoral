@@ -16,6 +16,10 @@
           <div class="slat-item">
             <div class="slat-content">
               <h4>{{electoralElection.name}}</h4>
+              <p>{{time-format electoralElection.date 'LL'}}</p>
+              <p>{{electoralElection.country.name}}</p>
+              <p>{{electoralElection.type.name}}</p>
+              <p>{{electoralElection.level.name}}</p>
             </div>
             <div class="slat-action">
               {{link-to "Editar" "data-entry.elections.elections.edit" electoralElection classNames="btn"}}
