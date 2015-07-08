@@ -9,7 +9,10 @@ module.exports = {
 
   attributes: {
   	name: 'string',
-  	polygon: 'string'
+  	polygon: 'string',
+  	flag: {
+  		model: 'asset'
+  	}
   }
 };
 
