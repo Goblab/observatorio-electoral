@@ -8,6 +8,7 @@ export default DS.Model.extend({
     level: DS.belongsTo('election-level', {async: true}),
     instance: DS.belongsTo('election-instance', {async: true}),
     category: DS.belongsTo('election-category', {async: true}),
+    cameratype: DS.belongsTo('camera-type', {async: true}),
     vinculated: DS.attr('boolean'),
     participation: DS.attr('election-participation', {async: true}),
 });

@@ -40,6 +40,10 @@ module.exports = {
 
     participation: {
       model: 'electionParticipation'
-    } 
+    },
+    
+    cameraType: {
+      model: 'cameraType'
+    }      
   }
 };
