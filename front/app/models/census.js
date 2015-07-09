@@ -1,6 +1,9 @@
 import DS from 'ember-data';
+var inflector = Ember.Inflector.inflector;
+inflector.irregular("census", "censuses");
 
 export default DS.Model.extend({
+	name: DS.attr('string'),
 	country: DS.belongsTo('country', {async: true}),
 	year: DS.attr('string'),
 	voters: DS.attr('number'),

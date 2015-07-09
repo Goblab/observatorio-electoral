@@ -127,7 +127,15 @@ Router.map(function() {
           path: ":election_level_id/show",
         });
       });  
-
+      this.route('censuses', function() {
+        this.route('new');
+        this.route('edit', {
+          path: ":census/edit",
+        });
+        this.route('show', {
+          path: ":census/show",
+        });
+      }); 
       this.route('candidates', function() {
         this.route('new');
         this.route('edit', {

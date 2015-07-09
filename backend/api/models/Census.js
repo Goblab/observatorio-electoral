@@ -11,7 +11,7 @@ module.exports = {
     country: {
       model: 'country',
     }, 
-
+    name: 'string',
     year: 'string',
     voters: 'number',
     male: 'number',
