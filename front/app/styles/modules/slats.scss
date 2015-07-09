@@ -27,21 +27,21 @@
 	}
 
 	.slat-img {
-		position: absolute;
-		display: inline-block;
-		border: 1px solid #ddd;
-		margin: 0;
-		border-radius: 50%;
-		height: 45px;
-		width: 45px;
-		overflow: hidden;
-		top: 0;
-		left: 0;
+		    position: absolute;
+    display: inline-block;
+    border: 1px solid #ddd;
+    margin: 0;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    overflow: hidden;
+    top: 10px;
+    left: 10px;
 	}
 
 	h4 {
 		font-size: 20px;
-		margin: 0;
+		    margin: 10px;
 	}
 
 	.dropdown,
@@ -50,7 +50,7 @@
 		display: inline-block;
 		top: 10px;
 		right: -15px;
-		width: 150px;
+		width: 200px;
 
 	}
 

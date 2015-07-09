@@ -210,7 +210,7 @@ header.is-visible {
 	transition: transform 0.4s;
 	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
 	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-	background: shade(#0083ff, 10%);
+	background: shade(#1EBCEF, 10%);
 	position: fixed;
 	z-index: 4003;
 	top: 0;
@@ -635,7 +635,7 @@ $mobile: new-breakpoint(max-width 600px 6);
 	@include span-columns(8);
   	@include shift(2);
   	position: relative;
-  	margin-bottom: 25px;
+  	margin-bottom: 0;
   	border-bottom: 1px solid #ccc;
   	@include transition(all 0.3s cubic-bezier(0.7,0,0.3,1));
 	
@@ -647,8 +647,10 @@ $mobile: new-breakpoint(max-width 600px 6);
 	}
 
   	 h1 {
-  	 	display: inline-block;
-  	 	margin: 10px 0 10px 0;
+  	 	    display: inline-block;
+    margin: 10px 0 10px 0;
+    font-size: 42px;
+    font-weight: 300;
   	 }
 
   	 .btn {
@@ -657,6 +659,7 @@ $mobile: new-breakpoint(max-width 600px 6);
 		  right: 0;
 		  top: 28px;
 		  height: 31px;
+	      font-size: 15px;
 		  background: none;
 		  color: #0083ff;
   	 }
@@ -886,6 +889,32 @@ $mobile: new-breakpoint(max-width 600px 6);
 		.btn {
 			float: right;
 		}
+	}
+
+	.color-picker {
+      margin: 20px;
+
+	}
+
+	.upload-file {
+		 margin: 25px;
+			
+		.img-container {
+			width: 20%;
+			
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	textarea {
+  width: 100%;
+  border-radius: 6px;
+  line-height: 1;
+  resize: vertical;
+  min-height: 75px;
 	}
 
 	input[type="submit"] {

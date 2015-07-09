@@ -25,7 +25,7 @@
     </label>
   </fieldset>  
  
-  <div class="hero-logo -profile">
+  <div class="upload-file">
       {{#if model.logo.url}}
         <div class="img-container">
           <img {{bind-attr src=model.logo.url}}>
@@ -33,7 +33,7 @@
       {{/if}}
       {{file-uploader file=model.logo multiple=false}}
   </div>    
-  <fieldset>
+  <fieldset class="color-picker">
     <label>
       Color
       {{spectrum-color-picker color=color preferredFormat="hex" clickoutFiresChange=true showInput=true moveFiresChange=true showButtons=false}}

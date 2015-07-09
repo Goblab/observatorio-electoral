@@ -1,0 +1,48 @@
+.logo {
+
+	img {
+		position: relative;
+		top: -7px;
+		width: 66px;
+		left: -10px;
+		border-radius: 50px;
+		-webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+		-moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	}
+}
+
+.index-container {
+	margin: 50px auto 0 ;
+	width: 325px;
+}
+
+.img-container {
+	&.-country {
+		    width: 50px;
+    overflow: hidden;
+    height: 50px;
+    border-radius: 50px;
+
+    img {
+    	    width: 77px;
+    position: relative;
+    left: -14px;
+    }
+	}
+}
+
+.slat-action {
+	
+	.-remove {
+		background: none;
+		color: #e74b3c;
+		    font-size: 16px;
+	}
+
+	.-edit {
+		background: none;
+		color: #3996d3;
+		    font-size: 16px;
+	}
+}

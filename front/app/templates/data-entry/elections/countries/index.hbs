@@ -5,15 +5,18 @@
   </div>
   <div class="section-content">
     {{#if model.length}}
-      <div class="slat-list">
+      <div class="slat-list ">
         {{#each country in model}}
-          <div class="slat-item">
-            <div class="slat-content">
+          <div class="slat-item -image">
+            <div class="slat-img">
               {{#if country.flag.url}}
-                <div class="img-container">
-                  <img {{bind-attr src=country.flag.url}} width="120px">
+                <div class="img-container -country">
+                  <img {{bind-attr src=country.flag.url}} width="50px">
                 </div>
-              {{/if}}            
+              {{/if}} 
+            </div>
+            <div class="slat-content">
+                         
               <h4>{{country.name}}</h4>
             </div>
             <div class="slat-action">
