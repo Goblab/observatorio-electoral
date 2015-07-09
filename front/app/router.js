@@ -130,10 +130,10 @@ Router.map(function() {
       this.route('censuses', function() {
         this.route('new');
         this.route('edit', {
-          path: ":census/edit",
+          path: ":census_id/edit",
         });
         this.route('show', {
-          path: ":census/show",
+          path: ":census_id/show",
         });
       }); 
       this.route('candidates', function() {

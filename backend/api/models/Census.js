@@ -13,10 +13,10 @@ module.exports = {
     }, 
     name: 'string',
     year: 'string',
-    voters: 'number',
-    male: 'number',
-    female: 'number',
-    externals: 'number'
+    voters: 'string',
+    male: 'string',
+    female: 'string',
+    externals: 'string'
   }
 };
 

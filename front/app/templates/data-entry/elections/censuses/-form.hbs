@@ -1,10 +1,48 @@
 <form {{action "save" on="submit"}} class="create-event">
   <fieldset>
     <label>
+      Pais <!-- Select -->
+      {{model-selector modelName='country' value=model.country optionLabelPath="content.name" }}
+    </label>
+  </fieldset> 
+  <fieldset>
+    <label>
       Nombre
       {{input type="text" value=model.name}}
     </label>
   </fieldset>
+    <fieldset>
+    <label>
+      Año
+    </label>
+    <div class="date-picker-container">
+      {{date-picker date=model.year yearRange="1920, 2020" format='YYYY' utc=true}}
+    </div>
+  </fieldset> 
+  <fieldset>
+    <label>
+      Votantes
+      {{input type="number" value=model.voters}}
+    </label>
+  </fieldset>   
+  <fieldset>
+    <label>
+      Hombres
+      {{input type="number" value=model.male}}
+    </label>
+  </fieldset>   
+  <fieldset>
+    <label>
+      Mujeres
+      {{input type="number" value=model.female}}
+    </label>
+  </fieldset>   
+  <fieldset>
+    <label>
+      Extranjeros
+      {{input type="number" value=model.externals}}
+    </label>
+  </fieldset>         
   <fieldset>
     <input type="submit" value="Guardar">
   </fieldset>
