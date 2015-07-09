@@ -21,8 +21,7 @@ module.exports = {
 
     email: {
      type: 'string',
-     unique: true,
-     email: true
+     unique: true
     },
 
     roles: {
