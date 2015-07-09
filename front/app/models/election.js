@@ -10,5 +10,5 @@ export default DS.Model.extend({
     category: DS.belongsTo('election-category', {async: true}),
     cameratype: DS.belongsTo('camera-type', {async: true}),
     vinculated: DS.attr('boolean'),
-    //participation: DS.belongsTo('election-participation', {async: true}),
+    participation: DS.belongsTo('election-participation', {async: true}),
 });

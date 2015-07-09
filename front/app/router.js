@@ -27,6 +27,44 @@ Router.map(function() {
         path: ":role_id/edit"
       });
     });
+
+    this.route('election-categories', function() {
+      this.route('new');
+      this.route('edit', {
+        path: ":election_category_id/edit",
+      });
+      this.route('show', {
+        path: ":election_category_id/show",
+      });
+    }); 
+
+    this.route('camera-types', function() {
+      this.route('new');
+      this.route('edit', {
+        path: ":election_camera_type/edit",
+      });
+      this.route('show', {
+        path: ":election_camera_type/show",
+      });
+    }); 
+    this.route('election-participations', function() {
+      this.route('new');
+      this.route('edit', {
+        path: ":election_participation_id/edit",
+      });
+      this.route('show', {
+        path: ":election_participation_id/show",
+      });
+    });  
+    this.route('election-instances', function() {
+      this.route('new');
+      this.route('edit', {
+        path: ":election_instance_id/edit",
+      });
+      this.route('show', {
+        path: ":election_instance_id/show",
+      });
+    });           
   });
 
   this.route('data-entry', function() {

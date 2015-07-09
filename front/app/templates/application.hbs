@@ -68,7 +68,20 @@
 					<li>
 					{{#link-to 'admin.roles.index'}} {{fa-icon "sliders"}} <span>Roles</span> {{/link-to}}
 					</li>
-					{{/if}}
+					<li>
+					{{#link-to 'admin.election-categories.index'}} {{fa-icon "sliders"}} <span>Categoria de elecciones</span> {{/link-to}}
+					</li>
+					<li>
+					{{#link-to 'admin.election-instances.index'}} {{fa-icon "sliders"}} <span>Instancias de elecciones</span> {{/link-to}}
+					</li>									
+			
+					<li>
+					{{#link-to 'admin.camera-types.index'}} {{fa-icon "sliders"}} <span>tipo de Camaras</span> {{/link-to}}
+					</li>		
+					<li>
+					{{#link-to 'admin.election-participations.index'}} {{fa-icon "sliders"}} <span>Participacion</span> {{/link-to}}
+					</li>													
+					{{/if}}					
 				{{/if}}	
 				{{#if isDataEntry}}
 					<li>

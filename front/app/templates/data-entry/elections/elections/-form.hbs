@@ -3,19 +3,19 @@
   <fieldset>
     <label>
       Pais <!-- Select -->
-      {{model-finder modelName='country' list=model.country labelPath="name" sigle=true}}
+      {{model-selector modelName='country' value=model.country optionLabelPath="content.name" }}
     </label>
   </fieldset>     
   <fieldset>
     <label>
       Nivel <!-- Select -->
-      {{model-finder modelName='election-level' list=model.level labelPath="name" sigle=true}}
+      {{model-selector modelName='election-level' value=model.level optionLabelPath="content.name" }}
     </label>
   </fieldset> 
   <fieldset>
     <label>
       Tipo <!-- Select -->
-      {{model-finder modelName='election-type' list=model.type labelPath="name" sigle=true}}
+      {{model-selector modelName='election-type' value=model.type optionLabelPath="content.name" }}
     </label>
   </fieldset>   
   <fieldset>
@@ -35,31 +35,39 @@
   <fieldset>
     <label>
       Instancia <!-- Select Primera vuelta | Segunda vuelta | Directa -->
-      {{model-finder modelName='election-instance' list=model.instance labelPath="name" sigle=true}}
+      {{model-selector modelName='election-instance' value=model.instance optionLabelPath="content.name" }}
     </label>
   </fieldset>   
   <fieldset>
     <label>
       Categoria <!-- Select Primarias | Generales -->
-      {{model-finder modelName='election-category' list=model.category labelPath="name" sigle=true}}
+      {{model-selector modelName='election-category' value=model.category optionLabelPath="content.name" }}
     </label>
   </fieldset>    
 
   <fieldset>
     <label>
       Vinculante <!-- Select Si | No  (Si es referendum) -->
+      {{view "select"
+          content=vinculateList
+          optionValuePath='content.id'
+          optionLabelPath='content.label'
+          selection=model.vinculated
+          }}      
     </label>
   </fieldset>   
 
   <fieldset>
     <label>
       Camara legislativa <!-- Select Unicameral | Bicameral (Si es Legislativa) -->
+      {{model-selector modelName='camera-type' value=model.cameraType optionLabelPath="content.name" }}
     </label>
   </fieldset> 
 
   <fieldset>
     <label>
       Participacion <!-- Select Obligatoria | Opcional -->
+      {{model-selector modelName='election-participation' value=model.participation optionLabelPath="content.name" }}
     </label>
   </fieldset> 
         

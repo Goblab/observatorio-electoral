@@ -1,0 +1,28 @@
+<section>
+  <div class="section-header">
+    <h1>Niveles de eleccions</h1>
+    {{link-to "Agregar" "admin.election-categories.new" classNames="btn"}}
+  </div>
+  <div class="section-content">
+    {{#if model.length}}
+      <div class="slat-list">
+        {{#each electionType in model}}
+          <div class="slat-item">
+            <div class="slat-content">
+              <h4>{{electionType.name}}</h4>
+            </div>
+            <div class="slat-action">
+              {{link-to "Editar" "admin.election-categories.edit" electionType classNames="btn"}}
+              <a href="#" class="btn" {{action "remove" electionType}}>Eliminar</a>
+            </div>
+          </div>
+        {{/each}}
+        {{infinity-loader infinityModel=model}}
+      </div>
+    {{else}}
+      <div class="loading">
+        {{loading-bubbles color='#0083ff' size=100}}
+      </div>
+    {{/if}}
+  </div>
+</section>
