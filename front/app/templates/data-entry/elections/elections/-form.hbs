@@ -48,12 +48,7 @@
   <fieldset>
     <label>
       Vinculante <!-- Select Si | No  (Si es referendum) -->
-      {{view "select"
-          content=vinculateList
-          optionValuePath='content.id'
-          optionLabelPath='content.label'
-          selection=model.vinculated
-          }}      
+      {{input type="checkbox" name="isVinculated" checked=model.vinculated}}   
     </label>
   </fieldset>   
 
