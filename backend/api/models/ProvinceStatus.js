@@ -16,7 +16,7 @@ module.exports = {
   		model: 'province',
   	},
 
-  	votes: DS.attr(''),
+  	votes: 'json',
   }
 };
 
