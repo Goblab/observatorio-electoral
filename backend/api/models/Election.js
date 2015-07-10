@@ -44,6 +44,23 @@ module.exports = {
     
     cameraType: {
       model: 'cameraType'
-    }      
+    },
+
+    formulas: {
+      collection: 'formula',
+      via: 'election'
+    } ,
+
+    voters: 'string',
+    votersPercent: 'string',
+    electors: 'string',
+    electorsPercent: 'string',
+    blank: 'string',
+    blankPercent: 'string',
+    nulls: 'string',
+    nullsPercent: 'string',
+    valids: 'string',
+    validsPercent: 'string',
+
   }
 };

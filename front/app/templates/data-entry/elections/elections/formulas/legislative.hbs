@@ -2,13 +2,47 @@
     <label>
     	Fuerza Politica
           {{model-finder modelName='political-force' list=formula.politicalForce labelPath="name" sigle=true}}
-  	</label>  
-    <label>
-    	Votos
-        {{input type="number" value=formula.votes}}
-  	</label> 
-     <label>
-    	Porcentaje
-        {{input type="number" value=formula.percent}}
-  	</label> 	   	 	
- </fieldset> 	
+  	</label>
+    {{#if isBicameral}}
+      Asambleistas
+      <label>
+        Votos
+          {{input type="number" value=formula.assemblyman.votes}}
+      </label> 
+       <label>
+        Porcentaje
+          {{input type="number" value=formula.assemblyman.percent}}
+      </label>     
+      <label>
+        Bancas
+          {{input type="number" value=formula.assemblyman.positions}}
+      </label>         
+    {{else}}
+      Diputados
+      <label>
+        Votos
+          {{input type="number" value=formula.diputies.votes}}
+      </label> 
+      <label>
+        Porcentaje
+          {{input type="number" value=formula.diputies.percent}}
+      </label>  
+      <label>
+        Bancas
+          {{input type="number" value=formula.diputies.positions}}
+      </label>         
+      Senadores
+       <label>
+        Votos
+          {{input type="number" value=formula.senators.votes}}
+      </label> 
+      <label>
+        Porcentaje
+          {{input type="number" value=formula.senators.percent}}
+      </label>  
+      <label>
+        Bancas
+          {{input type="number" value=formula.senators.positions}}
+      </label>                 
+    {{/if}}  
+</fieldset> 	

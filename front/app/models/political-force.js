@@ -6,6 +6,6 @@ export default DS.Model.extend({
 	initials: DS.attr('string'),
 	history: DS.attr('string'),
 	logo: DS.belongsTo('asset', {async: true}),
+	alignment: DS.belongsTo('political-aline', {async: true}),
 	country: DS.belongsTo('country', {async: true}),
-
 });

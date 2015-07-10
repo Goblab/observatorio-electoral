@@ -8,7 +8,15 @@
 module.exports = {
 
   attributes: {
+  	formula: {
+  		model: 'formula',
+  	},
 
+  	province: {
+  		model: 'province',
+  	},
+
+  	votes: DS.attr(''),
   }
 };
 

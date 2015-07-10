@@ -129,7 +129,8 @@
       {{/if}}
       {{#if isReferendum}}
         {{partial 'data-entry/elections/elections/formulas/referendum'}}
-      {{/if}}            
+      {{/if}}
+      <a {{action 'saveFormula' formula}}></a>            
   {{/each}}
   <fieldset>
     <input type="submit" value="Guardar">

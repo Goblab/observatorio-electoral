@@ -6,6 +6,7 @@ export default DS.Model.extend({
   	vicepresident: DS.attr(''),
   	votes: DS.attr('string'),
   	percent: DS.attr('string'),
+    politicalForce: DS.belongsTo('political-force', {async: true}),
 
   	//Legislative
   	assemblyman: DS.attr(''),
@@ -14,4 +15,10 @@ export default DS.Model.extend({
 
   	//Referendum
   	proposal: DS.attr('string'),
+  	positiveVotes: DS.attr(''),
+  	negativeVotes: DS.attr(''),
+
+  	//Legislative
+  	provinceStatuses: DS.hasMany('province-status', {async: true}),
+
 });

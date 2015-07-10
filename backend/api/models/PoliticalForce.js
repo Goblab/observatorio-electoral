@@ -21,6 +21,20 @@ module.exports = {
     color: {
       type: 'string',
       columnName: 'color',
-    },    
+    },  
+
+    history: 'string',
+
+    logo: {
+      model: 'asset',
+    },  
+
+    alignment: {
+      model: 'PoliticalAline'
+    },   
+     
+    country: {
+      model: 'country'
+    },      
   }
 };
