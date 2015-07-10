@@ -1,13 +1,13 @@
   <fieldset>
     <label>
     	Presidente | Gobernador
-          {{model-finder modelName='candidate' list=formula.candidato labelPath="name" sigle=true}}
-          {{model-finder modelName='charge' list=formula.cargo labelPath="name" sigle=true}}
+          {{model-finder modelName='candidate' list=formula.president.candidate labelPath="name" sigle=true}}
+          {{model-finder modelName='charge' list=formula.president.charge labelPath="name" sigle=true}}
   	</label>
     <label>
     	VicePresidente | ViceGobernador
-          {{model-finder modelName='candidate' list=formula.candidato labelPath="name" sigle=true}}
-          {{model-finder modelName='charge' list=formula.cargo labelPath="name" sigle=true}}
+          {{model-finder modelName='candidate' list=formula.vicepresident.candidate labelPath="name" sigle=true}}
+          {{model-finder modelName='charge' list=formula.vicepresident.charge labelPath="name" sigle=true}}
   	</label>  	
     <label>
     	Fuerza Politica

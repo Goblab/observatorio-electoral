@@ -90,8 +90,8 @@
    <fieldset>
     <label>
       Blancos
-      {{input type="number" value=model.blanks}}
-      {{input type="number" value=model.blanksPercent}} %
+      {{input type="number" value=model.blank}}
+      {{input type="number" value=model.blankPercent}} %
     </label>
   </fieldset>   
   
@@ -130,7 +130,9 @@
       {{#if isReferendum}}
         {{partial 'data-entry/elections/elections/formulas/referendum'}}
       {{/if}}
-      <a {{action 'saveFormula' formula}}></a>            
+      {{#if formula.dirtyType}}
+         <a {{action 'saveFormula' formula}}>Guardar Formula</a>  
+      {{/if}}          
   {{/each}}
   <fieldset>
     <input type="submit" value="Guardar">

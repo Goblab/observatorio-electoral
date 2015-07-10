@@ -9,12 +9,16 @@ export default Ember.Controller.extend({
 
 	actions: {
 		addFormula: function () {
-			var newFormula = this.get('store').createRecord('formula', {election: this.get('model')});
+			var newFormula = this.get('store').createRecord('formula', {
+				election: this.get('model'), 
+				president: this.get('store').createFragment('candicharge'),		
+				vicepresident: this.get('store').createFragment('candicharge'),
+			});
 			this.get('model').get('formulas').pushObject(newFormula);
 		},
 
 		saveFormula: function (formula) {
-			console.log(formula);
+			formula.save();
 		},
 	},
 
@@ -39,7 +43,7 @@ export default Ember.Controller.extend({
 	}.observes('model.type.name'),
 
 	bicameralChange: function () {
-		if (this.get('model.cameratype')) {
+		if (this.get('model.cameratype') && this.get('model.cameratype.name')) {
 			if (this.get('model.cameratype.name').toLowerCase() === 'bicameral') {
 				this.set('isBicameral', true);
 			} else {

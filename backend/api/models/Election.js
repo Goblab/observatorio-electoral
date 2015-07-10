@@ -61,6 +61,8 @@ module.exports = {
     nullsPercent: 'string',
     valids: 'string',
     validsPercent: 'string',
+    recurred: 'string',
+    recurredPercent: 'string',
 
   }
 };
