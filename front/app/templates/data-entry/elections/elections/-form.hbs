@@ -43,29 +43,94 @@
       Categoria <!-- Select Primarias | Generales -->
       {{model-selector modelName='election-category' value=model.category optionLabelPath="content.name" }}
     </label>
-  </fieldset>    
+  </fieldset>   
 
+  {{#if isReferendum}}
   <fieldset>
     <label>
       Vinculante <!-- Select Si | No  (Si es referendum) -->
       {{input type="checkbox" name="isVinculated" checked=model.vinculated}}   
     </label>
-  </fieldset>   
+  </fieldset>
+  {{/if}}
 
+  {{#if isLegislative}}
   <fieldset>
     <label>
       Camara legislativa <!-- Select Unicameral | Bicameral (Si es Legislativa) -->
       {{model-selector modelName='camera-type' value=model.cameraType optionLabelPath="content.name" }}
     </label>
   </fieldset> 
+  {{/if}}
 
   <fieldset>
     <label>
       Participacion <!-- Select Obligatoria | Opcional -->
       {{model-selector modelName='election-participation' value=model.participation optionLabelPath="content.name" }}
     </label>
-  </fieldset> 
-        
+  </fieldset>
+
+
+  <fieldset>
+    <label>
+      Electores habilitados
+      {{input type="number" value=model.electors}}
+      {{input type="number" value=model.electorsPercent}} %
+    </label>
+  </fieldset>   
+
+  <fieldset>
+    <label>
+      Votantes
+      {{input type="number" value=model.voters}}
+      {{input type="number" value=model.votersPercent}} %
+    </label>
+  </fieldset>   
+
+   <fieldset>
+    <label>
+      Blancos
+      {{input type="number" value=model.blanks}}
+      {{input type="number" value=model.blanksPercent}} %
+    </label>
+  </fieldset>   
+  
+   <fieldset>
+    <label>
+      Nulos
+      {{input type="number" value=model.nulls}}
+      {{input type="number" value=model.nullsPercent}} %
+    </label>
+  </fieldset>       
+
+   <fieldset>
+    <label>
+      Recurridos o impugnados
+      {{input type="number" value=model.recurred}}
+      {{input type="number" value=model.recurredPercent}} %
+    </label>
+  </fieldset>     
+
+  <fieldset>
+    <label>
+      Validos
+      {{input type="number" value=model.valids}}
+      {{input type="number" value=model.validsPercent}} %
+    </label>
+  </fieldset>   
+
+  <a {{action 'addFormula'}}>Agregar Formula</a>
+  {{#each model.formulas as |formula|}}
+      {{#if isEjecutive}}
+        {{partial 'data-entry/elections/elections/formulas/ejecutive'}}
+      {{/if}}
+      {{#if isLegislative}}
+        {{partial 'data-entry/elections/elections/formulas/legislative'}}
+      {{/if}}
+      {{#if isReferendum}}
+        {{partial 'data-entry/elections/elections/formulas/referendum'}}
+      {{/if}}            
+  {{/each}}
   <fieldset>
     <input type="submit" value="Guardar">
   </fieldset>

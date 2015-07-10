@@ -11,4 +11,5 @@ export default DS.Model.extend({
     cameratype: DS.belongsTo('camera-type', {async: true}),
     vinculated: DS.attr('boolean'),
     participation: DS.belongsTo('election-participation', {async: true}),
+    formulas: DS.hasMany('formula', {async: true}), 
 });
