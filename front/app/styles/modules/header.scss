@@ -58,7 +58,7 @@ header {
 
 
 		@include media($mobile) {
-			margin: 7px 0;
+			margin: 12px 0 0 0;
 			font-size: 30px;
 			padding: 0 15px 0 70px;
 		}
@@ -83,5 +83,26 @@ header {
 		.search-button, .menu-button {
 			margin: 0.3em;
 		}
+	}
+	
+	.log-out {
+		@include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
+	    float: right;
+	    font-size: 20px;
+	    padding: 32px;
+	    color: rgba(255,255,255,.75);
+	    cursor: pointer;
+	    background: none;
+	    z-index: 3000;
+	    position: relative;
+	    right: 60px;
+
+	    .fa {
+	    	margin-left: 15px;
+	    }
+
+	    &:hover {
+	    	color: rgba(255,255,255,1);
+	    }
 	}
 }

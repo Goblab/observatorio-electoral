@@ -4,6 +4,28 @@ $mobile: new-breakpoint(max-width 550px 9);
 $medium: new-breakpoint(max-width 800px 6);
 
 
+
+.btn-login {
+	position: fixed;
+	top: 25px;
+	right: 35px;
+	
+
+	span {
+		font-size: 18px;
+		color: #1EBCEF;
+		@include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
+	}
+
+	&:hover {
+		span {
+			color: darken(#1EBCEF, 10%);
+		}
+	}
+}
+
+
+
 .login-container {
 	position: fixed;
 	top: 0;
@@ -32,7 +54,7 @@ $medium: new-breakpoint(max-width 800px 6);
 		padding: 0 0 2px 0;
 		
 		img {
-			width: 250px;
+			width: 160px;
 		}
 	}
 

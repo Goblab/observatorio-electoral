@@ -19,15 +19,15 @@
 
 .img-container {
 	&.-country {
-		    width: 50px;
+    width: 43px;
     overflow: hidden;
-    height: 50px;
+    height: 43px;
     border-radius: 50px;
 
     img {
-    	    width: 77px;
+    width: 65px;
     position: relative;
-    left: -14px;
+    left: -11px;
     }
 	}
 }

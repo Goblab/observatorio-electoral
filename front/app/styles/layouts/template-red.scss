@@ -33,7 +33,11 @@ button:focus {
 }
 
 section {
-	padding: 1em;
+	padding: 1em 0;
+
+	 @include media($mobile) {
+	  padding: 1em;
+	  }
 	
 	h1, h2 {
 		text-align: center;
@@ -237,11 +241,11 @@ header.is-visible {
 
 
 		&.active {
-			border-bottom: 6px solid shade(#0083ff, 40%);
+			border-bottom: 6px solid shade(#1ba9d7, 40%);
 		}
 
 		&:hover {
-			border-bottom: 6px solid shade(#0083ff, 70%);
+			border-bottom: 6px solid shade(#1ba9d7, 70%);
 		}
 
 		a {
@@ -347,13 +351,17 @@ header.is-visible {
 
 	h3 {
 		padding: 0 17px;
-		margin: 20px 0 5px 0;
-		
+		margin: 20px 0 15px 0;
+		font-size: 23px;
 	}
 
 	li {
 
 	}	
+
+	ul {
+		padding: 0;
+	}
 
 	a {
 		position: relative;
@@ -631,14 +639,15 @@ $text-header: new-breakpoint(max-width 400px 6);
 }
 
 $mobile: new-breakpoint(max-width 600px 6);
+
 .section-header {
-	@include span-columns(8);
-  	@include shift(2);
+	@include span-columns(10);
+  	@include shift(1);
   	position: relative;
   	margin-bottom: 0;
   	border-bottom: 1px solid #ccc;
   	@include transition(all 0.3s cubic-bezier(0.7,0,0.3,1));
-	
+    margin-top: 25px;
 
 
   	@include media($mobile) {
@@ -654,20 +663,24 @@ $mobile: new-breakpoint(max-width 600px 6);
   	 }
 
   	 .btn {
-  	 	  display: inline-block;
-		  position: absolute;
-		  right: 0;
-		  top: 28px;
-		  height: 31px;
-	      font-size: 15px;
-		  background: none;
-		  color: #0083ff;
+		display: inline-block;
+		position: absolute;
+		right: 0;
+		top: 36px;
+		height: 31px;
+		font-size: 15px;
+		background: none;
+		color: #0083ff;
+  	 }
+
+  	 &.-table {
+  	 	border: none;
   	 }
 }
 
 .section-content {
-	@include span-columns(8);
-  	@include shift(2);
+	@include span-columns(10);
+  	@include shift(1);
   	@include transition(all 0.3s cubic-bezier(0.7,0,0.3,1));
 
   	@include media($mobile) {

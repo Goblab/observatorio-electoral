@@ -1,5 +1,8 @@
 .search-form {
 	display: block;
+	padding: 15px;
+	background: #f8f8f8;
+    border-bottom: 1px solid #ddd;
 
 
 	.field {
@@ -14,12 +17,12 @@
 		width: 60px;
 		text-align: center;
 		background: #0083ff;
-		padding: 12px;
+		padding: 11px;
 		color: #fff;
 		line-height: 1;
 		position: absolute;
-		top: 0;
-		right: 0;
+		top: 15px;
+		right: 15px;
 		cursor: pointer;
 	}
 
@@ -37,6 +40,6 @@
 
 	.search-form {
 		position: relative;
-		margin-bottom: 1.5em;
+		
 	}
 }

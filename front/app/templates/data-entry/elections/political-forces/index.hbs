@@ -1,7 +1,7 @@
 <section>
   <div class="section-header">
-    <h1>Partidos politicos</h1>
-    {{link-to "Agregar" "data-entry.elections.political-forces.new" classNames="btn"}}
+    <h1>Partidos políticos</h1>
+    {{link-to "Agregar partido" "data-entry.elections.political-forces.new" classNames="btn"}}
   </div>
   <div class="section-content">
     <div class="search-form">
@@ -13,7 +13,7 @@
     {{#if model.length}}
       <div class="slat-list">
         {{#each politicalForce in model}}
-          <div class="slat-item">
+          <div class="slat-item -color">
             <div class="palet-color">
               {{{color-div politicalForce.color}}}
             </div>

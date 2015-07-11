@@ -1,8 +1,9 @@
-<h1>Candidatos</h1>
-
-<p>
-  {{link-to "Agregar" "data-entry.elections.candidates.new" }}
-</p>
+<section>
+  <div class="section-header">
+    <h1>Candidatos</h1>
+   {{link-to "Agregar candidato" "data-entry.elections.candidates.new" classNames="btn"}}
+  </div>
+<div class="section-content">
 
 {{#if model.length}}
   <table class="table-minimal">
@@ -65,3 +66,5 @@
     No candidates found
   </p>
 {{/if}}
+</div>
+</section>
