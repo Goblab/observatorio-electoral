@@ -23,9 +23,14 @@
       Pais
       {{model-selector modelName='country' value=model.country labelPath="name" sigle=true}}
     </label>
-  </fieldset>  
- 
-  <div class="upload-file">
+  </fieldset> 
+
+   <fieldset>
+    <label>
+      Alineacion
+      {{model-selector modelName='political-aline' value=model.alignment labelPath="name" sigle=true}}
+    </label>
+  </fieldset>   <div class="upload-file">
       {{#if model.logo.url}}
         <div class="img-container">
           <img {{bind-attr src=model.logo.url}}>

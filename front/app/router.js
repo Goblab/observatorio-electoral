@@ -38,6 +38,16 @@ Router.map(function() {
       });
     }); 
 
+    this.route('political-alines', function() {
+      this.route('new');
+      this.route('edit', {
+        path: ":political_aline_id/edit",
+      });
+      this.route('show', {
+        path: ":political_aline_id/show",
+      });
+    }); 
+
     this.route('camera-types', function() {
       this.route('new');
       this.route('edit', {

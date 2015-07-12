@@ -1,0 +1,28 @@
+<section>
+  <div class="section-header">
+    <h1>Alineacion politica</h1>
+    {{link-to "Agregar instancia" "admin.political-alines.new" classNames="btn"}}
+  </div>
+  <div class="section-content">
+    {{#if model.length}}
+      <div class="slat-list">
+        {{#each politicalAline in model}}
+          <div class="slat-item">
+            <div class="slat-content">
+              <h4>{{politicalAline.name}}</h4>
+            </div>
+            <div class="slat-action">
+              {{link-to "Editar" "admin.political-alines.edit" politicalAline classNames="btn"}}
+              <a href="#" class="btn" {{action "remove" politicalAline}}>Eliminar</a>
+            </div>
+          </div>
+        {{/each}}
+        {{infinity-loader infinityModel=model}}
+      </div>
+    {{else}}
+      <div class="loading">
+        {{loading-bubbles color='#0083ff' size=100}}
+      </div>
+    {{/if}}
+  </div>
+</section>
