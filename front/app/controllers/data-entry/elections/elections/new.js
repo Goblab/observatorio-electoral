@@ -27,13 +27,31 @@ export default Ember.Controller.extend({
 		},
 
 		saveElection: function () {
-	      var route = this.get('target').get('router');
-	      console.log(route);	
-	      this.get('model').save().then(function() {
-	        route.transitionTo('data-entry.elections.elections.index');
-	      }, function() {
-	        console.log('Failed to save the model');
-	      });			
+			var route = this.get('target').get('router');	
+			var election = this.get('model');
+			var promises = Ember.A();
+			var promises_formulas = Ember.A();
+			
+
+			election.get('formulas').forEach(function(item){
+			    item.get('provinceStatuses').forEach(function (status) {
+					promises.push(status.save());
+			    });
+			    item.get('candidates').forEach(function (candidate) {
+					promises.push(candidate.save());
+			    });			    
+			});
+
+			Ember.RSVP.Promise.all(promises).then(function(resolvedPromises){
+				election.get('formulas').forEach(function(item){		    
+				    promises_formulas.push(item.save());
+				});
+				Ember.RSVP.Promise.all(promises_formulas).then(function(resolvedPromises){
+					election.save().then(function () {
+				    	route.transitionTo('data-entry.elections.elections.index');
+					});
+				});
+			});	      			
 		},		
 	},
 
