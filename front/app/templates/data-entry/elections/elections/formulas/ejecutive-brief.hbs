@@ -1,0 +1,49 @@
+  <fieldset>
+    <label>
+      Fuerza Politica
+      {{formula.politicalForce.name}}
+    </label>  
+    <label>
+    	Votos
+        {{formula.votes}}
+  	</label> 
+     <label>
+    	Porcentaje
+        {{formula.percent}}
+  	</label> 	   	 	
+    {{#each formula.provinceStatuses as |status|}}
+    <fieldset> 
+      <label>
+        Provincia | Estado  <!-- Select Obligatoria | Opcional -->
+        {{status.province.name}}
+      </label>
+      <label>
+        Votos
+          {{status.votes.votes}}
+      </label> 
+       <label>
+        Porcentaje
+          {{status.votes.percent}}
+      </label>
+     </fieldset>  
+    {{/each}} 
+    <a {{action 'addCandidate' formula}}>Agregar Candidato</a>
+    {{#each formula.candidates as |candidate|}}
+    <fieldset> 
+      <label>
+        Cargo
+        {{candidate.charge.name}}
+      </label>
+      <label>
+        Candidato
+          {{#if candidate.candidate.picture.url}}
+            <div class="img-container -country">
+              <img {{bind-attr src=candidate.candidate.picture.url}} width="50px">
+            </div>
+          {{/if}}        
+        {{candidate.candidate.fullName}}
+      </label>
+
+     </fieldset>  
+    {{/each}}      
+ </fieldset> 	

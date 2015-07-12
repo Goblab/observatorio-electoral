@@ -1,1 +1,51 @@
-{{outlet}}
+<section>
+	<div class="section-header">
+		<h1>Ver Eleccion</h1>
+		{{link-to "Todas las elecciones" "data-entry.elections.elections.index" classNames="btn"}}
+	</div>
+
+	<div class="section-content">
+		<h2>{{model.name}}</h2>
+		<div>
+		      {{#if model.country.flag.url}}
+		        <div class="img-container -country">
+		          <img {{bind-attr src=model.country.flag.url}} width="50px">
+		        </div>
+		      {{/if}}
+		      {{model.level.name}}
+		  	  {{model.type.name}} 
+		  	  {{model.instance.name}} 
+		  	  {{model.category.name}}
+		  	  {{model.participation.name}}
+		  	  {{#if isLegislative}}
+		  	  	{{model.cameraType.name}}
+		  	  {{/if}}
+		  	  {{#if isReferendum}}
+		  	  	{{model.vinculated}}
+		  	  {{/if}}
+		</div>
+		<div>
+			<p>Electores: {{model.electors}} ({{model.electorsPercent}}%)</p>
+			<p>Votantes: {{model.voters}} ({{model.votersPercent}}%)</p>
+			<p>Nulos: {{model.blank}} ({{model.blankPercent}}%)</p>
+			<p>Recurridos o impugnados: {{model.nulls}} ({{model.recurredPercent}}%)</p>
+			<p>Blancos: {{model.recurred}} ({{model.blankPercent}}%)</p>
+			<p>Validos: {{model.valids}} ({{model.validsPercent}}%)</p>
+		</div>
+
+		<div>
+			<h4>Resultados</h4>
+			{{#each model.formulas as |formula|}}
+			      {{#if isEjecutive}}
+			        {{partial 'data-entry/elections/elections/formulas/ejecutive-brief'}}
+			      {{/if}}
+			      {{#if isLegislative}}
+			        {{partial 'data-entry/elections/elections/formulas/legislative-brief'}}
+			      {{/if}}
+			      {{#if isReferendum}}
+			        {{partial 'data-entry/elections/elections/formulas/referendum-brief'}}
+			      {{/if}}			
+			{{/each}}
+		</div>
+	</div>
+</section>
