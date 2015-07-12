@@ -1,7 +1,7 @@
   <fieldset>
     <label>
       Fuerza Politica
-          {{model-finder modelName='political-force' list=formula.politicalForce labelPath="name" sigle=true}}
+          {{model-selector modelName='political-force' countryFilter=model.country.id value=formula.politicalForce labelPath="name" sigle=true}}
     </label>  
     <label>
     	Votos
@@ -16,7 +16,7 @@
     <fieldset> 
       <label>
         Provincia | Estado  <!-- Select Obligatoria | Opcional -->
-        {{model-selector modelName='province' value=status.province optionLabelPath="content.name" }}
+        {{model-selector modelName='province' countryFilter=model.country.id  value=status.province optionLabelPath="content.name" }}
       </label>
       <label>
         Votos
@@ -41,7 +41,7 @@
       </label>
       <label>
         Candidato
-        {{model-finder modelName='candidate' list=candidate.candidate labelPath="name" sigle=true}}
+        {{model-finder modelName='candidate' countryFilter=model.country.id  list=candidate.candidate labelPath="name" sigle=true}}
       </label>
 
      </fieldset>  

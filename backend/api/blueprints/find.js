@@ -36,7 +36,6 @@ var performSideload = (sails.config.blueprints.ember && sails.config.blueprints.
 module.exports = function findRecords( req, res ) {
   // Look up the model
   var Model = actionUtil.parseModel( req );
-  console.log(new Date() + ' FINDING ' + req.url);
 
   /* ENABLE if needed ( see https://github.com/mphasize/sails-ember-blueprints/issues/3 )
    * ----------------
@@ -59,7 +58,6 @@ module.exports = function findRecords( req, res ) {
   query = actionUtil.populateEach( query, req );
   query.exec( function found( err, matchingRecords ) {
     if ( err ) return res.serverError( err );
-    console.log(new Date()  + ' FOUND RECORDS');
 
     // Only `.watch()` for new instances of the model if
     // `autoWatch` is enabled.
