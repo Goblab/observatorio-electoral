@@ -1,8 +1,8 @@
 {{yield}}
 {{view "select"
        content=data
-       optionValuePath=optionValuePath
-       optionLabelPath=optionLabelPath
+       optionLabelPath='content.name'
        selection=value
        value=value
+       prompt='Selecciona una opcion'
        }}

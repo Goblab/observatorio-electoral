@@ -8,19 +8,18 @@
 module.exports = {
 
   attributes: {
-  	election: {
-  		model: 'election',
-  	},
 
     politicalForce: {
       model: 'politicalForce',
     },
 
+    candidates: {
+      collection: 'candicharge'
+    },
+
   	votes: 'string',
   	percent: 'string',
-  	president: 'json',
-  	vicepresident: 'json',
-
+ 
   	assemblyman: 'json',
   	diputies: 'json',
   	senators: 'json',
@@ -31,7 +30,6 @@ module.exports = {
 
   	provinceStatuses: {
   		collection: 'provinceStatus',
-  		via: 'formula',
   	},
   }
 };

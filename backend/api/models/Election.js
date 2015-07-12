@@ -48,7 +48,6 @@ module.exports = {
 
     formulas: {
       collection: 'formula',
-      via: 'election'
     } ,
 
     voters: 'string',
