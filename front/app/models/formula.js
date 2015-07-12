@@ -1,9 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  	election: DS.belongsTo('election', { async: true}),
-  	president: DS.hasOneFragment('candicharge'),
-  	vicepresident: DS.hasOneFragment('candicharge'),
+    candidates: DS.hasMany('candicharge', {async: true}),
 
   	votes: DS.attr('string'),
   	percent: DS.attr('string'),

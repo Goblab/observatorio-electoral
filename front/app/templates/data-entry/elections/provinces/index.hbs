@@ -1,0 +1,29 @@
+<section>
+  <div class="section-header">
+    <h1>provincias</h1>
+    {{link-to "Agregar provincia" "data-entry.elections.provinces.new" classNames="btn"}}
+  </div>
+  <div class="section-content">
+    {{#if model.length}}
+      <div class="slat-list ">
+        {{#each province in model}}
+          <div class="slat-item -image">
+            <div class="slat-content">
+                         
+              <h4>{{province.name}}</h4>
+            </div>
+            <div class="slat-action">
+              {{link-to "Editar" "data-entry.elections.provinces.edit" province classNames="btn"}}
+              <a href="#" class="btn" {{action "remove" province}}>Eliminar</a>
+            </div>
+          </div>
+        {{/each}}
+        {{infinity-loader infinityModel=model}}
+      </div>
+    {{else}}
+      <div class="loading">
+        {{loading-bubbles color='#0083ff' size=100}}
+      </div>
+    {{/if}}
+  </div>
+</section>

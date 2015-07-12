@@ -1,4 +1,4 @@
-{{yield}}
+{{#if data}}
 {{view "select"
        content=data
        optionLabelPath='content.name'
@@ -6,3 +6,4 @@
        value=value
        prompt='Selecciona una opcion'
        }}
+{{/if}}

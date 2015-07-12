@@ -9,17 +9,32 @@ export default Ember.Controller.extend({
 
 	actions: {
 		addFormula: function () {
-			var newFormula = this.get('store').createRecord('formula', {
-				election: this.get('model'), 
-				president: this.get('store').createFragment('candicharge'),		
-				vicepresident: this.get('store').createFragment('candicharge'),
-			});
+			var newFormula = this.get('store').createRecord('formula');
 			this.get('model').get('formulas').pushObject(newFormula);
 		},
 
 		saveFormula: function (formula) {
 			formula.save();
 		},
+
+		addProvince: function (formula) {
+			var newStatus = this.get('store').createRecord('province-status');
+			formula.get('provinceStatuses').pushObject(newStatus);			
+		},
+		addCandidate: function (formula) {
+			var newStatus = this.get('store').createRecord('candicharge');
+			formula.get('candidates').pushObject(newStatus);			
+		},
+
+		saveElection: function () {
+	      var route = this.get('target').get('router');
+	      console.log(route);	
+	      this.get('model').save().then(function() {
+	        route.transitionTo('data-entry.elections.elections.index');
+	      }, function() {
+	        console.log('Failed to save the model');
+	      });			
+		},		
 	},
 
 	typeHandler: function () {
@@ -43,12 +58,12 @@ export default Ember.Controller.extend({
 	}.observes('model.type.name'),
 
 	bicameralChange: function () {
-		if (this.get('model.cameratype') && this.get('model.cameratype.name')) {
-			if (this.get('model.cameratype.name').toLowerCase() === 'bicameral') {
+		if (this.get('model.cameraType') && this.get('model.cameraType.name')) {	
+			if (this.get('model.cameraType.name').toLowerCase() === 'bicameral') {
 				this.set('isBicameral', true);
 			} else {
 				this.set('isBicameral', false);
 			}
 		}
-	}.observes('model.cameratype.name')
+	}.observes('model.cameraType.name')
 });

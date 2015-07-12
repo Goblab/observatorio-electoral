@@ -96,7 +96,15 @@ Router.map(function() {
           path: ":country_id/show",
         });
       });  
-
+      this.route('provinces', function() {
+        this.route('new');
+        this.route('edit', {
+          path: ":province_id/edit",
+        });
+        this.route('show', {
+          path: ":province_id/show",
+        });
+      });  
       this.route('elections', function() {
         this.route('new');
         this.route('edit', {

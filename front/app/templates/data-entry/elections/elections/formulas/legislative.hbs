@@ -3,7 +3,7 @@
     	Fuerza Politica
           {{model-finder modelName='political-force' list=formula.politicalForce labelPath="name" sigle=true}}
   	</label>
-    {{#if isBicameral}}
+    {{#unless isBicameral}}
       Asambleistas
       <label>
         Votos
@@ -44,5 +44,5 @@
         Bancas
           {{input type="number" value=formula.senators.positions}}
       </label>                 
-    {{/if}}  
+    {{/unless}}  
 </fieldset> 	

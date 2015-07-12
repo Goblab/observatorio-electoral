@@ -1,18 +1,8 @@
   <fieldset>
     <label>
-    	Presidente | Gobernador
-          {{model-finder modelName='candidate' list=formula.president.candidate labelPath="name" sigle=true}}
-          {{model-finder modelName='charge' list=formula.president.charge labelPath="name" sigle=true}}
-  	</label>
-    <label>
-    	VicePresidente | ViceGobernador
-          {{model-finder modelName='candidate' list=formula.vicepresident.candidate labelPath="name" sigle=true}}
-          {{model-finder modelName='charge' list=formula.vicepresident.charge labelPath="name" sigle=true}}
-  	</label>  	
-    <label>
-    	Fuerza Politica
+      Fuerza Politica
           {{model-finder modelName='political-force' list=formula.politicalForce labelPath="name" sigle=true}}
-  	</label>  
+    </label>  
     <label>
     	Votos
         {{input type="number" value=formula.votes}}
@@ -21,4 +11,39 @@
     	Porcentaje
         {{input type="number" value=formula.percent}}
   	</label> 	   	 	
+    <a {{action 'addProvince' formula}}>Agregar resultado por provincia</a>
+    {{#each formula.provinceStatuses as |status|}}
+    <fieldset> 
+      <label>
+        Provincia | Estado  <!-- Select Obligatoria | Opcional -->
+        {{model-selector modelName='province' value=status.province optionLabelPath="content.name" }}
+      </label>
+      <label>
+        Votos
+          {{input type="number" value=status.votes.votes}}
+      </label> 
+       <label>
+        Porcentaje
+          {{input type="number" value=status.votes.percent}}
+      </label>     
+      <label>
+        Bancas
+          {{input type="number" value=status.votes.positions}}
+      </label> 
+     </fieldset>  
+    {{/each}} 
+    <a {{action 'addCandidate' formula}}>Agregar Candidato</a>
+    {{#each formula.candidates as |candidate|}}
+    <fieldset> 
+      <label>
+        Cargo
+        {{model-selector modelName='charge' value=candidate.charge optionLabelPath="content.name" }}
+      </label>
+      <label>
+        Candidato
+        {{model-finder modelName='candidate' list=candidate.candidate labelPath="name" sigle=true}}
+      </label>
+
+     </fieldset>  
+    {{/each}}      
  </fieldset> 	
