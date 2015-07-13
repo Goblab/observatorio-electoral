@@ -1,11 +1,10 @@
 <section>
 	<div class="section-header">
-		<h1>Ver Eleccion</h1>
+		<h1>{{model.name}}</h1>
 		{{link-to "Todas las elecciones" "data-entry.elections.elections.index" classNames="btn"}}
 	</div>
 
 	<div class="section-content">
-		<h2>{{model.name}}</h2>
 		<div>
 		      {{#if model.country.flag.url}}
 		        <div class="img-container -country">

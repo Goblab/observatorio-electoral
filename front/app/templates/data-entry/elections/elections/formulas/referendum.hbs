@@ -1,16 +1,36 @@
-  <fieldset>	
+ <div class="field-container">
+  <fieldset>
     <label>
-    	Propuesta
-        {{input type="text" value=formula.proposal}}
-  	</label>  
+      Propuesta
+      {{input type="text" value=formula.proposal}}
+    </label>
+  </fieldset>
+
+
+  <fieldset class="election-poll">
     <label>
-    	   Votos SI
-        {{input type="number" value=formula.positiveVotes.votes}}
-        {{input type="number" value=formula.positiveVotes.percent}} %
-  	</label> 
-     <label>
-    	   Votos No
-        {{input type="number" value=formula.negativeVotes.votes}}
-        {{input type="number" value=formula.negativeVotes.percent}} %
-  	</label> 	   	 	
- </fieldset> 	
+       Votos SI
+    </label>
+    <div class="quantity">
+      {{input type="number" value=formula.positiveVotes.votes placeholder="Ingrese la cantidad"}}
+    </div>
+    <div class="percent">
+      {{input type="number" value=formula.positiveVotes.percent placeholder="Ingrese el porcentaje"}}
+      %
+    </div>
+  </fieldset>   
+
+  <fieldset class="election-poll">
+    <label>
+       Votos No
+    </label>
+    <div class="quantity">
+      {{input type="number" value=formula.negativeVotes.votes placeholder="Ingrese la cantidad"}}
+    </div>
+    <div class="percent">
+      {{input type="number" value=formula.negativeVotes.percent placeholder="Ingrese el porcentaje"}}
+      %
+    </div>
+  </fieldset>   
+
+</div>

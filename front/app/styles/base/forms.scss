@@ -22,8 +22,6 @@ form {
 		}
 	}
 
-
-
 	hr {
 		margin: 15px;
 		border: none;
@@ -71,32 +69,44 @@ form {
 }
 
 .field-container {
-	@include outer-container(100%);
-    padding: 1em 0;
+    padding: 1em 0 2em 0;
+    display: inline-block;
+    width: 100%;
 	
 	.three {
 		@include span-columns(3);
+
+		@include media($mobile) {
+			@include span-columns(6);
+		}
 	}
 
 	.six {
 		@include span-columns(7);
+		@include media($mobile) {
+			@include span-columns(6);
+		}
 	}
 
 	.election-poll {
 		@include span-columns(12);
+		@include media($mobile) {
+			@include span-columns(6);
+		}
 	}
 }
 
 
 .election-poll {
-	position: relative;
-	border-bottom: 1px solid #777;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5em 0;
 
 	label {
 		position: relative;
 		float: left; 
 		width: 300px;
-	    padding: 12px 0 12px 0;
+	    padding: 12px 0;
 	}
 
 	input {
@@ -114,7 +124,75 @@ form {
 	.percent {
 		position: relative;
 		float: right;
+
+		input {
+			text-align: right;
+		}
 	}
+
+}
+
+.province-poll {
+	position: relative;
+
+	label {
+		position: relative;
+		@include span-columns(5);
+	}
+
+	input {
+		width: 100%;
+		padding: 10px;
+	}
+
+
+	.votes {
+		position: relative;
+		@include span-columns(2);
+
+	}
+
+	.percent {
+		position: relative;
+		@include span-columns(2);
+
+	}
+
+	.position {
+		position: relative;
+		@include span-columns(2);
+
+	}
+}
+
+.candidates-poll {
+	position: relative;
+
+	label {
+		position: relative;
+	}
+
+	.charge {
+		position: relative;
+		@include span-columns(5);
+	}
+
+	.candidate {
+		position: relative;
+		@include span-columns(5);
+
+		label {
+			    display: inline-block;
+    padding: 15px 0;
+    
+		}
+
+		a {
+			    display: inline-block;
+    margin: 0 0 0 20px;
+		}
+	}
+	
 
 }
 
@@ -315,98 +393,6 @@ fieldset {
 }
 
 
-	// colors
-
-	$color-1: #2b3e51; // Pickled Bluewood
-	$color-2: #2c97de; // Curious Blue
-	$color-3: #ecf0f1; // Porcelain
-	$color-4: #ffffff; // White
-	$color-5: #e94b35; // Cinnabar
-
-	input[type=radio],
-	input[type=checkbox] {
-		/* hide original check and radio buttons */
-		position: absolute;
-		left: 0;
-		top: 50%;
-		@include transform(translateY(-50%));
-		margin: 0;
-		padding: 0;
-		opacity: 0;
-		z-index: 2;
-	}
-
-	input[type="radio"] + label, 
-	input[type="checkbox"] + label {
-		padding-left: 24px;
-	}
-
-	input[type="radio"] + label::before,
-	input[type="radio"] + label::after,
-	input[type="checkbox"] + label::before,
-	input[type="checkbox"] + label::after {
-		/* custom radio and check boxes */
-		content: '';
-		display: block;
-		position: absolute;
-		left: 0;
-		top: 50%;
-		margin-top: -8px;
-		width: 16px;
-		height: 16px;
-	}
-
-	input[type="radio"] + label::before,
-	input[type="checkbox"] + label::before {
-		border: 1px solid darken($color-3, 10%);
-		background: $color-4;
-		box-shadow: inset 0 1px 1px rgba(#000, .08);
-	}
-
-	input[type="radio"] + label::before,
-	input[type="radio"] + label::after {
-		border-radius: 50%;
-	}
-
-	input[type="checkbox"] + label::before,
-	input[type="checkbox"] + label::after {
-		border-radius: .25em;
-	}
-
-	input[type="radio"] + label::after,
-	input[type="checkbox"] + label::after {
-		background-color: $color-2;
-		background-position: center center;
-		background-repeat: no-repeat;
-		box-shadow: 0 0 5px rgba($color-2, .4);
-		display: none;
-	}
-
-	input[type="radio"] + label::after {
-		/* custom image for radio button */
-		background-image: url('../img/cd-icon-radio.svg');
-	}
-
-	input[type="checkbox"] + label::after {
-		/* custom image for checkbox */
-		
-    font-family: FontAwesome;
-    content: '\f00c';
-    color: #fff;
-    font-size: 13px;
-    text-align: center;
-    line-height: 15px;
-
-	}
-
-	input[type="radio"]:checked + label::after,
-	input[type="checkbox"]:checked + label::after {
-		display: block;
-	}
-
-	input[type="radio"]:checked + label::before,
-	input[type="radio"]:checked + label::after,
-	input[type="checkbox"]:checked + label::before,
-	input[type="checkbox"]:checked + label::after {
-		@include animation(cd-bounce .3s);
-	}
+.multiselect-checkboxes {
+	padding: 0;
+}
