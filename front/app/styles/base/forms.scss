@@ -1,5 +1,123 @@
 $mobile: new-breakpoint(max-width 800px 6);
 
+form {
+
+
+	input[type="text"], 
+	input[type="email"], 
+	textarea, 
+	select, 
+	legend {
+		display: block;
+		width: 100%;
+	}
+
+	fieldset {
+		padding: 1em 0;
+		position: relative;
+
+		&.-checkbox {
+			top: 30px;
+			left: 15px;
+		}
+	}
+
+
+
+	hr {
+		margin: 15px;
+		border: none;
+		border-bottom: 1px solid #ccc;
+	}
+
+	legend {
+		padding-bottom: 10px;
+		margin-bottom: 20px;
+		font-size: 17px;
+		border-bottom: 1px solid #ccc;
+		font-weight: 500;
+	}
+}
+
+.field-container {
+	position: relative;
+
+	.-country,  {
+	    position: absolute;
+	    right: 0;
+	    top: 100px;
+	    opacity: 0.8;
+	        background-color: #ddd;
+
+	    .fa {
+    width: 45px;
+    text-align: center;
+    height: 45px;
+    line-height: 43px;
+    color: #888;
+    font-size: 21px;
+	    }
+	}
+
+	legend {
+		a {
+			float: right;
+			font-size: 15px;
+			background: none;
+			color: #0083ff;
+			cursor: pointer;
+		}
+	}
+}
+
+.field-container {
+	@include outer-container(100%);
+    padding: 1em 0;
+	
+	.three {
+		@include span-columns(3);
+	}
+
+	.six {
+		@include span-columns(7);
+	}
+
+	.election-poll {
+		@include span-columns(12);
+	}
+}
+
+
+.election-poll {
+	position: relative;
+	border-bottom: 1px solid #777;
+
+	label {
+		position: relative;
+		float: left; 
+		width: 300px;
+	    padding: 12px 0 12px 0;
+	}
+
+	input {
+		border: none;
+		padding: 10px;
+		font-weight: 300px;
+	}
+
+	.quantity {
+		position: relative;
+		float: left;
+		
+	}
+
+	.percent {
+		position: relative;
+		float: right;
+	}
+
+}
+
 .simple-form {
 
 	fieldset {
@@ -19,7 +137,6 @@ $mobile: new-breakpoint(max-width 800px 6);
 	}
 
 	textarea {
-		width: 100%;
 		resize: vertical;
 		min-height: 140px;
 		padding: 15px;
@@ -41,3 +158,255 @@ $mobile: new-breakpoint(max-width 800px 6);
 	}
 
 }
+
+.create-event {
+	padding: 2em;
+	background: #fff;
+
+	label {
+		display: block;
+	}
+
+	input[type=text] {
+		padding: 12px;
+		  border: 1px solid #cfd9db;
+		  background-color: #ffffff;
+		  border-radius: .25em;
+		  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+	}
+
+	.date-picker-container {
+
+		select {
+			  width: 30%;
+			  float:right;
+			  padding: 12px;
+			  border: 1px solid #cfd9db;
+			  background-color: #ffffff;
+			  border-radius: .25em;
+			  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+		}
+	}
+
+	.map-search {
+		position: relative; 
+		margin: 0 0 10px 0;
+
+		input {
+
+		}
+
+		.btn {
+			position: absolute;
+			  top: 0;
+			  right: 0;
+			  padding: 15px 3em;
+			  border-radius: 0;
+			  font-size: 15px;
+		}
+
+	}
+
+	.event-add-user {
+
+		p {
+			margin: 0;
+		}
+
+		ul {
+			margin: 0;
+			padding: 15px;
+
+			a {
+				margin: 0;
+			}
+
+		}
+		
+	}
+
+	.event-user-list {
+
+		ul {
+			padding: 0;
+		}
+
+		li {
+
+			height: 45px;
+  			display: block;
+
+		}
+
+		a {
+  			margin: 0;
+
+		}
+
+		.btn {
+			float: right;
+		}
+	}
+
+	.color-picker {
+      margin: 20px;
+
+	}
+
+	.upload-file {
+		 margin: 25px;
+			
+		.img-container {
+			width: 20%;
+			
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	textarea {
+	  border-radius: 6px;
+	  line-height: 1;
+	  resize: vertical;
+	  min-height: 75px;
+	}
+
+	input[type="submit"] {
+		    -webkit-font-smoothing: antialiased;
+  background-color: #0083ff;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1em;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-size: 22px;
+  width: 100%;
+  opacity: 0.8; 
+
+	&:hover {
+		opacity: 1;
+	}
+
+	}
+
+}
+
+fieldset {
+	select {
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+		cursor: pointer;
+		padding: 12px;
+		border: 1px solid #cfd9db;
+		background-color: #ffffff;
+		border-radius: .25em;
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+		display: block;
+		width: 100%;
+	}
+}
+
+
+	// colors
+
+	$color-1: #2b3e51; // Pickled Bluewood
+	$color-2: #2c97de; // Curious Blue
+	$color-3: #ecf0f1; // Porcelain
+	$color-4: #ffffff; // White
+	$color-5: #e94b35; // Cinnabar
+
+	input[type=radio],
+	input[type=checkbox] {
+		/* hide original check and radio buttons */
+		position: absolute;
+		left: 0;
+		top: 50%;
+		@include transform(translateY(-50%));
+		margin: 0;
+		padding: 0;
+		opacity: 0;
+		z-index: 2;
+	}
+
+	input[type="radio"] + label, 
+	input[type="checkbox"] + label {
+		padding-left: 24px;
+	}
+
+	input[type="radio"] + label::before,
+	input[type="radio"] + label::after,
+	input[type="checkbox"] + label::before,
+	input[type="checkbox"] + label::after {
+		/* custom radio and check boxes */
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		margin-top: -8px;
+		width: 16px;
+		height: 16px;
+	}
+
+	input[type="radio"] + label::before,
+	input[type="checkbox"] + label::before {
+		border: 1px solid darken($color-3, 10%);
+		background: $color-4;
+		box-shadow: inset 0 1px 1px rgba(#000, .08);
+	}
+
+	input[type="radio"] + label::before,
+	input[type="radio"] + label::after {
+		border-radius: 50%;
+	}
+
+	input[type="checkbox"] + label::before,
+	input[type="checkbox"] + label::after {
+		border-radius: .25em;
+	}
+
+	input[type="radio"] + label::after,
+	input[type="checkbox"] + label::after {
+		background-color: $color-2;
+		background-position: center center;
+		background-repeat: no-repeat;
+		box-shadow: 0 0 5px rgba($color-2, .4);
+		display: none;
+	}
+
+	input[type="radio"] + label::after {
+		/* custom image for radio button */
+		background-image: url('../img/cd-icon-radio.svg');
+	}
+
+	input[type="checkbox"] + label::after {
+		/* custom image for checkbox */
+		
+    font-family: FontAwesome;
+    content: '\f00c';
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    line-height: 15px;
+
+	}
+
+	input[type="radio"]:checked + label::after,
+	input[type="checkbox"]:checked + label::after {
+		display: block;
+	}
+
+	input[type="radio"]:checked + label::before,
+	input[type="radio"]:checked + label::after,
+	input[type="checkbox"]:checked + label::before,
+	input[type="checkbox"]:checked + label::after {
+		@include animation(cd-bounce .3s);
+	}

@@ -1,17 +1,19 @@
   <fieldset>
     <label>
-      Fuerza Politica
+        Fuerza Politica
           {{model-selector modelName='political-force' countryFilter=model.country.id value=formula.politicalForce labelPath="name" sigle=true}}
     </label>  
     <label>
-    	Votos
+    	 Votos
         {{input type="number" value=formula.votes}}
   	</label> 
      <label>
-    	Porcentaje
+    	 Porcentaje
         {{input type="number" value=formula.percent}}
   	</label> 	   	 	
+    
     <a {{action 'addProvince' formula}}>Agregar resultado por provincia</a>
+
     {{#each formula.provinceStatuses as |status|}}
     <fieldset> 
       <label>
@@ -32,7 +34,9 @@
       </label> 
      </fieldset>  
     {{/each}} 
+
     <a {{action 'addCandidate' formula}}>Agregar Candidato</a>
+
     {{#each formula.candidates as |candidate|}}
     <fieldset> 
       <label>
@@ -46,4 +50,5 @@
 
      </fieldset>  
     {{/each}}      
+    
  </fieldset> 	

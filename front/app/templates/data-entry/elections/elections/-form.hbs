@@ -1,61 +1,75 @@
 <form {{action "saveElection" on="submit"}} class="create-event">
 
-  <fieldset>
+  <div class="field-container">
+    <legend>Elección {{model.name}}</legend>
+    <fieldset class="three">
     <label>
-      Pais <!-- Select -->
-      {{model-selector modelName='country' value=model.country optionLabelPath="content.name" }}
+      Nombre
+      {{input type="text" value=model.name placeholder="ej: Legislativa 2015"}}
     </label>
-  </fieldset>     
-  <fieldset>
-    <label>
-      Nivel <!-- Select -->
-      {{model-selector modelName='election-level' value=model.level optionLabelPath="content.name" }}
-    </label>
-  </fieldset> 
-  <fieldset>
-    <label>
-      Tipo <!-- Select -->
-      {{model-selector modelName='election-type' value=model.type optionLabelPath="content.name" }}
-    </label>
-  </fieldset>   
-  <fieldset>
+  </fieldset>
+
+   <fieldset class="three">
     <label>
       Fecha
     </label>
     <div class="date-picker-container">
-      {{date-picker date=model.date valueFormat='YYYY-MM-DD' utc=true }}
+      {{date-picker date=model.date valueFormat='YYYY-MM-DD' utc=true placeholder="Ingrese la fecha" }}
     </div>
-  </fieldset>  
-  <fieldset>
-    <label>
-      Nombre (EJ: Legislativa 2015)
-      {{input type="text" value=model.name}}
-    </label>
-  </fieldset>     
-  <fieldset>
+  </fieldset> 
+
+    <fieldset class="three">
+      <label>
+        Pais <!-- Select -->
+        {{model-selector modelName='country' value=model.country optionLabelPath="content.name" }}
+      </label>
+     
+    </fieldset>    
+
+    <fieldset class="three">
+      <label>
+        Nivel <!-- Select -->
+        {{model-selector modelName='election-level' value=model.level optionLabelPath="content.name" }}
+      </label>
+    </fieldset> 
+    <fieldset class="three">
+      <label>
+        Tipo <!-- Select -->
+        {{model-selector modelName='election-type' value=model.type optionLabelPath="content.name" }}
+      </label>
+    </fieldset>  
+    
+  
+
+   <fieldset class="three">
     <label>
       Instancia <!-- Select Primera vuelta | Segunda vuelta | Directa -->
       {{model-selector modelName='election-instance' value=model.instance optionLabelPath="content.name" }}
     </label>
   </fieldset>   
-  <fieldset>
+  <fieldset class="three">
     <label>
       Categoria <!-- Select Primarias | Generales -->
       {{model-selector modelName='election-category' value=model.category optionLabelPath="content.name" }}
     </label>
-  </fieldset>   
+  </fieldset> 
+
+   <fieldset class="three">
+    <label>
+      Participacion <!-- Select Obligatoria | Opcional -->
+      {{model-selector modelName='election-participation' value=model.participation optionLabelPath="content.name" }}
+    </label>
+  </fieldset>  
 
   {{#if isReferendum}}
-  <fieldset>
-    <label>
-      Vinculante <!-- Select Si | No  (Si es referendum) -->
+  <fieldset class="three -checkbox">
       {{input type="checkbox" name="isVinculated" checked=model.vinculated}}   
-    </label>
+      <label>Vinculante <!-- Select Si | No  (Si es referendum) --></label>
   </fieldset>
   {{/if}}
 
   {{#if isLegislative}}
-  <fieldset>
+  <fieldset class="three">
     <label>
       Camara legislativa <!-- Select Unicameral | Bicameral (Si es Legislativa) -->
       {{model-selector modelName='camera-type' value=model.cameraType}}
@@ -63,79 +77,116 @@
   </fieldset> 
   {{/if}}
 
-  <fieldset>
-    <label>
-      Participacion <!-- Select Obligatoria | Opcional -->
-      {{model-selector modelName='election-participation' value=model.participation optionLabelPath="content.name" }}
-    </label>
-  </fieldset>
+ 
+  </div>
 
-
-  <fieldset>
+<div class="field-container">
+  <legend>Datos</legend>
+  <fieldset class="election-poll">
     <label>
       Electores habilitados
-      {{input type="number" value=model.electors}}
-      {{input type="number" value=model.electorsPercent}} %
     </label>
+    <div class="quantity">
+      {{input type="number" value=model.electors placeholder="Ingrese la cantidad"}}
+    </div>
+    <div class="percent">
+      {{input type="number" value=model.electorsPercent placeholder="Ingrese el porcentaje"}}
+      %
+    </div>
   </fieldset>   
 
-  <fieldset>
+  <fieldset class="election-poll ">
     <label>
       Votantes
-      {{input type="number" value=model.voters}}
-      {{input type="number" value=model.votersPercent}} %
     </label>
-  </fieldset>   
+    <div class="quantity">
+      {{input type="number" value=model.voters placeholder="Ingrese la cantidad"}}
+    </div>
+    <div class="percent">
+      {{input type="number" value=model.votersPercent placeholder="Ingrese el porcentaje"}}
+      %
+    </div>
+  </fieldset> 
 
-   <fieldset>
-    <label>
-      Blancos
-      {{input type="number" value=model.blank}}
-      {{input type="number" value=model.blankPercent}} %
-    </label>
-  </fieldset>   
-  
-   <fieldset>
+   <fieldset class="election-poll">
     <label>
       Nulos
-      {{input type="number" value=model.nulls}}
-      {{input type="number" value=model.nullsPercent}} %
     </label>
-  </fieldset>       
+    <div class="quantity">
+      {{input type="number" value=model.nulls placeholder="Ingrese la cantidad"}}
+    </div>
+    <div class="percent">
+      {{input type="number" value=model.nullsPercent placeholder="Ingrese el porcentaje"}}
+      %
+    </div>
+  </fieldset>    
 
-   <fieldset>
+   <fieldset class="election-poll">
+    <label>
+      Blancos
+    </label>
+    <div class="quantity">
+      {{input type="number" value=model.blank placeholder="Ingrese la cantidad"}}
+    </div>
+    <div class="percent">
+      {{input type="number" value=model.blankPercent placeholder="Ingrese el porcentaje"}}
+      %
+    </div>
+  </fieldset>   
+  
+       
+
+   <fieldset class="election-poll">
     <label>
       Recurridos o impugnados
-      {{input type="number" value=model.recurred}}
-      {{input type="number" value=model.recurredPercent}} %
     </label>
+    <div class="quantity">
+      {{input type="number" value=model.recurred placeholder="Ingrese la cantidad"}}
+    </div>
+    <div class="percent">
+      {{input type="number" value=model.recurredPercent placeholder="Ingrese el porcentaje"}}
+      %
+    </div>
   </fieldset>     
 
-  <fieldset>
+  <fieldset class="election-poll">
     <label>
       Validos
-      {{input type="number" value=model.valids}}
-      {{input type="number" value=model.validsPercent}} %
     </label>
+    <div class="quantity">
+      {{input type="number" value=model.valids placeholder="Ingrese la cantidad"}}
+    </div>
+    <div class="percent">
+      {{input type="number" value=model.validsPercent placeholder="Ingrese el porcentaje"}}
+      %
+    </div>
   </fieldset>   
+</div>
 
-  <a {{action 'addFormula'}}>Agregar Formula</a>
-  {{#each model.formulas as |formula|}}
-      {{#if isEjecutive}}
-        {{partial 'data-entry/elections/elections/formulas/ejecutive'}}
-      {{/if}}
-      {{#if isLegislative}}
-        {{partial 'data-entry/elections/elections/formulas/legislative'}}
-      {{/if}}
-      {{#if isReferendum}}
-        {{partial 'data-entry/elections/elections/formulas/referendum'}}
-      {{/if}}
-      {{#if formula.dirtyType}}
-         <a {{action 'saveFormula' formula}}>Guardar Formula</a>  
-      {{/if}}          
-  {{/each}}
+  <div class="field-container">
+    <legend>
+      Formulas
+      <a {{action 'addFormula'}}>Agregar Formula</a>
+    </legend>
+    {{#each model.formulas as |formula|}}
+        {{#if isEjecutive}}
+          {{partial 'data-entry/elections/elections/formulas/ejecutive'}}
+        {{/if}}
+        {{#if isLegislative}}
+          {{partial 'data-entry/elections/elections/formulas/legislative'}}
+        {{/if}}
+        {{#if isReferendum}}
+          {{partial 'data-entry/elections/elections/formulas/referendum'}}
+        {{/if}}
+        {{#if formula.dirtyType}}
+           <a {{action 'saveFormula' formula}}>Guardar Formula</a>  
+        {{/if}}          
+    {{/each}}
+  </div>
+
   <fieldset>
     <input type="submit" value="Guardar">
   </fieldset>
+
 </form>
     
