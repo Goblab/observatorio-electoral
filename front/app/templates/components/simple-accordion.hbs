@@ -1,6 +1,8 @@
-<h3>{{title}}</h3>
 <div class="js-accordion-trigger">
-{{t-remove a="chevron-down" is-removed=true}}
+	<h3>
+		{{title}}
+		{{fa-icon 'chevron-down'}}
+	</h3>
 </div>
 <div class="submenu" style="display: none;">
 	{{yield}}

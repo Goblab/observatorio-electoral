@@ -353,6 +353,21 @@ header.is-visible {
 		padding: 0 17px;
 		margin: 20px 0 15px 0;
 		font-size: 23px;
+		position: relative;
+
+		.fa {
+			position: absolute;
+			right: 15px;
+			font-size: 15px;
+			@include transition(all 0.3s cubic-bezier(0.7,0,0.3,1));
+			-webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+    top: 4px;
+    color: #999;
+		}
 	}
 
 	li {
@@ -361,6 +376,20 @@ header.is-visible {
 
 	ul {
 		padding: 0;
+		display: inline-block;
+		margin: 0;
+		border-bottom: 1px solid #ddd;
+		cursor: pointer;
+
+		&.is-expanded {
+			h3  .fa {
+				    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+			}
+		}
 	}
 
 	a {
@@ -524,6 +553,7 @@ header.is-visible {
 
   &:hover {
   	color: #fff;
+  	background-color: darken(#0083ff, 10%);
   }
 }
 
