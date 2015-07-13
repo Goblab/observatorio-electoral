@@ -1,38 +1,59 @@
-<section>
-	<div class="section-header">
-		<h1>{{model.name}}</h1>
-		{{link-to "Todas las elecciones" "data-entry.elections.elections.index" classNames="btn"}}
-	</div>
-
-	<div class="section-content">
-		<div>
-		      {{#if model.country.flag.url}}
-		        <div class="img-container -country">
-		          <img {{bind-attr src=model.country.flag.url}} width="50px">
+<div class="hero">
+	<div class="hero-inner">
+    	<div class="hero-logo">
+    		{{#if model.country.flag.url}}
+		        <div class="img-container">
+		          <img {{bind-attr src=model.country.flag.url}}>
 		        </div>
-		      {{/if}}
-		      {{model.level.name}}
-		  	  {{model.type.name}} 
-		  	  {{model.instance.name}} 
-		  	  {{model.category.name}}
-		  	  {{model.participation.name}}
-		  	  {{#if isLegislative}}
-		  	  	{{model.cameraType.name}}
-		  	  {{/if}}
-		  	  {{#if isReferendum}}
-		  	  	{{model.vinculated}}
-		  	  {{/if}}
+		     {{/if}}
 		</div>
-		<div>
-			<p>Electores: {{model.electors}} ({{model.electorsPercent}}%)</p>
-			<p>Votantes: {{model.voters}} ({{model.votersPercent}}%)</p>
-			<p>Nulos: {{model.blank}} ({{model.blankPercent}}%)</p>
-			<p>Recurridos o impugnados: {{model.nulls}} ({{model.recurredPercent}}%)</p>
-			<p>Blancos: {{model.recurred}} ({{model.blankPercent}}%)</p>
-			<p>Validos: {{model.valids}} ({{model.validsPercent}}%)</p>
+		<div class="hero-copy">
+			<h1>{{model.name}}</h1>
+			
+			<div class="stats">
+			  <p>
+				Elección {{model.level.name}} {{model.type.name}} <br>
+				<i> {{model.instance.name}} {{model.category.name}} {{model.participation.name}}</i>
+			  </p>
+			{{#if isLegislative}}
+			{{model.cameraType.name}}
+			{{/if}}
+			{{#if isReferendum}}
+			{{model.vinculated}}
+			{{/if}}
+			 
+			</div>
+			<p>{{link-to "Todas las elecciones" "data-entry.elections.elections.index" classNames="btn"}}</p>
+		</div>
+    	
+	</div>
+</div>
+
+<div class="section-content">
+		
+		<div class="profile-data">
+			<h4>Datos</h4>
+			<div class="data-item">
+				<label for="">Electores</label> {{model.electors}} ({{model.electorsPercent}}%)
+			</div>
+			<div class="data-item">
+				<label for="">Votantes</label> {{model.voters}} ({{model.votersPercent}}%)
+			</div>
+			<div class="data-item">
+				<label for="">Nulos</label> {{model.blank}} ({{model.blankPercent}}%)
+			</div>
+			<div class="data-item">
+				<label for="">Recurridos o impugnados</label> {{model.nulls}} ({{model.recurredPercent}}%)
+			</div>
+			<div class="data-item">
+				<label for="">Blancos</label> {{model.recurred}} ({{model.blankPercent}}%)
+			</div>
+			<div class="data-item">
+				<label for="">Validos</label> {{model.valids}} ({{model.validsPercent}}%)
+			</div>
 		</div>
 
-		<div>
+		<div class="profile-results">
 			<h4>Resultados</h4>
 			{{#each model.formulas as |formula|}}
 			      {{#if isEjecutive}}
@@ -47,4 +68,3 @@
 			{{/each}}
 		</div>
 	</div>
-</section>

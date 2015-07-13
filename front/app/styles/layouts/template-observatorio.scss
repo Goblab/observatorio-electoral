@@ -19,16 +19,30 @@
 
 .img-container {
 	&.-country {
-    width: 43px;
-    overflow: hidden;
-    height: 43px;
-    border-radius: 50px;
+	    width: 43px;
+	    overflow: hidden;
+	    height: 43px;
+	    border-radius: 50px;
 
-    img {
-    width: 65px;
-    position: relative;
-    left: -11px;
-    }
+	    img {
+		    width: 65px;
+		    position: relative;
+		    left: -11px;
+	    }
+	}
+
+	&.-candidates {
+	    width: 43px;
+	    overflow: hidden;
+	    height: 43px;
+	    border-radius: 50px;
+
+	    img {
+			width: 55px;
+			position: relative;
+			left: -7px;
+			top: -5px;
+	    }
 	}
 }
 

@@ -7,12 +7,12 @@
 
   $hero-background-top: #7F99BE; 
   $hero-background-bottom: #20392B;
-  $hero-color: #fff;
+  $hero-color: #333;
   $gradient-angle: 10deg;
   //$hero-image: 'images/profile-background.jpg';
 
-  @include background(linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
-  background-color: #324766;
+  
+  background-color: #f9f9f9;
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -95,11 +95,11 @@
           @include box-shadow;
             
             > img {
-              position: relative;
-        left: -50%;
-        top: 0;
-        display: block;
-        width: 280px;
+                    position: relative;
+    left: -52%;
+    top: -24px;
+    display: block;
+    width: 280px;
             }
 
           }
@@ -225,4 +225,28 @@ $mobile: new-breakpoint(max-width 800px 6);
   &.left135 {
     left: 135px;
   }
+}
+
+
+.profile-data {
+  position: relative;
+  @include outer-container(100%);
+
+  .data-item {
+    @include span-columns(3);
+    text-align: center;
+      min-height: 80px;
+
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 18px;
+    }
+  }
+
+}
+
+.profile-results {
+  position: relative;
+  @include outer-container(100%);
 }

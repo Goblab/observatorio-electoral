@@ -141,6 +141,7 @@ $medium: new-breakpoint(max-width 800px 6);
 		position: absolute;
 		padding: 16px 20px 16px 20px;
 		color: #999;
+		left: 0;
 
 		 @include media($mobile) {
 		  	@include transition(all 0.3s cubic-bezier(0.7,0,0.3,1));

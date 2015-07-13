@@ -346,9 +346,10 @@ form {
 
 	textarea {
 	  border-radius: 6px;
-	  line-height: 1;
-	  resize: vertical;
-	  min-height: 75px;
+    line-height: 25px;
+    resize: vertical;
+    min-height: 146px;
+    padding: 10px 12px;
 	}
 
 	input[type="submit"] {

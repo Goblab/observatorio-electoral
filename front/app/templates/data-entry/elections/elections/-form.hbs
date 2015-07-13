@@ -166,7 +166,17 @@
 
   <div class="field-container">
     <legend>
-      Formulas
+      {{#if isEjecutive}}
+        Formulas
+      {{/if}}
+      {{#if isLegislative}}
+        Fuerza Politica
+      {{/if}}
+      {{#if isReferendum}}
+        Propuesta
+      {{/if}}
+
+
       <a {{action 'addFormula'}}>Agregar Formula</a>
     </legend>
     {{#each model.formulas as |formula|}}
@@ -180,7 +190,7 @@
           {{partial 'data-entry/elections/elections/formulas/referendum'}}
         {{/if}}
         {{#if formula.dirtyType}}
-           <a {{action 'saveFormula' formula}}>Guardar Formula</a>  
+           <a {{action 'saveFormula' formula}} class="btn">Guardar Formula</a>  
         {{/if}}          
     {{/each}}
   </div>

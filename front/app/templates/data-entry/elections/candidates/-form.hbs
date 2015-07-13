@@ -1,47 +1,44 @@
 <form {{action "save" on="submit"}} class="create-event">
-  <fieldset>
-    <label>
-      Nombre
-      {{input type="text" value=model.name}}
-    </label>
-  </fieldset>
-  <fieldset>
-    <label>
-      Apellido
-      {{input type="text" value=model.lastName}}
-    </label>
-  </fieldset>
-  <fieldset>
-    <label>
-      Apodo | Alias
-      {{input type="text" value=model.alias}}
-    </label>
-  </fieldset>
-  <fieldset>
-    <label>
-      Pais
-      {{model-selector modelName='country' value=model.country labelPath="name" sigle=true}}
-    </label>
-  </fieldset>  
+  <div class="field-container">
+    <fieldset class="three">
+      <label>
+        Nombre
+        {{input type="text" value=model.name}}
+      </label>
+    </fieldset>
+    <fieldset class="three">
+      <label>
+        Apellido
+        {{input type="text" value=model.lastName}}
+      </label>
+    </fieldset>
+    <fieldset>
+      <label>
+        Apodo | Alias
+        {{input type="text" value=model.alias}}
+      </label>
+    </fieldset>
+    <fieldset>
+      <label>
+        Pais
+        {{model-selector modelName='country' value=model.country labelPath="name" sigle=true}}
+      </label>
+    </fieldset>
+
+      
+  </div>
 
   <fieldset>
-    <label>
-      Historia
-      {{input type="text" value=model.history}}
-    </label>
-  </fieldset>
+        <label>
+          Historia
+          {{textarea type="text" value=model.history}}
+        </label>
+      </fieldset>
 
   <fieldset>
     <label>
       Fuerza Politico (EJ: Frente para la victoria)
       {{model-selector modelName='political-force' countryFilter=model.country.id  value=model.politicalForce labelPath="name" sigle=true}}
-    </label>
-  </fieldset>
-
-  <fieldset>
-    <label>
-      Cargo
-      {{model-selector modelName='charge' value=model.charge labelPath="name" sigle=true}}
     </label>
   </fieldset>
 

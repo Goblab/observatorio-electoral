@@ -10,10 +10,10 @@
     <thead>
       <tr>
         <th>
-          Nombre
+          
         </th>
         <th>
-          Apellido
+          Nombre apellido
         </th>
         <th>
           Alias
@@ -22,7 +22,7 @@
           Pais
         </th>        
         <th colspan="3">
-          Acciones
+          
         </th>
       </tr>
     </thead>
@@ -31,14 +31,14 @@
         <tr>
           <td>
             {{#if candidate.picture.url}}
-              <div class="img-container">
-                <img {{bind-attr src=candidate.picture.url}} width="120px">
+              <div class="img-container -candidates">
+                <img {{bind-attr src=candidate.picture.url}} width="50px">
               </div>
             {{/if}}  
-            {{candidate.name}}
+            
           </td>
           <td>
-            	{{candidate.lastName}}
+            	{{candidate.name}} {{candidate.lastName}}
           </td>
           <td>
             {{candidate.alias}}
