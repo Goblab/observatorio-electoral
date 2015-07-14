@@ -60,3 +60,35 @@
 		    font-size: 16px;
 	}
 }
+
+.referendum-item {
+	@include span-columns(4);
+	text-align: center;
+    padding: 15px;
+
+    &.-yes {
+		background: lighten(#2ecc71, 40%);
+    }
+
+    &.-no {
+    	background: lighten(#e74c3c, 40%);
+    }
+
+	.fa {
+		position: relative;
+		width: 100%;
+		font-size: 26px;
+		margin-bottom: 15px;
+
+	}
+
+	span {
+		position: relative;
+	}
+
+	small {
+		position: relative;
+		width: 100%;
+		display: block;
+	}
+}

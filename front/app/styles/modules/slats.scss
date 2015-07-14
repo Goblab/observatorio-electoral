@@ -18,6 +18,20 @@
 		&.-color {
 			padding-left: 3em;
 		}
+
+		&.-title {
+			padding-left: 0;
+
+			.slat-content {
+				width: 100%;
+				padding-left: 130px;
+				text-align: center;
+			}
+
+			.slat-vote {
+				@include span-columns(3.8);
+			}
+		}
 	}
 	
 	.slat-content {
@@ -30,6 +44,12 @@
 			margin: 0;
 		}
 	}
+
+	.slat-title {
+		position: absolute;
+	}
+
+	
 
 	.slat-img {
 		    position: absolute;

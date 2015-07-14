@@ -1,48 +1,72 @@
-  <fieldset>	
-    <label>
-      Fuerza Politica
-      {{formula.politicalForce.name}}
-    </label>  
+  <div class="brief-header">
+    <h5>{{formula.politicalForce.name}}</h5>
+  </div>
+  <div class="brief-content">	
     {{#unless isBicameral}}
-      Asambleistas
-      <label>
-        Votos
-          {{formula.assemblyman.votes}}
-      </label> 
-       <label>
-        Porcentaje
-          {{formula.assemblyman.percent}}
-      </label>     
-      <label>
-        Bancas
-          {{formula.assemblyman.positions}}
-      </label>         
+       <div class="slat-list">
+        {{#each formula.candidates as |candidate|}}
+          <div class="slat-item -title">
+            <div class="slat-title">
+              Asambleistas 
+            </div>
+            <div class="slat-content">
+              <div class="slat-vote">
+                Votos
+                {{formula.assemblyman.votes}}
+              </div>
+              <div class="slat-vote">
+                Porcentaje
+                {{formula.assemblyman.percent}}
+              </div>
+              <div class="slat-vote">
+                Bancas
+                {{formula.assemblyman.positions}}
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
     {{else}}
-      Diputados
-      <label>
-        Votos
-          {{formula.diputies.votes}}
-      </label> 
-      <label>
-        Porcentaje
-          {{formula.diputies.percent}}
-      </label>  
-      <label>
-        Bancas
-          {{formula.diputies.positions}}
-      </label>         
-      Senadores
-       <label>
-        Votos
-          {{formula.senators.votes}}
-      </label> 
-      <label>
-        Porcentaje
-          {{formula.senators.percent}}
-      </label>  
-      <label>
-        Bancas
-          {{formula.senators.positions}}
-      </label>                 
+      <div class="slat-list ">
+        <div class="slat-item -title">
+          <div class="slat-title">
+            Diputados 
+          </div>
+          <div class="slat-content">
+              <div class="slat-vote">
+                 Votos
+                 {{formula.diputies.votes}}
+              </div>
+              <div class="slat-vote">
+                Porcentaje
+                {{formula.diputies.percent}}
+              </div>
+              <div class="slat-vote">
+                Bancas
+                {{formula.diputies.positions}}
+              </div>
+            </div>
+        </div>
+
+        <div class="slat-item -title">
+          <div class="slat-title">
+              Senadores 
+          </div>
+          <div class="slat-content">
+            <div class="slat-vote">
+               Votos
+               {{formula.senators.votes}}
+            </div>
+            <div class="slat-vote">
+              Porcentaje
+              {{formula.senators.percent}}
+            </div>
+            <div class="slat-vote">
+              Bancas
+              {{formula.senators.positions}}
+            </div>
+          </div>
+        </div>
+      </div>
     {{/unless}}  
-</fieldset> 	
+</div> 	

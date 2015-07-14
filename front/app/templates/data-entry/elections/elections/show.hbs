@@ -14,13 +14,14 @@
 			  <p>
 				Elección {{model.level.name}} {{model.type.name}} <br>
 				<i> {{model.instance.name}} {{model.category.name}} {{model.participation.name}}</i>
+				{{#if isLegislative}}
+					{{model.cameraType.name}}
+				{{/if}}
+				{{#if isReferendum}}
+					{{model.vinculated}}
+				{{/if}}
 			  </p>
-			{{#if isLegislative}}
-			{{model.cameraType.name}}
-			{{/if}}
-			{{#if isReferendum}}
-			{{model.vinculated}}
-			{{/if}}
+			
 			 
 			</div>
 			<p>{{link-to "Todas las elecciones" "data-entry.elections.elections.index" classNames="btn"}}</p>
@@ -29,7 +30,7 @@
 	</div>
 </div>
 
-<div class="section-content">
+<div class="profile-content">
 		
 		<div class="profile-data">
 			<h4>Datos</h4>
@@ -54,7 +55,17 @@
 		</div>
 
 		<div class="profile-results">
-			<h4>Resultados</h4>
+			<h4>
+			{{#if isEjecutive}}
+				Resultados
+            {{/if}}
+	        {{#if isLegislative}}
+				Resultados
+            {{/if}}
+			{{#if isReferendum}}
+				Propuesta
+			{{/if}}	
+			</h4>
 			{{#each model.formulas as |formula|}}
 			      {{#if isEjecutive}}
 			        {{partial 'data-entry/elections/elections/formulas/ejecutive-brief'}}

@@ -228,12 +228,16 @@ $mobile: new-breakpoint(max-width 800px 6);
 }
 
 
-.profile-data {
+.profile-data, .profile-results {
   position: relative;
   @include outer-container(100%);
 
+  h4 {
+    border-bottom: 1px solid #ddd;
+  }
+
   .data-item {
-    @include span-columns(3);
+    @include span-columns(3.9);
     text-align: center;
       min-height: 80px;
 
@@ -246,7 +250,47 @@ $mobile: new-breakpoint(max-width 800px 6);
 
 }
 
+.profile-content {
+  padding: 15px;
+  background: #fff;
+  @include span-columns(8);
+  @include shift(2);
+  @include transition(all 0.3s cubic-bezier(0.7,0,0.3,1));
+}
+
 .profile-results {
   position: relative;
   @include outer-container(100%);
+
+  h5 {
+            margin: 12px 0;
+    font-size: 18px;
+  }
+
+  .brief-header, 
+  .brief-content {
+    
+  }
+
+  .brief-header {
+          position: relative;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+      
+
+      h5 {
+        position: relative;
+      }
+
+      p {
+        position: relative;
+      }
+  }
+
+  .brief-content {
+    position: relative;
+      h4 {
+        margin-bottom: 0;
+      }
+  }
 }
