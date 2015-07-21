@@ -10,17 +10,34 @@ export default Ember.Controller.extend({
 		this.set('isEjecutive', false);
 		this.set('isLegislative', false);
 		this.set('isReferendum', false);
+		this.set('isDiputies', false);
+		this.set('isSenators', false);
 		if (this.get('model.type') && this.get('model.type').get('name')) {
 			var t = this.get('model.type').get('name').toLowerCase();
 			switch(t) {
 				case 'ejecutiva':
 					this.set('isEjecutive', true);
-					break;	
+					break;
 				case 'legislativas':
 					this.set('isLegislative', true);
 					break;
 				default:
-					this.set('isReferendum', true);
+					var rg = /legislativas/i;
+					if (rg.test(t)) {
+						this.set('isLegislative', true);
+						var rg2 = /diputado/i;
+						var rg3 = /senador/i;
+
+						if (rg2.test(t)) {
+							this.set('isDiputies', true);
+						} else {
+							if (rg3.test(t)) {
+								this.set('isSenators', true);
+							}
+						}
+					} else {
+						this.set('isReferendum', true);	
+					}
 					break;
 			}
 		}

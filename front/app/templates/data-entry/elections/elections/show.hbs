@@ -18,7 +18,11 @@
 					{{model.cameraType.name}}
 				{{/if}}
 				{{#if isReferendum}}
-					{{model.vinculated}}
+					{{#if model.vinculated}}
+						Vinculada
+					{{else}}
+						No Vinculada
+					{{/if}}
 				{{/if}}
 			  </p>
 			
@@ -41,13 +45,13 @@
 				<label for="">Votantes</label> {{model.voters}} ({{model.votersPercent}}%)
 			</div>
 			<div class="data-item">
-				<label for="">Nulos</label> {{model.blank}} ({{model.blankPercent}}%)
+				<label for="">Nulos</label> {{model.nulls}} ({{model.nullsPercent}}%)
 			</div>
 			<div class="data-item">
-				<label for="">Recurridos o impugnados</label> {{model.nulls}} ({{model.recurredPercent}}%)
+				<label for="">Recurridos o impugnados</label> {{model.recured}} ({{model.recurredPercent}}%)
 			</div>
 			<div class="data-item">
-				<label for="">Blancos</label> {{model.recurred}} ({{model.blankPercent}}%)
+				<label for="">Blancos</label> {{model.blank}} ({{model.blankPercent}}%)
 			</div>
 			<div class="data-item">
 				<label for="">Validos</label> {{model.valids}} ({{model.validsPercent}}%)

@@ -14,7 +14,7 @@
       Fecha
     </label>
     <div class="date-picker-container">
-      {{date-picker date=model.date valueFormat='YYYY-MM-DD' utc=true placeholder="Ingrese la fecha" }}
+      {{date-picker date=model.date valueFormat='YYYY-MM-DD' yearRange="1980, 2020" utc=true placeholder="Ingrese la fecha" }}
     </div>
   </fieldset> 
 
@@ -91,7 +91,7 @@
       {{input type="number" value=model.electors placeholder="Ingrese la cantidad"}}
     </div>
     <div class="percent">
-      {{input type="number" value=model.electorsPercent placeholder="Ingrese el porcentaje"}}
+      {{input type="text" value=model.electorsPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
       %
     </div>
   </fieldset>   
@@ -104,7 +104,7 @@
       {{input type="number" value=model.voters placeholder="Ingrese la cantidad"}}
     </div>
     <div class="percent">
-      {{input type="number" value=model.votersPercent placeholder="Ingrese el porcentaje"}}
+      {{input type="text" value=model.votersPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
       %
     </div>
   </fieldset> 
@@ -117,7 +117,7 @@
       {{input type="number" value=model.nulls placeholder="Ingrese la cantidad"}}
     </div>
     <div class="percent">
-      {{input type="number" value=model.nullsPercent placeholder="Ingrese el porcentaje"}}
+      {{input type="text" value=model.nullsPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
       %
     </div>
   </fieldset>    
@@ -130,7 +130,7 @@
       {{input type="number" value=model.blank placeholder="Ingrese la cantidad"}}
     </div>
     <div class="percent">
-      {{input type="number" value=model.blankPercent placeholder="Ingrese el porcentaje"}}
+      {{input type="text" value=model.blankPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
       %
     </div>
   </fieldset>   
@@ -145,7 +145,7 @@
       {{input type="number" value=model.recurred placeholder="Ingrese la cantidad"}}
     </div>
     <div class="percent">
-      {{input type="number" value=model.recurredPercent placeholder="Ingrese el porcentaje"}}
+      {{input type="text" value=model.recurredPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
       %
     </div>
   </fieldset>     
@@ -158,10 +158,49 @@
       {{input type="number" value=model.valids placeholder="Ingrese la cantidad"}}
     </div>
     <div class="percent">
-      {{input type="number" value=model.validsPercent placeholder="Ingrese el porcentaje"}}
+      {{input type="text" value=model.validsPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
       %
     </div>
   </fieldset>   
+
+  <fieldset class="election-poll">
+    <label>
+      Abstencion
+    </label>
+    <div class="quantity">
+      {{input type="number" value=model.abstens placeholder="Ingrese la cantidad"}}
+    </div>
+    <div class="percent">
+      {{input type="text" value=model.abstensPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
+      %
+    </div>
+  </fieldset>  
+
+  <fieldset class="election-poll">
+    <label>
+      Extranjeros
+    </label>
+    <div class="quantity">
+      {{input type="number" value=model.externals placeholder="Ingrese la cantidad"}}
+    </div>
+    <div class="percent">
+      {{input type="text" value=model.externalsPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
+      %
+    </div>
+  </fieldset>  
+
+  <fieldset class="election-poll">
+    <label>
+      Positivos
+    </label>
+    <div class="quantity">
+      {{input type="number" value=model.positives placeholder="Ingrese la cantidad"}}
+    </div>
+    <div class="percent">
+      {{input type="text" value=model.positivesPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
+      %
+    </div>
+  </fieldset>        
 </div>
 
   <div class="field-container">
@@ -189,7 +228,7 @@
         {{#if isReferendum}}
           {{partial 'data-entry/elections/elections/formulas/referendum'}}
         {{/if}}
-               
+        <a {{action 'removeFormula' formula}}>X</a>      
     {{/each}}
   </div>
 

@@ -1,62 +1,52 @@
-<a {{action 'addProvince' formula}} class="btn">Agregar resultado por provincia</a>
-<a {{action 'addCandidate' formula}} class="btn">Agregar Candidato</a>
 
 <fieldset>
-<label>
-Fuerza Politica
-{{model-selector modelName='political-force' countryFilter=model.country.id value=formula.politicalForce labelPath="name" sigle=true}}
-</label> 
+	<label>
+		Fuerza Politica
+		{{model-selector modelName='political-force' countryFilter=model.country.id value=formula.politicalForce labelPath="name" sigle=true}}
+	</label> 
 </fieldset>  
 
 <fieldset class="election-poll">
-<label>
-Votos
-</label>
-<div class="quantity">
-{{input type="number" value=formula.votes}}
-</div>
-<div class="percent">
-{{input type="number" value=formula.percent}}
-%
-</div>
-</fieldset>   
+	<label>
+		Votos
+	</label>
+	<div class="quantity">
+		{{input type="number" value=formula.votes}}
+	</div>
+	<div class="percent">
+		{{input type="number" value=formula.percent pattern="\d+(,\d{2})?"}}
+		%
+	</div>
+</fieldset>   	
 
-
-
-{{#each formula.provinceStatuses as |status|}}
-<fieldset class="province-poll"> 
-<label>
-Provincia | Estado  <!-- Select Obligatoria | Opcional -->
-{{model-selector modelName='province' countryFilter=model.country.id  value=status.province optionLabelPath="content.name" }}
-</label>
-<div class="votes">
-Votos
-{{input type="number" value=status.votes.votes}}
-</div> 
-<div class="percent">
-Porcentaje
-{{input type="number" value=status.votes.percent}}
-</div>     
-<div class="position">
-Bancas
-{{input type="number" value=status.votes.positions}}
-</div> 
-</fieldset> 
-
-{{/each}} 
-
-
+<a {{action 'addCandidate' formula}} class="btn">Agregar Candidato</a>
 
 {{#each formula.candidates as |candidate|}}
 <fieldset class="candidates-poll"> 
-<label class="charge">
-Cargo
-{{model-selector modelName='charge' value=candidate.charge optionLabelPath="content.name" }}
-</label>
-<label class="candidate">
-Candidato
-{{model-finder modelName='candidate' countryFilter=model.country.id  list=candidate.candidate labelPath="name" sigle=true}}
-</label>
-
+	<label class="charge">
+		Cargo
+		{{model-selector modelName='charge' value=candidate.charge optionLabelPath="content.name" }}
+	</label>
+	<label class="candidate">
+		Candidato
+		{{model-finder modelName='candidate' countryFilter=model.country.id  list=candidate.candidate labelPath="name" sigle=true}}
+	</label>
+	<a {{action 'removeCandidate' formula candidate}}>X</a>
 </fieldset>  
 {{/each}}      
+
+{{#each formula.provinceStatuses as |status|}}
+<fieldset class="province-poll"> 
+	<label>
+		{{status.province.name}}
+	</label>
+	<div class="votes">
+		Votos
+		{{input type="number" value=status.votes.votes}}
+	</div> 
+	<div class="percent">
+		Porcentaje
+		{{input type="text" value=status.votes.percent pattern="\d+(,\d{2})?"}}
+	</div>     
+</fieldset> 
+{{/each}} 

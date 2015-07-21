@@ -1,62 +1,31 @@
-  <fieldset>	
+<fieldset>	
+  <label>
+  	Fuerza Politica
+        {{model-selector modelName='political-force' countryFilter=model.country.id value=formula.politicalForce labelPath="name" sigle=true}}
+	</label>
+  <fieldset class="province-poll"> 
     <label>
-    	Fuerza Politica
-          {{model-selector modelName='political-force' countryFilter=model.country.id value=formula.politicalForce labelPath="name" sigle=true}}
-  	</label>
-    {{#unless isBicameral}}
-    <fieldset class="province-poll"> 
-      <label>
-        Asambleistas
-      </label>
-      <div class="votes">
+      {{#if isDiputies}}
+        Diputados
+      {{else}}
+        {{#if isSenators}}
+          Senadores
+        {{else}}
+          Asambleistas
+        {{/if}}
+      {{/if}}
+    </label>
+    <div class="votes">
       Votos
       {{input type="number" value=formula.assemblyman.votes}}
-      </div> 
-      <div class="percent">
+    </div> 
+    <div class="percent">
       Porcentaje
-      {{input type="number" value=formula.assemblyman.percent}}
-      </div>     
-      <div class="position">
+      {{input type="text" value=formula.assemblyman.percent pattern="\d+(,\d{2})?"}}
+    </div>     
+    <div class="position">
       Bancas
       {{input type="number" value=formula.assemblyman.positions}}
-      </div>   
-    </fieldset>             
-    {{else}}
-    <fieldset class="province-poll"> 
-      <label>
-        Diputados
-      </label>    
-      
-      <div class="votes">
-      Votos
-      {{input type="number" value=formula.diputies.votes}}
-      </div> 
-      <div class="percent">
-      Porcentaje
-      {{input type="number" value=formula.diputies.percent}}
-      </div>     
-      <div class="position">
-      Bancas
-      {{input type="number" value=formula.diputies.positions}}
-      </div>    
-     </fieldset>     
-    <fieldset class="province-poll"> 
-      <label>
-        Senadores
-      </label>   
-      
-      <div class="votes">
-      Votos
-      {{input type="number" value=formula.senators.votes}}
-      </div> 
-      <div class="percent">
-      Porcentaje
-      {{input type="number" value=formula.senators.percent}}
-      </div>     
-      <div class="position">
-      Bancas
-      {{input type="number" value=formula.senators.positions}}
-      </div>     
-     </fieldset>                      
-    {{/unless}}  
+    </div>   
+  </fieldset>    
 </fieldset> 	

@@ -9,18 +9,34 @@ export default Ember.Controller.extend({
 
 	actions: {
 		addFormula: function () {
+			var _this = this;
 			var newFormula = this.get('store').createRecord('formula');
+			if (this.get('isEjecutive')) {
+				this.get('store').find('province', {country: this.get('model').get('country').get('id')}).then(function (provinces) {
+					provinces.forEach(function (province) {
+						var newStatus = _this.get('store').createRecord('province-status', {
+							province: province,
+						});
+						newFormula.get('provinceStatuses').pushObject(newStatus);	
+					});
+				});
+			}
 			this.get('model').get('formulas').pushObject(newFormula);
 		},
 
-		saveFormula: function (formula) {
-			formula.save();
+		removeFormula: function (formula) {
+			this.get('model').get('formulas').removeObject(formula);
+		},
+
+		removeCandidate: function (formula, candidate) {
+			formula.get('candidates').removeObject(candidate);
 		},
 
 		addProvince: function (formula) {
 			var newStatus = this.get('store').createRecord('province-status');
 			formula.get('provinceStatuses').pushObject(newStatus);			
 		},
+
 		addCandidate: function (formula) {
 			var newStatus = this.get('store').createRecord('candicharge');
 			formula.get('candidates').pushObject(newStatus);			
@@ -59,6 +75,8 @@ export default Ember.Controller.extend({
 		this.set('isEjecutive', false);
 		this.set('isLegislative', false);
 		this.set('isReferendum', false);
+		this.set('isDiputies', false);
+		this.set('isSenators', false);
 		if (this.get('model.type') && this.get('model.type').get('name')) {
 			var t = this.get('model.type').get('name').toLowerCase();
 			switch(t) {
@@ -69,7 +87,22 @@ export default Ember.Controller.extend({
 					this.set('isLegislative', true);
 					break;
 				default:
-					this.set('isReferendum', true);
+					var rg = /legislativas/i;
+					if (rg.test(t)) {
+						this.set('isLegislative', true);
+						var rg2 = /diputado/i;
+						var rg3 = /senador/i;
+
+						if (rg2.test(t)) {
+							this.set('isDiputies', true);
+						} else {
+							if (rg3.test(t)) {
+								this.set('isSenators', true);
+							}
+						}
+					} else {
+						this.set('isReferendum', true);	
+					}
 					break;
 			}
 		}

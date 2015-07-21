@@ -2,71 +2,33 @@
     <h5>{{formula.politicalForce.name}}</h5>
   </div>
   <div class="brief-content">	
-    {{#unless isBicameral}}
-       <div class="slat-list">
-        {{#each formula.candidates as |candidate|}}
-          <div class="slat-item -title">
-            <div class="slat-title">
-              Asambleistas 
-            </div>
-            <div class="slat-content">
-              <div class="slat-vote">
-                Votos
-                {{formula.assemblyman.votes}}
-              </div>
-              <div class="slat-vote">
-                Porcentaje
-                {{formula.assemblyman.percent}}
-              </div>
-              <div class="slat-vote">
-                Bancas
-                {{formula.assemblyman.positions}}
-              </div>
-            </div>
-          </div>
-        {{/each}}
-      </div>
-    {{else}}
-      <div class="slat-list ">
+     <div class="slat-list">
         <div class="slat-item -title">
           <div class="slat-title">
-            Diputados 
-          </div>
-          <div class="slat-content">
-              <div class="slat-vote">
-                 Votos
-                 {{formula.diputies.votes}}
-              </div>
-              <div class="slat-vote">
-                Porcentaje
-                {{formula.diputies.percent}}
-              </div>
-              <div class="slat-vote">
-                Bancas
-                {{formula.diputies.positions}}
-              </div>
-            </div>
-        </div>
-
-        <div class="slat-item -title">
-          <div class="slat-title">
-              Senadores 
+          {{#if isDiputies}}
+            Diputados
+          {{else}}
+            {{#if isSenators}}
+              Senadores
+            {{else}}
+              Asambleistas
+            {{/if}}
+          {{/if}}
           </div>
           <div class="slat-content">
             <div class="slat-vote">
-               Votos
-               {{formula.senators.votes}}
+              Votos
+              {{formula.assemblyman.votes}}
             </div>
             <div class="slat-vote">
               Porcentaje
-              {{formula.senators.percent}}
+              {{formula.assemblyman.percent}}
             </div>
             <div class="slat-vote">
               Bancas
-              {{formula.senators.positions}}
+              {{formula.assemblyman.positions}}
             </div>
           </div>
         </div>
-      </div>
-    {{/unless}}  
+    </div>
 </div> 	

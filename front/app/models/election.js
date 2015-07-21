@@ -24,4 +24,10 @@ export default DS.Model.extend({
     validsPercent: DS.attr('string'), 
     recurredPercent: DS.attr('string'), 
     recurred: DS.attr('string'), 
+    abstens: DS.attr('string'),
+    abstensPercent: DS.attr('string'), 
+    externals: DS.attr('string'),
+    externalsPercent: DS.attr('string'), 
+    positives: DS.attr('string'),
+    positivesPercent: DS.attr('string'),            
 });
