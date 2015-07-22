@@ -1,6 +1,9 @@
 {{#if sigle}}
 	{{#if list}}
-		<label>{{list.name}}</label> <a {{action 'delete'}}>X</a>
+
+		<label>
+			{{listLabel}}
+		</label> <a {{action 'delete'}}>X</a>
 	{{else}}
 		{{input type="text" value=query}}
 		<ul>

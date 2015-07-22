@@ -29,7 +29,7 @@
 	</label>
 	<label class="candidate">
 		Candidato
-		{{model-finder modelName='candidate' countryFilter=model.country.id  list=candidate.candidate labelPath="name" sigle=true}}
+		{{model-finder modelName='candidate' countryFilter=model.country.id  list=candidate.candidate labelPath="name" sigle=true showPath="fullName"}}
 	</label>
 	<a {{action 'removeCandidate' formula candidate}}>X</a>
 </fieldset>  

@@ -10,6 +10,7 @@ export default Ember.Component.extend({
   selectedLabel: null,
   labelPath: 'name',
   countryFilter: null,
+  showPath: null,
 
   queryChanged: function () {
   	if (this.get('query').length >= 3) {
@@ -23,6 +24,15 @@ export default Ember.Component.extend({
   		this.set('queryContent', []);
     }
   }.observes('query'),
+
+
+  listLabel: function () {
+    if (this.get('showPath')) {
+      return this.get('list').get(this.get('showPath'));
+    } else {
+      return this.get('list.name');
+    }
+  }.property('list'),
 
   actions: {
   	add: function (model) {
