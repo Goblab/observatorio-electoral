@@ -294,3 +294,39 @@ $mobile: new-breakpoint(max-width 800px 6);
       }
   }
 }
+
+
+.brief-content {
+
+  .slat-list {
+    display: block;
+    float: left;
+    width: 100%;
+  }
+
+  .brief-item {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    float: left;
+
+    .item-name {
+      @include span-columns(6);
+    }
+
+    .item-votes {
+      position: relative;
+      @include span-columns(3);
+      text-align: center;
+    }
+
+    .item-percent {
+      position: relative;
+      @include span-columns(3);
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+}
