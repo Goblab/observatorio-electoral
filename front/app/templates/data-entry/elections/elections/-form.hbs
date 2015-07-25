@@ -98,6 +98,9 @@
     </label>
     <div class="quantity">
       {{input type="number" value=model.voters placeholder="Ingrese la cantidad"}}
+    </div>
+    <div class="percent">  
+
       {{percent-of model.voters model.electors}}
 
     </div>
@@ -109,6 +112,9 @@
     </label>
     <div class="quantity">
       {{input type="number" value=model.nulls placeholder="Ingrese la cantidad"}}
+    </div>
+    <div class="percent">  
+
       {{percent-of model.nulls model.electors}}
     </div>
   </fieldset>    
@@ -119,6 +125,9 @@
     </label>
     <div class="quantity">
       {{input type="number" value=model.blank placeholder="Ingrese la cantidad"}}
+    </div>
+    <div class="percent">  
+      
       {{percent-of model.blank model.electors}}
     </div>
   </fieldset>   
@@ -130,6 +139,8 @@
     </label>
     <div class="quantity">
       {{model.valids}}
+    </div>
+    <div class="percent">  
       {{percent-of model.valids model.electors}}
     </div>
   </fieldset>     
@@ -140,6 +151,8 @@
     </label>
     <div class="quantity">
       {{model.positives}}
+    </div>
+    <div class="percent">  
       {{percent-of model.positives model.electors}}
     </div>
   </fieldset>   
@@ -150,6 +163,9 @@
     </label>
     <div class="quantity">
       {{model.abstens}}
+    </div>
+    <div class="percent">  
+
       {{percent-of model.abstens model.electors}}
     </div>
   </fieldset> 
