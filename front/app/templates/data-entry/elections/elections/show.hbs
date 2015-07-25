@@ -39,23 +39,26 @@
 		<div class="profile-data">
 			<h4>Datos</h4>
 			<div class="data-item">
-				<label for="">Electores</label> {{model.electors}} ({{model.electorsPercent}}%)
+				<label for="">Electores</label> {{model.electors}} ({{percent-of model.electors model.electors}})
 			</div>
 			<div class="data-item">
-				<label for="">Votantes</label> {{model.voters}} ({{model.votersPercent}}%)
+				<label for="">Votantes</label> {{model.voters}} ({{percent-of model.voters model.electors}})
 			</div>
 			<div class="data-item">
-				<label for="">Nulos</label> {{model.nulls}} ({{model.nullsPercent}}%)
+				<label for="">Nulos</label> {{model.nulls}} ({{percent-of model.nulls model.electors}})
 			</div>
 			<div class="data-item">
-				<label for="">Recurridos o impugnados</label> {{model.recured}} ({{model.recurredPercent}}%)
+				<label for="">Positivos</label> {{model.positives}} ({{percent-of model.positives model.electors}})
 			</div>
 			<div class="data-item">
-				<label for="">Blancos</label> {{model.blank}} ({{model.blankPercent}}%)
+				<label for="">Blancos</label> {{model.blank}} ({{percent-of model.blank model.electors}})
 			</div>
 			<div class="data-item">
-				<label for="">Validos</label> {{model.valids}} ({{model.validsPercent}}%)
+				<label for="">Validos</label> {{model.valids}} ({{percent-of model.valids model.electors}})
 			</div>
+			<div class="data-item">
+				<label for="">Abstenciones</label> {{model.abstens}} ({{percent-of model.abstens model.electors}})
+			</div>			
 		</div>
 
 		<div class="profile-results">

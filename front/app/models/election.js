@@ -12,22 +12,27 @@ export default DS.Model.extend({
     vinculated: DS.attr('boolean'),
     participation: DS.belongsTo('election-participation', {async: true}),
     formulas: DS.hasMany('formula', {async: true}), 
-    voters: DS.attr('string'),
-    votersPercent: DS.attr('string'),
+
     electors: DS.attr('string'),
-    electorsPercent: DS.attr('string'),
+    voters: DS.attr('string'),
     blank: DS.attr('string'),
-    blankPercent: DS.attr('string'),
     nulls: DS.attr('string'),
-    nullsPercent: DS.attr('string'),
-    valids: DS.attr('string'),
-    validsPercent: DS.attr('string'), 
-    recurredPercent: DS.attr('string'), 
-    recurred: DS.attr('string'), 
-    abstens: DS.attr('string'),
-    abstensPercent: DS.attr('string'), 
+    
+    //voters - Nulos
+    valids: Ember.computed('voters', 'nulls', function () {
+        return parseInt(this.get('voters')) - parseInt(this.get('nulls'));
+    }),
+    //Validos - Blancos
+    positives: Ember.computed('valids', 'nulls', function () {
+        return parseInt(this.get('valids')) - parseInt(this.get('blank'));
+    }),
+    //Electors - voters
+    abstens: Ember.computed('electors', 'voters', function () {
+        return parseInt(this.get('electors')) - parseInt(this.get('voters'));
+    }),
+
     externals: DS.attr('string'),
-    externalsPercent: DS.attr('string'), 
-    positives: DS.attr('string'),
-    positivesPercent: DS.attr('string'),            
+    
+
+
 });

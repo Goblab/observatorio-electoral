@@ -14,8 +14,7 @@
 		{{input type="number" value=formula.votes}}
 	</div>
 	<div class="percent">
-		{{input type="number" value=formula.percent pattern="\d+(,\d{2})?"}}
-		%
+		({{percent-of formula.votes model.valids}})
 	</div>
 </fieldset>   	
 
