@@ -46,7 +46,7 @@
 
 		{{#if isShowApps}}
 			<a class="log-out" {{ action 'invalidateSession' }}>
-				Cerrar sesión {{fa-icon "sign-out"}}
+				<span>Cerrar sesión</span> {{fa-icon "sign-out"}}
 			</a>
 		{{/if}}	
 
@@ -94,13 +94,13 @@
 				{{#if isDataEntry}}
 					{{#simple-accordion title="Datos"  tagName="ul"}}
 						<li>
-							{{#link-to 'data-entry.elections.countries.index'}} {{fa-icon "user"}} <span>País</span> {{/link-to}}
+							{{#link-to 'data-entry.elections.countries.index'}} {{fa-icon "flag"}} <span>País</span> {{/link-to}}
 						</li>
 						<li>
-							{{#link-to 'data-entry.elections.provinces.index'}} {{fa-icon "user"}} <span>Provincias</span> {{/link-to}}
+							{{#link-to 'data-entry.elections.provinces.index'}} {{fa-icon "university"}} <span>Provincias</span> {{/link-to}}
 						</li>						
 						<li>
-							{{#link-to 'data-entry.elections.charges.index'}} {{fa-icon "user"}} <span>Cargos</span> {{/link-to}}
+							{{#link-to 'data-entry.elections.charges.index'}} {{fa-icon "briefcase"}} <span>Cargos</span> {{/link-to}}
 						</li>																							
 						<li>
 							{{#link-to 'data-entry.elections.candidates.index'}} {{fa-icon "user"}} <span>Candidatos</span> {{/link-to}}
@@ -109,18 +109,18 @@
 
 					{{#simple-accordion title="Elecciones" tagName="ul"}}
 						<li>
-							{{#link-to 'data-entry.elections.election-levels.index'}} {{fa-icon "user"}} <span>Nivel de elecciones</span> {{/link-to}}
+							{{#link-to 'data-entry.elections.election-levels.index'}} {{fa-icon "copy"}} <span>Nivel de elecciones</span> {{/link-to}}
 						</li>
 						
 						<li>
-							{{#link-to 'data-entry.elections.election-types.index'}} {{fa-icon "user"}} <span>Tipo de elecciones</span> {{/link-to}}
+							{{#link-to 'data-entry.elections.election-types.index'}} {{fa-icon "columns"}} <span>Tipo de elecciones</span> {{/link-to}}
 						</li>
 							
 						<li>
-							{{#link-to 'data-entry.elections.political-forces.index'}} {{fa-icon "user"}} <span>Fuerza politica</span> {{/link-to}}
+							{{#link-to 'data-entry.elections.political-forces.index'}} {{fa-icon "file"}} <span>Fuerza politica</span> {{/link-to}}
 						</li>
 						<li>
-							{{#link-to 'data-entry.elections.elections.index'}} {{fa-icon "user"}} <span>Elecciones</span> {{/link-to}}
+							{{#link-to 'data-entry.elections.elections.index'}} {{fa-icon "th-large"}} <span>Elecciones</span> {{/link-to}}
 						</li>
 					{{/simple-accordion}}
 				{{/if}}		

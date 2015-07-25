@@ -1,3 +1,5 @@
+$text-header-app: new-breakpoint(max-width 500px 6);
+
 header {
 	width: 100%;
 	height: 90px;
@@ -63,7 +65,7 @@ header {
 			padding: 0 15px 0 70px;
 		}
 
-	  	$text-header-app: new-breakpoint(max-width 500px 6);
+	  	
 
 		@include media($text-header-app) {
 			display: none;
@@ -96,6 +98,17 @@ header {
 	    z-index: 3000;
 	    position: relative;
 	    right: 60px;
+
+	    @include media($mobile) {
+			font-size: 16px;
+			padding: 20px;
+	    }
+
+	    @include media($text-header-app) {
+			span {
+				display: none;
+			}	
+		}
 
 	    .fa {
 	    	margin-left: 15px;

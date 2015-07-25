@@ -106,8 +106,9 @@ form {
 	label {
 		position: relative;
 		float: left; 
-		width: 300px;
+		
 	    padding: 12px 0;
+	    @include span-columns(3);
 	}
 
 	input {
@@ -119,16 +120,22 @@ form {
 
 	.quantity {
 		position: relative;
-		float: left;
+		@include span-columns(3);
 		
 	}
 
 	.percent {
 		position: relative;
-		float: right;
+		@include span-columns(3);
 
 		input {
 			text-align: right;
+			@include span-columns(8);
+		}
+
+		span {
+			@include span-columns(3);
+			margin: 13px 0;
 		}
 	}
 

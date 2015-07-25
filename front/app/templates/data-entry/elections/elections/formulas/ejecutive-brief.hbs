@@ -5,9 +5,21 @@
 
 <div class="brief-content">
   {{#each formula.provinceStatuses as |status|}}
+      <div class="brief-item">
+      <div class="item-name">
+        
       Provincia | Estado  <!-- Select Obligatoria | Opcional -->
       {{status.province.name}}
-      Votos {{status.votes.votes}} | {{status.votes.percent}}%
+      </div>
+      <div class="item-votes">
+
+       {{status.votes.votes}}
+       <small>Votos</small>
+      </div>
+      <div class="item-percent">
+         {{status.votes.percent}}%
+      </div>
+      </div>
   {{/each}}   
 
   <div class="slat-list ">
