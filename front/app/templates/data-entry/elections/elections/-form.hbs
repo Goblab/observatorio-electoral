@@ -76,13 +76,26 @@
       {{model-selector modelName='camera-type' value=model.cameraType}}
     </label>
   </fieldset> 
+   <fieldset class="election-poll">
+    <label>
+      Bancas en juego
+    </label>
+    <div class="quantity">
+      {{input type="number" value=model.banks placeholder="Ingrese la cantidad"}}
+    </div>
+  </fieldset>  
   {{/if}}
-
- 
   </div>
+
 
 <div class="field-container">
   <legend>Datos</legend>
+   <fieldset>
+        <label>
+          Historia
+          {{textarea type="text" value=model.history}}
+        </label>
+  </fieldset>  
   <fieldset class="election-poll">
     <label>
       Electores habilitados
@@ -100,8 +113,7 @@
       {{input type="number" value=model.voters placeholder="Ingrese la cantidad"}}
     </div>
     <div class="percent">  
-
-      {{percent-of model.voters model.electors}}
+      {{input type="text" value=model.votersPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
 
     </div>
   </fieldset> 
@@ -115,7 +127,7 @@
     </div>
     <div class="percent">  
 
-      {{percent-of model.nulls model.electors}}
+      {{input type="text" value=model.nullsPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
     </div>
   </fieldset>    
 
@@ -128,7 +140,7 @@
     </div>
     <div class="percent">  
       
-      {{percent-of model.blank model.electors}}
+      {{input type="text" value=model.blankPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
     </div>
   </fieldset>   
   
@@ -141,7 +153,7 @@
       {{model.valids}}
     </div>
     <div class="percent">  
-      {{percent-of model.valids model.electors}}
+      {{input type="text" value=model.validsPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
     </div>
   </fieldset>     
 
@@ -153,7 +165,7 @@
       {{model.positives}}
     </div>
     <div class="percent">  
-      {{percent-of model.positives model.electors}}
+      {{input type="text" value=model.positivesPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
     </div>
   </fieldset>   
 
@@ -165,8 +177,7 @@
       {{model.abstens}}
     </div>
     <div class="percent">  
-
-      {{percent-of model.abstens model.electors}}
+      {{input type="text" value=model.abstensPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
     </div>
   </fieldset> 
 
@@ -177,8 +188,22 @@
     <div class="quantity">
       {{input type="number" value=model.externals placeholder="Ingrese la cantidad"}}
     </div>
+    <div class="percent">
+      {{input type="text" value=model.externalsPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
+    </div>
+  </fieldset>
 
-  </fieldset>  
+  <fieldset class="election-poll">
+    <label>
+      No Marcados (Caso Colombia)
+    </label>
+    <div class="quantity">
+      {{input type="number" value=model.unchecked placeholder="Ingrese la cantidad"}}
+    </div>
+    <div class="percent">
+      {{input type="text" value=model.uncheckedPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
+    </div>
+  </fieldset>      
 </div>
 
   <div class="field-container">

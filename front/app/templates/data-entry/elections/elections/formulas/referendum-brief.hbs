@@ -4,14 +4,14 @@
     	{{fa-icon 'thumbs-o-up'}}
       <span>
         {{formula.positiveVotes.votes}}
-        <small>({{percent-of formula.positiveVotes.votes model.valids}})</small>
+        <small>({{formula.positiveVotes.percent}}%)</small>
       </span>
   	</div> 
      <div class="referendum-item">
     	{{fa-icon 'thumbs-o-down'}}
       <span>
         {{formula.negativeVotes.votes}}
-        <small>({{percent-of formula.negativeVotes.votes model.valids}})</small>
+        <small>({{formula.negativeVotes.percent}}%)</small>
       </span>
   	</div> 	   	 	
  </div> 	

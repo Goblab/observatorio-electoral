@@ -15,7 +15,7 @@
       {{input type="number" value=formula.positiveVotes.votes placeholder="Ingrese la cantidad"}}
     </div>
     <div class="percent">
-     ({{percent-of formula.positiveVotes.votes model.valids}})
+     {{input type="text" value=formula.positiveVotes.percent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
      </div>
   </fieldset>   
 
@@ -27,7 +27,7 @@
       {{input type="number" value=formula.negativeVotes.votes placeholder="Ingrese la cantidad"}}
     </div>
     <div class="percent">
-      ({{percent-of formula.negativeVotes.votes model.valids}})
+      {{input type="text" value=formula.negativeVotes.percent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
     </div>
   </fieldset>   
 

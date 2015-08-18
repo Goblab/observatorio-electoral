@@ -14,7 +14,7 @@
 		{{input type="number" value=formula.votes}}
 	</div>
 	<div class="percent">
-		({{percent-of formula.votes model.valids}})
+		{{input type="text" value=formula.percent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
 	</div>
 </fieldset>   	
 
@@ -34,10 +34,11 @@
 </fieldset>  
 {{/each}}      
 
+<a {{action 'addProvince' formula}} class="btn">Agregar Provincia</a>
 {{#each formula.provinceStatuses as |status|}}
 <fieldset class="province-poll"> 
 	<label>
-		{{status.province.name}}
+		{{model-selector modelName='province' countryFilter=model.country.id  list=status.province value=status.province optionLabelPath="content.name" }}
 	</label>
 	<div class="votes">
 		Votos
@@ -47,5 +48,6 @@
 		Porcentaje
 		{{input type="text" value=status.votes.percent pattern="\d+(,\d{2})?"}}
 	</div>     
+	<a {{action 'removeProvincia' formula status}}>X</a>
 </fieldset> 
 {{/each}} 

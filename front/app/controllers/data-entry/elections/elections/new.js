@@ -32,6 +32,10 @@ export default Ember.Controller.extend({
 			formula.get('candidates').removeObject(candidate);
 		},
 
+		removeProvincia: function (formula, province) {
+			formula.get('provinceStatuses').removeObject(province);
+		},		
+
 		addProvince: function (formula) {
 			var newStatus = this.get('store').createRecord('province-status');
 			formula.get('provinceStatuses').pushObject(newStatus);			
