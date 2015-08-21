@@ -2,12 +2,12 @@
 
 // Styles
 body {
-  font-family: $font-sans;
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
   font-weight: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-sans-narrow;
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
   font-weight: normal;
 }
 
@@ -94,7 +94,7 @@ article.type-system-sans {
   .type {
     border-bottom: 1px solid;
     display: inline-block;
-    font-family: $font-sans;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
     font-size: 0.7em;
     font-weight: 600;
     margin-bottom: 2em;
@@ -104,7 +104,7 @@ article.type-system-sans {
   }
 
   h1 {
-    font-family: $font-sans-narrow;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
     font-size: 1.6em;
     font-weight: 400;
     margin-bottom: 0.6em;
@@ -115,7 +115,7 @@ article.type-system-sans {
   }
 
   h2 {
-    font-family: $font-sans;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
     font-size: 1.1em;
     font-weight: 400;
     line-height: 1.5em;
@@ -137,7 +137,7 @@ article.type-system-sans {
   }
 
   h3 {
-   font-family: $font-sans;
+   font-family: 'Trebuchet MS', Helvetica, sans-serif;
    font-size: 1em;
    font-weight: 600;
    line-height: 1.4em;
@@ -147,19 +147,19 @@ article.type-system-sans {
 
   p.date {
     color: transparentize($base-font-color, 0.6);
-    font-family: $font-sans;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
     font-size: 0.8em;
     margin-bottom: 0.5em;
   }
 
   p {
-    font-family: $font-sans;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
     font-weight: 300;
     letter-spacing: 1;
     margin-bottom: 1.5em;
 
     span {
-      font-family: $font-sans;
+      font-family: 'Trebuchet MS', Helvetica, sans-serif;
       font-size: 0.8em;
       font-weight: 600;
       text-transform: uppercase;
@@ -168,7 +168,7 @@ article.type-system-sans {
 
   a.read-more {
     display: inline-block;
-    font-family: $font-sans;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
     font-size: 0.8em;
     font-weight: 700;
     margin-left: 0.2em;
@@ -188,7 +188,7 @@ article.type-system-sans {
   }
 
   p.author {
-    font-family: $font-sans;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
   }
 
   .btn {
