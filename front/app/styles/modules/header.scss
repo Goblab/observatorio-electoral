@@ -15,31 +15,11 @@ header {
 	top: 0;
 	@include box-shadow;
 
-	&.-red {
+	&.-home {
 		background: #1EBCEF;
 	}
 
-	&.-calendar {
-		background: #3CCEF0;
-	}
-
-	&.-data {
-		background: none;
-		box-shadow: none;
-
-		.logo {
-			@include box-shadow;
-
-			@include media($mobile) {
-				margin: 1em;
-				-ms-transform: scale(1);
-				-webkit-transform: scale(1);
-				transform: scale(1);
-
-			}
-		}
-	}
-
+	
 	&.-admin {
 		background: #5EA4CA;
 	}

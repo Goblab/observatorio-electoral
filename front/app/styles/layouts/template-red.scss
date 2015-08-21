@@ -381,6 +381,7 @@ header.is-visible {
 		border-bottom: 1px solid #ddd;
 		cursor: pointer;
 		@include transition(all 0.3s cubic-bezier(0.7,0,0.3,1));
+	    width: 100%;
 
 		&.is-expanded {
 			background: #eee;
