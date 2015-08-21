@@ -69,5 +69,10 @@ module.exports = {
     positives: 'string',
     positivesPercent: 'string',       
 
+    history: 'string',
+    banks: 'string',
+    unchecked: 'string',
+    uncheckedPercent: 'string',
+
   }
 };

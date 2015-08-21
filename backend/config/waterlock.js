@@ -64,7 +64,7 @@ module.exports.waterlock = {
           vars:{}
         }
       },      
-      createOnNotFound: true
+      createOnNotFound: true,
     }
   ],
 
