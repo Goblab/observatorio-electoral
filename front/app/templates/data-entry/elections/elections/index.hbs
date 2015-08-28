@@ -15,7 +15,7 @@
         {{#each electoralElection in model}}
           <div class="slat-item">
             <div class="slat-content">
-              <h4>{{electoralElection.name}} <small>{{time-format electoralElection.date 'LL' 'es-ar'}}</small></h4>
+              <h4>{{electoralElection.name}} <small>{{electoralElection.fixDate}}</small></h4>
               <p>
                 {{electoralElection.type.name}}
                 {{#if electoralElection.country.name}}

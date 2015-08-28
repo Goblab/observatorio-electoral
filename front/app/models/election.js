@@ -34,24 +34,24 @@ export default DS.Model.extend({
     nullsPercent: DS.attr('string'),
     
     //voters - Nulos
-    valids: Ember.computed('voters', 'nulls', function () {
-        return parseInt(this.get('voters')) - parseInt(this.get('nulls'));
-    }),
+    valids: DS.attr('string'),
     validsPercent: DS.attr('string'),
 
     //Validos - Blancos
-    positives: Ember.computed('valids', 'nulls', function () {
-        return parseInt(this.get('valids')) - parseInt(this.get('blank'));
-    }),
+    positives: DS.attr('string'),
     positivesPercent: DS.attr('string'),
 
     //Electors - voters
-    abstens: Ember.computed('electors', 'voters', function () {
-        return parseInt(this.get('electors')) - parseInt(this.get('voters'));
-    }),
+    abstens: DS.attr('string'),
     abstensPercent: DS.attr('string'),
 
     externals: DS.attr('string'),
     externalsPercent: DS.attr('string'),
+
+
+    fixDate: Ember.computed('date', function () {
+        console.log(moment(this.get('date')).add(4, 'h').format('LL'));
+        return moment(this.get('date')).add(4, 'h').format('LL');
+    }),
     
 });

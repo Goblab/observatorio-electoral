@@ -150,7 +150,7 @@
       Validos
     </label>
     <div class="quantity">
-      {{model.valids}}
+      {{input type="number" value=model.valids placeholder="Ingrese la cantidad"}}
     </div>
     <div class="percent">  
       {{input type="text" value=model.validsPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
@@ -162,7 +162,7 @@
       Positivos
     </label>
     <div class="quantity">
-      {{model.positives}}
+      {{input type="number" value=model.positives placeholder="Ingrese la cantidad"}}
     </div>
     <div class="percent">  
       {{input type="text" value=model.positivesPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}
@@ -174,7 +174,7 @@
       Abstenciones
     </label>
     <div class="quantity">
-      {{model.abstens}}
+      {{input type="number" value=model.abstens placeholder="Ingrese la cantidad"}}
     </div>
     <div class="percent">  
       {{input type="text" value=model.abstensPercent placeholder="Ingrese el porcentaje" pattern="\d+(,\d{2})?"}}

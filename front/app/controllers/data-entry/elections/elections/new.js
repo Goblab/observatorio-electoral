@@ -37,7 +37,7 @@ export default Ember.Controller.extend({
 		},		
 
 		addProvince: function (formula) {
-			var newStatus = this.get('store').createRecord('province-status');
+			var newStatus = this.get('store').createRecord('province-status', {isCustom: true});
 			formula.get('provinceStatuses').pushObject(newStatus);			
 		},
 

@@ -38,7 +38,12 @@
 {{#each formula.provinceStatuses as |status|}}
 <fieldset class="province-poll"> 
 	<label>
-		{{model-selector modelName='province' countryFilter=model.country.id  list=status.province value=status.province optionLabelPath="content.name" }}
+
+		{{#if status.isCustom}} 
+			{{model-selector modelName='province' countryFilter=model.country.id  list=status.province value=status.province optionLabelPath="content.name" }}
+		{{else}}
+			{{status.province.name}}
+		{{/if}}
 	</label>
 	<div class="votes">
 		Votos
