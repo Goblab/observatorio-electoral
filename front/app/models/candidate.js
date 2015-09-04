@@ -9,6 +9,6 @@ export default DS.Model.extend({
   country: DS.belongsTo('country', {async: true}),
 
   fullName: Ember.computed('name', 'lastName', function () {
-  		return this.get('lastName') + ', ' + this.get('name');
+  	return this.get('lastName') + ', ' + this.get('name');
   })
 });

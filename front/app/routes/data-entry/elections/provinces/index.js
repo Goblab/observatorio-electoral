@@ -16,6 +16,16 @@ export default Ember.Route.extend(InfinityRoute, AuthenticatedRouteMixin, {
         model.destroyRecord();
       }
     },
+    search: function () {
+      this.set('_listName', 'model');
+
+      var filter = { perPage: 10, startingPage: 1};
+
+      if (this.get('controller.country')) {
+        filter.country = this.get('controller.country.id'); 
+      }
+      this.get('controller').set('model', this.infinityModel("province", filter))
+    }    
   }
 });
 

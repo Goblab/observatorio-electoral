@@ -24,7 +24,11 @@
 <fieldset class="candidates-poll"> 
 	<label class="charge">
 		Cargo
-		{{model-selector modelName='charge' value=candidate.charge optionLabelPath="content.name" }}
+		{{#if candidate.charge}}
+			<div>{{candidate.charge.name}} <a {{action 'removeCandidateCharge' candidate}}>X</a></div>
+		{{else}}
+			{{model-selector modelName='charge' value=candidate.charge optionLabelPath="content.name" }}
+		{{/if}}
 	</label>
 	<label class="candidate">
 		Candidato
@@ -35,6 +39,8 @@
 {{/each}}      
 
 <a {{action 'addProvince' formula}} class="btn">Agregar Provincia</a>
+<a {{action 'removeAllProvince' formula}} class="btn">Borrar todas las provincias</a>
+
 {{#each formula.provinceStatuses as |status|}}
 <fieldset class="province-poll"> 
 	<label>

@@ -31,4 +31,31 @@
     </div>
   </fieldset>   
 
+  <a {{action 'addProvince' formula}} class="btn">Agregar Provincia</a>
+  {{#each formula.provinceStatuses as |status|}}
+  <fieldset class="province-poll"> 
+    <label>
+      {{#if status.isCustom}} 
+        {{model-selector modelName='province' countryFilter=model.country.id  list=status.province value=status.province optionLabelPath="content.name" }}
+      {{else}}
+        {{status.province.name}}
+      {{/if}}
+    </label>
+    <div class="votes">
+      Votos Si
+      {{input type="number" value=status.positiveVotes.votes}}
+    </div> 
+    <div class="percent">
+      {{input type="text" value=status.positiveVotes.percent pattern="\d+(,\d{2})?"}}
+    </div>     
+    <div class="votes">
+      Votos No
+      {{input type="number" value=status.negativeVotes.votes}}
+    </div> 
+    <div class="percent">
+      {{input type="text" value=status.negativeVotes.percent pattern="\d+(,\d{2})?"}}
+    </div>     
+    <a {{action 'removeProvincia' formula status}}>X</a>
+  </fieldset> 
+  {{/each}} 
 </div>

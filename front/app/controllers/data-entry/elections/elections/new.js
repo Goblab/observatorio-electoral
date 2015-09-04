@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
 		addFormula: function () {
 			var _this = this;
 			var newFormula = this.get('store').createRecord('formula');
-			if (this.get('isEjecutive')) {
+			if (this.get('isEjecutive') || this.get('isReferendum')) {
 				this.get('store').find('province', {country: this.get('model').get('country').get('id')}).then(function (provinces) {
 					provinces.forEach(function (province) {
 						var newStatus = _this.get('store').createRecord('province-status', {
@@ -32,8 +32,16 @@ export default Ember.Controller.extend({
 			formula.get('candidates').removeObject(candidate);
 		},
 
+		removeAllProvince: function (formula, province) { 
+			formula.get('provinceStatuses').clear();
+		},
+
 		removeProvincia: function (formula, province) {
 			formula.get('provinceStatuses').removeObject(province);
+		},		
+
+		removeCandidateCharge: function (candidate) {
+			candidate.set('charge', null);
 		},		
 
 		addProvince: function (formula) {

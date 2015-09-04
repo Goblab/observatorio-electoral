@@ -11,10 +11,16 @@ export default Ember.Route.extend(InfinityRoute, AuthenticatedRouteMixin, {
   },
 
   actions: {
-  	search: function () {
-  		this.set('_listName', 'model.content');
-  		this.get('controller').set('model', this.infinityModel("political-force", { perPage: 10, startingPage: 1, sort: 'name', query: this.get('controller.query')}))
-  	},
+    search: function () {
+      this.set('_listName', 'model');
+
+      var filter = { perPage: 10, startingPage: 1};
+
+      if (this.get('controller.country')) {
+        filter.country = this.get('controller.country.id'); 
+      }
+      this.get('controller').set('model', this.infinityModel("political-force", filter))
+    } 
   }
   
 });

@@ -4,6 +4,16 @@
     {{link-to "Agregar provincia" "data-entry.elections.provinces.new" classNames="btn"}}
   </div>
   <div class="section-content">
+    <div class="search-form">
+      <label>
+        Pais
+      </label>
+      {{model-selector modelName='country' value=country optionLabelPath="content.name" }}
+
+      <a {{action 'search'}} class="action">
+        {{fa-icon "search"}}
+      </a>
+    </div>  
     {{#if model.length}}
       <div class="slat-list ">
         {{#each province in model}}

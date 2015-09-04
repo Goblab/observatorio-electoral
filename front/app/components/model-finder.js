@@ -32,7 +32,7 @@ export default Ember.Component.extend({
     } else {
       return this.get('list.name');
     }
-  }.property('list'),
+  }.property('list', 'list.name'),
 
   actions: {
   	add: function (model) {

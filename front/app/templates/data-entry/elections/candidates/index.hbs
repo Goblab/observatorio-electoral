@@ -4,7 +4,16 @@
    {{link-to "Agregar candidato" "data-entry.elections.candidates.new" classNames="btn"}}
   </div>
 <div class="section-content">
+    <div class="search-form">
+      <label>
+        Pais
+      </label>
+      {{model-selector modelName='country' value=country optionLabelPath="content.name" }}
 
+      <a {{action 'search'}} class="action">
+        {{fa-icon "search"}}
+      </a>
+    </div>  
 {{#if model.length}}
   <table class="table-minimal">
     <thead>

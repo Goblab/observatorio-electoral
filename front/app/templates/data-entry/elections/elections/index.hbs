@@ -5,7 +5,12 @@
   </div>
   <div class="section-content">
     <div class="search-form">
-      {{input type="text" value=query class="field"}}
+      <label>
+        Pais
+      </label>
+      {{model-selector modelName='country' value=country optionLabelPath="content.name" }}
+      {{model-selector modelName='election-type' value=type optionLabelPath="content.name" }}
+
       <a {{action 'search'}} class="action">
         {{fa-icon "search"}}
       </a>

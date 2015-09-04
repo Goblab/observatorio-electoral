@@ -13,5 +13,32 @@
         {{formula.negativeVotes.votes}}
         <small>({{formula.negativeVotes.percent}}%)</small>
       </span>
-  	</div> 	   	 	
+  	</div>
+
+  {{#each formula.provinceStatuses as |status|}}
+      <div class="brief-item">
+      <div class="item-name">
+        
+      Provincia | Estado  <!-- Select Obligatoria | Opcional -->
+      {{status.province.name}}
+      </div>
+      <div class="item-votes">
+
+       {{status.positiveVotes.votes}}
+       <small>Votos</small>
+      </div>
+      <div class="item-percent">
+         {{status.positiveVotes.percent}}%
+      </div>
+
+     <div class="item-votes">
+
+       {{status.negativeVotes.votes}}
+       <small>Votos</small>
+      </div>
+      <div class="item-percent">
+         {{status.negativeVotes.percent}}%
+      </div>      
+      </div>
+  {{/each}}      	   	 	
  </div> 	
