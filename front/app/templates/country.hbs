@@ -2,6 +2,14 @@
 	<h2>{{model.country.name}}</h2>
 	
 	<ul>
+	{{#each model.types as |type|}}
+		<li {{bind-attr class="type.isActive:active"}}>
+			<a {{action 'search' type model.country}} >{{type.name}}</a>
+		</li>
+	{{/each}}
+	</ul>	
+
+	<ul>
 	{{#each model.elections as |election|}}
 		{{partial 'partials/election/brief'}}
 	{{/each}}
