@@ -13,6 +13,7 @@ export default Ember.Controller.extend({
 		this.set('isAdmin', false);
 		this.set('isDataEntry', false);
 		this.set('isHome', false);
+		this.set('isData', true);
 
 		if (RegExp('index').test(this.get('currentPath'))) {
 			this.set('isHome', true);
@@ -21,10 +22,12 @@ export default Ember.Controller.extend({
 		if (RegExp('admin').test(this.get('currentPath'))) {
 			this.set('isAdmin', true);
 			this.set('isHome', false);
+			this.set('isData', false);
 		}		
 		if (RegExp('data-entry').test(this.get('currentPath'))) {
 			this.set('isDataEntry', true);
 			this.set('isHome', false);
+			this.set('isData', false);
 		}		
 
 	}.observes('currentPath'),
