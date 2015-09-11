@@ -10,6 +10,7 @@ export default DS.Model.extend({
     category: DS.belongsTo('election-category', {async: true}),
     cameraType: DS.belongsTo('camera-type', {async: true}),
     vinculated: DS.attr('boolean'),
+    enabled: DS.attr('boolean'),
     participation: DS.belongsTo('election-participation', {async: true}),
     formulas: DS.hasMany('formula', {async: true}), 
 
