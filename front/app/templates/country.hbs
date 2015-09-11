@@ -1,0 +1,9 @@
+<div>
+	<h2>{{model.country.name}}</h2>
+	
+	<ul>
+	{{#each model.elections as |election|}}
+		{{partial 'partials/election/brief'}}
+	{{/each}}
+	</ul>
+</div>

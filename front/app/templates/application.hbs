@@ -136,7 +136,17 @@
 		</ul>
 	</div><!-- main-nav-wrap -->
 
+
+
 {{/if}}
+
+<div>
+	<ul>
+	{{#each model.countries as |country|}}
+		<li>{{#link-to 'country' country.id}} {{country.name}} {{/link-to}}</li>
+	{{/each}}
+	</ul>
+</div>
 
 <div {{bind-attr class=":content isHome:-home isShowMenu:show isShowApps:is-visible isDataEntry:-admin isAdmin:-admin"}}>
 	{{outlet}}

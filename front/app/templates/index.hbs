@@ -5,3 +5,11 @@
 <div class="index-container">
   <img src="/assets/images/Observatorio-latino.svg" width="310px" alt="">
 </div>
+
+<div>
+	<ul>
+	{{#each model.lastElections as |election|}}
+		{{partial 'partials/election/brief'}}
+	{{/each}}
+	</ul>
+</div>

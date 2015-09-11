@@ -1,0 +1,18 @@
+<li>
+	{{#if election.country.flag.isFulfilled}}
+		<div></div>
+		<div>
+			<h4>{{#link-to 'election' election.id}} {{election.name}} {{/link-to}}<small>{{election.fixDate}}</small></h4>
+            <div class="img-container -country">
+              <img {{bind-attr src=election.country.flag.url}} width="50px">
+            </div>
+			<p>{{election.type.name}} {{election.level.name}}</p>
+			<p>participacion: {{election.voters}} ({{election.votersPercent}}%)</p>
+			{{#each election.bestFormulas as |formula|}}
+				{{partial 'partials/formula/brief'}}
+			{{/each}}
+		</div>
+	{{else}}
+		<div class="dummy"></div>
+	{{/if}}
+</li>

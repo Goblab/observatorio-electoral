@@ -1,0 +1,28 @@
+<div class="brief-header">
+  <h5>{{formula.politicalForce.name}}</h5>
+  <p>{{formula.votes}} ({{formula.percent}}%)</p>  
+</div>
+
+<div class="brief-content">
+  <div class="slat-list ">
+    {{#each formula.candidates as |candidate|}}
+      <div class="slat-item -image">
+       {{#link-to 'candidate' candidate.candidate.id}}
+        <div class="slat-img">
+           {{#if candidate.candidate.picture.url}}
+            <div class="img-container -candidates">
+              <img {{bind-attr src=candidate.candidate.picture.url}} width="50px">
+            </div>
+          {{/if}}  
+        </div>
+       {{/link-to}}
+        <div class="slat-content">
+          <h5>{{candidate.candidate.fullName}}</h5>
+        </div>
+        <div class="slat-action">
+           <i>{{candidate.charge.name}}</i>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
