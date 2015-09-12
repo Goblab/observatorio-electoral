@@ -5,38 +5,59 @@
   </div>
   <div class="section-content">
     <div class="search-form">
-      <label>
-        Pais
+      <label class="item">
+        <span>Pais</span>
+        {{model-selector modelName='country' value=country optionLabelPath="content.name" class="select-item" }}
       </label>
-      {{model-selector modelName='country' value=country optionLabelPath="content.name" }}
-      {{model-selector modelName='election-type' value=type optionLabelPath="content.name" }}
-
+      <label class="item">
+        <span>Tipo de elección</span>
+        {{model-selector modelName='election-type' value=type optionLabelPath="content.name" class="select-item"}}
+      </label>
       <a {{action 'search'}} class="action">
         {{fa-icon "search"}}
       </a>
     </div>
     {{#if model.length}}
       <div class="slat-list">
+
         {{#each electoralElection in model}}
-          <div class="slat-item">
-            <div class="slat-content">
-              <h4>{{electoralElection.name}} <small>{{electoralElection.fixDate}}</small></h4>
-              <p>
-                {{electoralElection.type.name}}
-                {{#if electoralElection.country.name}}
-                  en {{electoralElection.country.name}}
-                {{/if}}
-                {{#if electoralElection.level.name}}
-                  a nivel {{electoralElection.level.name}}
-                {{/if}}
-              </p>
+         {{#if electoralElection.country.isFulfilled}}
+            <div class="slat-item -image">
+               <div class="slat-img">
+                {{#if electoralElection.country.flag.url}}
+                  <div class="img-container -country">
+                    <img {{bind-attr src=electoralElection.country.flag.url}} width="50px">
+                  </div>
+                {{else}}
+                 <div class="img-container -country">
+                    
+                  </div>
+                {{/if}} 
+              </div>
+              <div class="slat-content">
+                <h4>{{electoralElection.name}} <small>{{electoralElection.fixDate}}</small></h4>
+                <p>
+                  {{electoralElection.type.name}}
+                  {{#if electoralElection.country.name}}
+                    en {{electoralElection.country.name}}
+                  {{/if}}
+                  {{#if electoralElection.level.name}}
+                    a nivel {{electoralElection.level.name}}
+                  {{/if}}
+                </p>
+              </div>
+              <div class="slat-action">
+                {{link-to "Editar" "data-entry.elections.elections.edit" electoralElection classNames="btn"}}
+                {{link-to "Ver" "data-entry.elections.elections.show" electoralElection classNames="btn"}}
+                <a href="#" class="btn" {{action "remove" electoralElection}}>Eliminar</a>
+              </div>
             </div>
-            <div class="slat-action">
-              {{link-to "Editar" "data-entry.elections.elections.edit" electoralElection classNames="btn"}}
-              {{link-to "Ver" "data-entry.elections.elections.show" electoralElection classNames="btn"}}
-              <a href="#" class="btn" {{action "remove" electoralElection}}>Eliminar</a>
-            </div>
-          </div>
+            
+          {{else}}
+            
+            
+           
+          {{/if}}
         {{/each}}
         {{infinity-loader infinityModel=model}}
       </div>

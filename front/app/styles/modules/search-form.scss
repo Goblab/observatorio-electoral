@@ -40,6 +40,32 @@
 
 	.search-form {
 		position: relative;
-		
+		@include outer-container(100%);
+
+		.item {
+			@include span-columns(4);
+			    font-size: 14px;
+		}
+
+		label {
+			position: relative;
+
+			span {
+				position: relative;
+			}
+		}
+
+		.select-item {
+			position: relative;
+
+			select {
+				position: relative;
+				width: 100%;
+				margin-top: 5px;
+				padding: 7px;
+				border: 1px solid #ddd;
+			}
+			
+		}
 	}
 }

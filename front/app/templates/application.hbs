@@ -27,7 +27,7 @@
 		</ul>
 	</nav> <!-- .change-app-container -->
 
-	<header {{bind-attr class="isShowApps:is-visible isHome:-red isDataEntry:-admin isAdmin:-admin"}}>
+	<header {{bind-attr class="isShowApps:is-visible isHome:-home isDataEntry:-admin isAdmin:-admin"}}>
 		{{#if isHome}}
 			<button class="logo" {{action 'toggleApps' target="view"}}>
 				<img src="assets/images/observatorio-logo.svg">
@@ -61,7 +61,7 @@
 		{{/if}}
 	</header>
 
-	<div {{bind-attr class=":menu-wrap isShowMenu:show isData:-data isDataEntry:-admin isRed:-red isCalendar:-calendar isAdmin:-admin"}}> 
+	<div {{bind-attr class=":menu-wrap isShowMenu:show isData:-data isHome:-home isDataEntry:-admin isRed:-red isCalendar:-calendar isAdmin:-admin"}}> 
 		<div class="menu-nav fa-ul">
 			{{#if session.isAuthenticated}}
 				{{#if isAdmin}}
@@ -136,18 +136,38 @@
 		</ul>
 	</div><!-- main-nav-wrap -->
 
-
-
 {{/if}}
 
-<div>
-	<ul>
-	{{#each model.countries as |country|}}
-		<li>{{#link-to 'country' country.id}} {{country.name}} {{/link-to}}</li>
-	{{/each}}
-	</ul>
+
+{{#if isData}}
+
+	{{#link-to 'index' class="logo"}} 
+		<img src="assets/images/observatorio-logo.svg">
+	{{/link-to}}
+
+	{{#link-to 'login' class="btn-login"}} 
+		{{fa-icon 'lock'}}
+	{{/link-to}}
+
+	{{/if}}
+
+	<div {{bind-attr class=":content isHome:-home isShowMenu:show isShowApps:is-visible isDataEntry:-admin isAdmin:-admin"}}>
+	
+	{{#if isData}}
+	<div class="country-menu">
+		<ul>
+		{{#each model.countries as |country|}}
+			<li>
+			{{#link-to 'country' country.id}}
+				<img {{bind-attr src=country.flag.url}} width="40%">
+			{{/link-to}}
+			</li>
+		{{/each}}
+		</ul>
+	</div>
+	{{/if}}
+
+	{{liquid-outlet}}
 </div>
 
-<div {{bind-attr class=":content isHome:-home isShowMenu:show isShowApps:is-visible isDataEntry:-admin isAdmin:-admin"}}>
-	{{outlet}}
-</div>
+

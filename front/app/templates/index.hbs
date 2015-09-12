@@ -1,12 +1,4 @@
-{{#link-to 'login' class="btn-login"}} 
-	<span>Iniciar sesión</span>
-{{/link-to}}
-
-<div class="index-container">
-  <img src="/assets/images/Observatorio-latino.svg" width="310px" alt="">
-</div>
-
-<div>
+<div class="brief-container">
 	<ul>
 	{{#each model.lastElections as |election|}}
 		{{partial 'partials/election/brief'}}
