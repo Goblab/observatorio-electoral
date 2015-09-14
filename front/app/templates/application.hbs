@@ -141,31 +141,63 @@
 
 {{#if isData}}
 
-	{{#link-to 'index' class="logo"}} 
+	
+	{{#link-to 'index' class="logo-home"}} 
 		<img src="assets/images/observatorio-logo.svg">
 	{{/link-to}}
 
-	{{#link-to 'login' class="btn-login"}} 
-		{{fa-icon 'lock'}}
-	{{/link-to}}
-
+	{{#if session.isAuthenticated}}
+		<a class="btn-login" {{ action 'invalidateSession' }}>
+			{{session.user.fullName}}
+		</a>
+	{{else}}
+		{{#link-to 'login' class="btn-login"}} 
+			{{fa-icon 'lock'}}
+		{{/link-to}}
 	{{/if}}
 
-	<div {{bind-attr class=":content isHome:-home isShowMenu:show isShowApps:is-visible isDataEntry:-admin isAdmin:-admin"}}>
+{{/if}}
+
+
+<div {{bind-attr class=":content isHome:-home isShowMenu:show isShowApps:is-visible isDataEntry:-admin isAdmin:-admin"}}>
 	
-	{{#if isData}}
-	<div class="country-menu">
-		<ul>
-		{{#each model.countries as |country|}}
-			<li>
-			{{#link-to 'country' country.id}}
-				<img {{bind-attr src=country.flag.url}} width="40%">
-			{{/link-to}}
-			</li>
-		{{/each}}
+	{{#liquid-if isHome class="country-menu"}}
+		<div menu-id="1">
+			{{scroll-to href='#intro' label='Intro'}}
+			{{scroll-to href='#paises' label='Paises'}}
+			{{scroll-to href='#quienes' label='Quienes'}}
+			{{scroll-to href='#contacto' label='Contacto'}}
+		</div>
+
+	{{else}}	
+		
+		<ul menu-id="1">
+			{{#each model.countries as |country|}}
+				{{#if country.flag.isFulfilled}}
+					<li>
+					{{#link-to 'country' country.id}}
+						{{country.name}}
+					{{/link-to}}
+					</li>
+				{{else}}
+					<div class="dummy">lala</div>
+				{{/if}}
+			{{/each}}
 		</ul>
-	</div>
-	{{/if}}
+	
+	{{/liquid-if}}
+	
+
+	{{#liquid-if isHome class="action-bar"}}
+		
+		<h5>Inicio</h5>
+
+	{{else}}	
+		
+		<h5>Detalle</h5>
+	
+	{{/liquid-if}}
+
 
 	{{liquid-outlet}}
 </div>

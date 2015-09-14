@@ -1,17 +1,36 @@
-<li class="item-brief">
-	{{#if election.country.flag.isFulfilled}}
-		<div>
-            <div class="flag -brief" post-id="image-{{election.id}}">
-              <img {{bind-attr src=election.country.flag.url}}>
-            </div>
-			<h4>{{#link-to 'election' election.id}} {{election.name}} {{/link-to}} <br> <small>{{election.fixDate}}</small></h4>
-			<p>{{election.type.name}} {{election.level.name}}</p>
-			<p>participacion: {{election.voters}} ({{election.votersPercent}}%)</p>
+{{#if election.country.flag.isFulfilled}}
+
+	  <div class="card">
+	    <div class="card-image">
+	    	<div class="card-headers" post-id="header-{{election.id}}">
+				<time>{{election.fixDate}}</time> <br>
+				<small> {{election.type.name}} {{election.level.name}}</small>
+		    </div>
+			{{#link-to 'election' election.id}}
+			<img {{bind-attr src=election.country.flag.url}} post-id="image-{{election.id}}">
+			{{/link-to}}
+			 
+	    </div>
+		<div class="card-copy">
+			{{#tool-tipster title="Participación"}} 
+			<div class="participation">
+				<div class="vote">
+					{{fa-icon 'users'}}
+					{{election.voters}}
+				</div>
+				<div class="percent">
+					{{election.votersPercent}}%
+				</div>
+			</div>
+			{{/tool-tipster}}
+
+
 			{{#each election.bestFormulas as |formula|}}
 				{{partial 'partials/formula/brief'}}
 			{{/each}}
 		</div>
-	{{else}}
-		<div class="dummy"></div>
-	{{/if}}
-</li>
+	  </div>
+	 
+{{else}}
+	<div class="dummy"></div>
+{{/if}}
