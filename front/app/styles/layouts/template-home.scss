@@ -16,7 +16,7 @@
     overflow: hidden;
     left: 0;
     width: 200px;
-    background: #ddd;
+    background: darken(#aae0ff, 10%);
     z-index: 1;
     top: 0;
     bottom: 0;
@@ -31,6 +31,7 @@
 
 	li {
 width: 100%;
+padding: 10px 0;
 	}
 
 	a {
@@ -98,6 +99,7 @@ margin: 0 auto;
 .country-filter {
 	float: left;
 	display: block;
+    padding: 0;
 
 	li {
 		float: left;
@@ -106,6 +108,7 @@ margin: 0 auto;
 
 		&.active {
 			font-weight: bold;
+			border-bottom: 2px solid #333;
 		}
 	}
 }

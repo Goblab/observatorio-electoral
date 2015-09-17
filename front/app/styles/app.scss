@@ -4,13 +4,13 @@
 @import "layouts/layouts";
 
 .pace .pace-progress {
-  background: #ffffff;
+  background: #20905d;
   position: fixed;
   z-index: 8000;
   top: 0;
   right: 100%;
   width: 100%;
-  height: 2px;
+  height: 5px;
 }
 
 
@@ -21,3 +21,51 @@
 .text-right {
 	text-align: right;
 }
+
+
+.card-headers {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 60px;
+    text-align: center;
+  
+}
+
+.card {
+
+	&.-brief {
+		.card-meta {
+		
+			font-weight: 600;
+
+			time {
+				font-size: 16px;
+			}
+		}
+
+		a {
+			opacity: 0.6;
+		}
+
+	}
+
+	&.-detail {
+.card-meta {
+		
+		font-weight: 600; 
+
+
+		time {
+			font-size: 22px;
+		}
+		
+	}
+
+	}
+
+}
+
+
+	

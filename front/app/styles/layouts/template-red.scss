@@ -197,15 +197,18 @@ header.is-visible {
     position: fixed;
     margin: 0;
     width: 200px;
-    height: 100px;
+    height: 80px;
     border-radius: 50px;
     z-index: 2001;
     padding: 0;
     border: none;
+    background: #2058ab;
+    border-radius: 0;
 	@include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
 
 	img {
 	    width: 55px;
+	    margin: 10px;
 	}
 
 }

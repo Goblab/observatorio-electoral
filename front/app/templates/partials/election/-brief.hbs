@@ -1,28 +1,41 @@
 {{#if election.country.flag.isFulfilled}}
 
-	  <div class="card">
+	  <div class="card -brief">
 	    <div class="card-image">
-	    	<div class="card-headers" post-id="header-{{election.id}}">
-				<time>{{election.fixDate}}</time> <br>
-				<small> {{election.type.name}} {{election.level.name}}</small>
-		    </div>
+
+			<div class="card-headers" post-id="header-{{election.id}}">
+				<div class="card-meta">
+					
+					<time>{{election.fixDate}}</time> <br>
+					<small> {{election.type.name}} {{election.level.name}}</small>
+		    
+				</div>
+
+			    {{#tool-tipster title="Participación"}} 
+				<div class="participation">
+					<div class="vote">
+						{{fa-icon 'users'}}
+						{{election.voters}}
+					</div>
+					<div class="percent">
+						{{election.votersPercent}}%
+					</div>
+				</div>
+				{{/tool-tipster}}
+
+			</div>
+
+			
+
 			{{#link-to 'election' election.id}}
-			<img {{bind-attr src=election.country.flag.url}} post-id="image-{{election.id}}">
+			<img {{bind-attr src=election.country.flag.url}} post-id="image-{{election.id}}" >
 			{{/link-to}}
+
+
 			 
 	    </div>
 		<div class="card-copy">
-			{{#tool-tipster title="Participación"}} 
-			<div class="participation">
-				<div class="vote">
-					{{fa-icon 'users'}}
-					{{election.voters}}
-				</div>
-				<div class="percent">
-					{{election.votersPercent}}%
-				</div>
-			</div>
-			{{/tool-tipster}}
+			
 
 
 			{{#each election.bestFormulas as |formula|}}
