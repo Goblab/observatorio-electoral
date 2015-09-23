@@ -17,7 +17,7 @@ export default Ember.Route.extend(InfinityRoute, AuthenticatedRouteMixin, {
       }
     }, 
     search: function () {
-      this.set('_listName', 'model');
+      this.set('_listName', 'model.content');
 
       var filter = { perPage: 10, startingPage: 1};
 
