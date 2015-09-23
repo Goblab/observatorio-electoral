@@ -1,0 +1,26 @@
+<ul class="country-filter">
+{{#each model.types as |type|}}
+	<li {{bind-attr class="type.isActive:active"}}>
+		<a {{action 'search' type model.country}} >{{type.name}}</a>
+	</li>
+{{/each}}
+</ul>
+
+<section class="section-content brief-container" style="width: 100%;">
+	
+	{{#if model.elections}}
+		<div class="cards">
+		{{#each model.elections as |election|}}
+			{{partial 'partials/election/brief'}}
+		{{/each}}
+		</div>
+	{{else}}
+
+		<div class="no-content">
+		{{fa-icon 'exclamation'}}
+
+			Todavia no se ha cargado el contenido
+		</div>
+	{{/if}}
+	
+</section>

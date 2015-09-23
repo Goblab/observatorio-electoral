@@ -1,14 +1,10 @@
-<article>
-  
-  
-</article>
-<h1>Listado de roles</h1>
-
-<p>
-  {{link-to "Crear nuevo rol" "admin.roles.new" }}
-</p>
+  <div class="section-header -table">
+    <h1>Listado de roles</h1>
+    {{link-to "Crear nuevo rol" "admin.roles.new" classNames="btn" }}
+  </div>
 
 {{#if model.length}}
+ <div class="section-content ">
   <table class="table-minimal">
     <thead>
       <tr>
@@ -42,6 +38,7 @@
       {{/each}}
     </tbody>
   </table>
+  </div>
 {{else}}
   <div class="loading">
   {{loading-bubbles color='#0083ff' size=100}}

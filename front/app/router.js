@@ -176,6 +176,15 @@ Router.map(function() {
     });
   });
 
+  this.route('country', {
+    path: "country/:country_id",
+  });
+  this.route('election', {
+    path: "election/:election_id",
+  });
+  this.route('candidate', {
+   path: "candidate/:candidate_id",
+  });
 });
 
 export default Router;

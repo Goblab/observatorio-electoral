@@ -37,6 +37,8 @@ module.exports = {
     }, 
 
     vinculated: 'boolean',
+    
+    enabled: 'boolean',
 
     participation: {
       model: 'electionParticipation'

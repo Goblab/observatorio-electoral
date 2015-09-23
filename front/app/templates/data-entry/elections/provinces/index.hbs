@@ -5,10 +5,10 @@
   </div>
   <div class="section-content">
     <div class="search-form">
-      <label>
+      <label class="item">
         Pais
+      {{model-selector modelName='country' value=country optionLabelPath="content.name" class="select-item"}}
       </label>
-      {{model-selector modelName='country' value=country optionLabelPath="content.name" }}
 
       <a {{action 'search'}} class="action">
         {{fa-icon "search"}}
@@ -18,6 +18,13 @@
       <div class="slat-list ">
         {{#each province in model}}
           <div class="slat-item -image">
+             <div class="slat-img">
+              {{#if province.country.flag.url}}
+                <div class="img-container -country">
+                  <img {{bind-attr src=province.country.flag.url}} width="50px">
+                </div>
+              {{/if}} 
+            </div>
             <div class="slat-content">
                          
               <h4>{{province.name}}</h4>

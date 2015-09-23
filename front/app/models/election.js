@@ -10,6 +10,7 @@ export default DS.Model.extend({
     category: DS.belongsTo('election-category', {async: true}),
     cameraType: DS.belongsTo('camera-type', {async: true}),
     vinculated: DS.attr('boolean'),
+    enabled: DS.attr('boolean'),
     participation: DS.belongsTo('election-participation', {async: true}),
     formulas: DS.hasMany('formula', {async: true}), 
 
@@ -50,8 +51,41 @@ export default DS.Model.extend({
 
 
     fixDate: Ember.computed('date', function () {
-        console.log(moment(this.get('date')).add(4, 'h').format('LL'));
         return moment(this.get('date')).add(4, 'h').format('LL');
     }),
     
+    bestFormulas: Ember.computed('formulas.@each', function () {
+        var bf = [];
+        this.get('formulas').forEach(function (formula) {
+            if (bf.length < 3) {
+                bf.pushObject(formula);
+            }
+        });
+        return bf;
+    }),
+
+    isEjecutive: Ember.computed('type.name', function () {
+        return  this.get('type').get('name') === 'Ejecutiva';
+    }),
+
+    isLegislative: Ember.computed('type.name', function () {
+        var rg = /legislativas/i;
+        return rg.test(this.get('type').get('name')); 
+    }),
+
+    isReferendum: Ember.computed('type.name', function () {
+        var rg = /refer/i;
+        return rg.test(this.get('type').get('name')); 
+    }),
+
+
+    isSenators: Ember.computed('type.name', function () {
+        var rg = /senador/i;
+        return rg.test(this.get('type').get('name')); 
+    }),
+
+    isDiputies: Ember.computed('type.name', function () {
+        var rg = /diputado/i;
+        return rg.test(this.get('type').get('name')); 
+    }),
 });

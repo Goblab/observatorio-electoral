@@ -1,0 +1,11 @@
+<div>
+	{{#if election.isEjecutive}}
+		{{partial 'partials/formula/ejecutive/detail'}}
+	{{/if}}
+	{{#if election.isLegislative}}
+		{{partial 'partials/formula/legislative/detail'}}
+	{{/if}}
+	{{#if election.isReferendum}}
+		{{partial 'partials/formula/referendum/detail'}}
+	{{/if}}
+</div>

@@ -1,0 +1,72 @@
+.cards {
+
+}
+
+
+.card {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+
+  @include transition (all 0.2s ease-in-out);
+  background-color: #fff;
+  border-radius: $base-border-radius;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px darken($base-background-color, 10%);
+  cursor: pointer;
+  margin: 0 1em;
+  position: relative;
+
+
+  .card-image {
+    height: auto;
+    background-color: #f1f1f1;
+
+    img {
+      @include transition (all 0.2s ease-in-out);
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      width: 100%;
+      opacity: 1;
+    }
+  }
+
+  .card-header {
+    @include transition (all 0.2s ease-in-out);
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: ($base-spacing / 3) ($base-spacing / 2);
+  }
+
+  .card-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: ($base-spacing / 2) ($base-spacing / 2);
+
+    p {
+      margin: 0 0 ($base-spacing / 2);
+    }
+  }
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+
+    img {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    background-color: #f9f9f9;
+
+    .card-header {
+      background-color: #f9f9f9;
+    }
+  }
+}

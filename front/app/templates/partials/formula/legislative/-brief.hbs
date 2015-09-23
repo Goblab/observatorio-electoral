@@ -1,0 +1,34 @@
+<div class="brief-header">
+    <h5>{{formula.politicalForce.name}}</h5>
+  </div>
+  <div class="brief-content">	
+     <div class="slat-list">
+        <div class="slat-item -title">
+          <div class="slat-title">
+          {{#if election.isDiputies}}
+            Diputados
+          {{else}}
+            {{#if election.isSenators}}
+              Senadores
+            {{else}}
+              Asambleistas
+            {{/if}}
+          {{/if}}
+          </div>
+          <div class="slat-content">
+            <div class="slat-vote">
+              {{formula.assemblyman.votes}} <br>
+              Votos
+            </div>
+            <div class="slat-vote">
+             {{formula.assemblyman.percent}}% <br>
+              Porcentaje 
+            </div>
+            <div class="slat-vote">
+              {{formula.assemblyman.positions}} <br>
+              Bancas 
+            </div>
+          </div>
+        </div>
+    </div>
+</div> 	

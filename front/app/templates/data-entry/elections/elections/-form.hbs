@@ -1,7 +1,21 @@
 <form {{action "saveElection" on="submit"}} class="create-event">
+  
 
   <div class="field-container">
-    <legend>Elección {{model.name}}</legend>
+
+
+    <legend>Elección {{model.name}}
+
+    <label class="election-publish">
+      {{input type="checkbox" name="isEnabled" checked=model.enabled}}  
+      {{#if model.enabled}}
+        Publicado <!-- Select Si | No  (Si es referendum) -->
+      {{else}}
+        Publicar en la web
+      {{/if}}
+       </label>
+
+    </legend>
     <fieldset class="three">
     <label>
       Nombre
@@ -26,6 +40,8 @@
      
     </fieldset>    
 
+    
+
     <fieldset class="three">
       <label>
         Nivel <!-- Select -->
@@ -38,6 +54,8 @@
         {{model-selector modelName='election-type' value=model.type optionLabelPath="content.name" }}
       </label>
     </fieldset>  
+
+
     
   
 
@@ -221,18 +239,23 @@
 
       <a {{action 'addFormula'}}>Agregar Formula</a>
     </legend>
+    <div class="formula-container">
+      
     {{#each model.formulas as |formula|}}
-        {{#if isEjecutive}}
-          {{partial 'data-entry/elections/elections/formulas/ejecutive'}}
-        {{/if}}
-        {{#if isLegislative}}
-          {{partial 'data-entry/elections/elections/formulas/legislative'}}
-        {{/if}}
-        {{#if isReferendum}}
-          {{partial 'data-entry/elections/elections/formulas/referendum'}}
-        {{/if}}
-        <a {{action 'removeFormula' formula}}>X</a>      
+        <div class="formula-item">
+          {{#if isEjecutive}}
+            {{partial 'data-entry/elections/elections/formulas/ejecutive'}}
+          {{/if}}
+          {{#if isLegislative}}
+            {{partial 'data-entry/elections/elections/formulas/legislative'}}
+          {{/if}}
+          {{#if isReferendum}}
+            {{partial 'data-entry/elections/elections/formulas/referendum'}}
+          {{/if}}
+          <a {{action 'removeFormula' formula}} class="remove-formula">{{fa-icon 'times'}}</a>      
+        </div>
     {{/each}}
+    </div>
   </div>
 
   <fieldset>

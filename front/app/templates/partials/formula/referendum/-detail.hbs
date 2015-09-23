@@ -1,0 +1,17 @@
+ <div class="brief-referendum">	
+    <p>{{formula.proposal}}</p> 
+    <div class="referendum-item -yes">
+    	{{fa-icon 'thumbs-o-up'}}
+      <span>
+        {{formula.positiveVotes.votes}}
+        <small>({{formula.positiveVotes.percent}}%)</small>
+      </span>
+  	</div> 
+     <div class="referendum-item">
+    	{{fa-icon 'thumbs-o-down'}}
+      <span>
+        {{formula.negativeVotes.votes}}
+        <small>({{formula.negativeVotes.percent}}%)</small>
+      </span>
+  	</div>
+</div>

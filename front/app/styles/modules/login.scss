@@ -6,10 +6,12 @@ $medium: new-breakpoint(max-width 800px 6);
 
 
 .btn-login {
-	position: fixed;
-	top: 25px;
-	right: 35px;
-	
+    position: fixed;
+    left: 75px;
+    bottom: 35px;
+    z-index: 2;
+    width: 50px;
+    text-align: center;	
 
 	span {
 		font-size: 18px;
@@ -37,10 +39,6 @@ $medium: new-breakpoint(max-width 800px 6);
 }
 
 .login-form {
-
-	@include vertical-align;
-	top: 35%;
-
 	margin: 0 auto;
 	width: 350px;
 

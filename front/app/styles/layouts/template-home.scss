@@ -1,0 +1,190 @@
+.content {
+	&.-admin {
+
+		margin-left: 0;
+
+		.country-menu {
+			-webkit-transform: translate-200pxd(0, 0, 0);
+			transform: translate3d(-200px, 0, 0);
+		}
+	}
+}
+
+
+.country-menu {
+    position: fixed;
+    overflow: hidden;
+    left: 0;
+    width: 200px;
+    background: darken(#aae0ff, 10%);
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    padding-top: 120px;
+    @include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
+
+	ul {
+    padding: 0;
+    margin: 0;
+    @include outer-container(100%);
+	}
+
+	li {
+width: 100%;
+padding: 10px 0;
+	}
+
+	a {
+    float: left;
+    width: 100%;
+    padding: 5px 15px;
+
+	}
+
+	img {
+position: relative;
+display: block;
+margin: 0 auto;
+	}
+
+	span {
+position: relative;
+display: block;
+	}
+}
+
+.brief-container {
+
+	ul {
+		padding: 0;
+		margin: 0;
+		@include outer-container(100%);
+	}
+
+	.card {
+		float: left;
+		width: 22%;
+	}
+
+	li {
+		   
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+
+			img {
+position: relative;
+display: block;
+margin: 0 auto;
+	}
+	}
+}
+
+
+.participation {
+
+	float: left; 
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+
+	.vote {
+		@include span-columns(6);
+	}
+
+	.percent {
+		@include span-columns(6);
+	}
+}
+
+.country-filter {
+	float: left;
+	display: block;
+    padding: 0;
+
+	li {
+		float: left;
+		display: inline-block;
+		margin: 10px 15px; 
+
+		&.active {
+			font-weight: bold;
+			border-bottom: 2px solid #333;
+		}
+	}
+}
+
+#intro {
+	.slat-title {
+		display: none;
+	}
+
+	.slat-content {
+		padding: 0;
+	}
+}
+
+.full-width {
+	height: 300px; margin: 0 auto; width: 600px; padding: 60px
+}
+
+.flag {
+
+	img {
+		width: 100%;
+	}
+
+	&.-brief {
+		    display: block;
+    width: 150px;
+    margin: 0 auto;
+
+		
+	}
+
+	&.-detail {
+
+		display: block;
+		width: 350px;
+
+	}
+}
+
+
+.card {
+	h4, h5, p {
+		margin: 0;
+	}
+
+	a {
+		text-decoration: underline;
+	}
+
+	h4 {
+		    line-height: 28px;
+    margin: 5px 0 0 0;
+	}
+
+	h5 {
+		line-height: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 15px 0 0 0;
+    text-align: left;
+	}
+}
+
+.action-bar {
+	position: fixed; 
+	left: 200px;
+	top: 0;
+	right: 0;
+	height: 55px;
+	padding: 5px;
+	background: #f9f9f9;
+	z-index: 2;
+
+	h5 {
+		margin: 10px 15px;
+		font-size: 23px;
+	}
+}

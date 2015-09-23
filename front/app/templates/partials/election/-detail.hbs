@@ -1,0 +1,121 @@
+<div class="card -detail">
+	 <div class="card-image">
+
+			<div class="card-headers" post-id="header-{{election.id}}">
+				<div class="card-meta">
+					
+					<time>{{election.fixDate}}</time> <br>
+					<small> {{election.type.name}} {{election.level.name}}</small>
+		    
+				</div>
+
+			    {{#tool-tipster title="Participación"}} 
+				<div class="participation">
+					<div class="vote">
+						{{fa-icon 'users'}}
+						{{election.voters}}
+					</div>
+					<div class="percent">
+						{{election.votersPercent}}%
+					</div>
+				</div>
+				{{/tool-tipster}}
+
+			</div>
+
+			
+
+			{{#link-to 'election' election.id}}
+			<img {{bind-attr src=election.country.flag.url}} post-id="image-{{election.id}}" >
+			{{/link-to}}
+
+
+			 
+	    </div>
+
+	<div class="hero">
+		<div class="hero-inner">
+			<div class="hero-copy">
+				<h1>{{election.name}}</h1>
+				<h2>{{election.fixDate}}</h2>
+				<div class="stats">
+				  <p>
+					Elección {{election.level.name}} {{election.type.name}} <br>
+					<i> {{election.instance.name}} {{election.category.name}} {{election.participation.name}}</i>
+					{{#if isLegislative}}
+						{{election.cameraType.name}} 
+						Bancas en juego {{election.banks}}
+					{{/if}}
+					{{#if isReferendum}}
+						{{#if election.vinculated}}
+							Vinculada
+						{{else}}
+							No Vinculada
+						{{/if}}
+					{{/if}}
+				  </p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="profile-content">	
+		<div class="profile-data">
+			<h4>Datos</h4>
+			<div class="data-item">
+				<label for="">Electores</label> {{election.electors}}
+			</div>
+			<div class="data-item">
+				<label for="">Votantes</label> {{election.voters}} ({{election.votersPercent}}%)
+			</div>
+			<div class="data-item">
+				<label for="">Nulos</label> {{election.nulls}} ({{election.nullsPercent}}%)
+			</div>
+			<div class="data-item">
+				<label for="">Positivos</label> {{election.positives}} ({{election.positivesPercent}}%)
+			</div>
+			<div class="data-item">
+				<label for="">Blancos</label> {{election.blank}} ({{election.blanksPercent}}%)
+			</div>
+			<div class="data-item">
+				<label for="">Validos</label> {{election.valids}} ({{election.validsPercent}}%)
+			</div>
+			<div class="data-item">
+				<label for="">Abstenciones</label> {{election.abstens}} ({{election.abstensPercent}})
+			</div>
+
+			{{#if election.unchecked}}			
+			<div class="data-item">
+				<label for="">Sin marcar</label> {{election.unchecked}} ({{election.uncheckedPercent}})
+			</div>				
+			{{/if}}
+		</div>
+
+		<div class="profile-results">
+			<h4>Referencia</h4>
+			<p>{{election.history}}</p>
+			<h4>
+			{{#if election.isEjecutive}}
+				Formulas
+	        {{/if}}
+	        {{#if election.isLegislative}}
+				Resultados
+	        {{/if}}
+			{{#if election.isReferendum}}
+				Propuesta
+			{{/if}}	
+			</h4>
+			{{#each election.formulas as |formula|}}
+			      {{#if election.isEjecutive}}
+			        {{partial 'partials/formula/ejecutive/detail'}}
+			      {{/if}}
+			      {{#if election.isLegislative}}
+			        {{partial 'partials/formula/legislative/detail'}}
+			      {{/if}}
+			      {{#if election.isReferendum}}
+			      	{{partial 'partials/formula/referendum/detail'}}
+			      {{/if}}			
+			{{/each}}
+		</div>
+	</div>
+</div>
