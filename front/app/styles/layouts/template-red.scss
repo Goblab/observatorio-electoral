@@ -112,9 +112,9 @@ header.is-visible {
 	transition: all 0.4s;
 	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
 	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-	padding-top: 90px;
+	padding-top: 80px;
     margin-right: 0;
-    margin-left: 200px;
+    margin-left: 0;
 	
 	section {
 		@include outer-container(100%);
@@ -191,27 +191,6 @@ header.is-visible {
 
 }
 
-
-.logo-home {
-    text-align: center;
-    position: fixed;
-    margin: 0;
-    width: 200px;
-    height: 80px;
-    border-radius: 50px;
-    z-index: 2001;
-    padding: 0;
-    border: none;
-    background: #2058ab;
-    border-radius: 0;
-	@include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
-
-	img {
-	    width: 55px;
-	    margin: 10px;
-	}
-
-}
 
 
 

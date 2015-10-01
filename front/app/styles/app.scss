@@ -4,7 +4,7 @@
 @import "layouts/layouts";
 
 .pace .pace-progress {
-  background: #20905d;
+  background: #013696;
   position: fixed;
   z-index: 8000;
   top: 0;
@@ -68,4 +68,19 @@
 }
 
 
-	
+.modal-welcome {
+	position: fixed;
+	z-index: 2000;
+	top: 30%;
+	right: 5%;
+	width: 300px;
+	background: #fff;
+	padding: 15px;
+	@include box-shadow;
+	text-align: center;
+
+	img {
+		margin: 0 auto;
+		display: block;
+	}
+}

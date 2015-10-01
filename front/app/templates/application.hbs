@@ -28,12 +28,6 @@
 	</nav> <!-- .change-app-container -->
 
 	<header {{bind-attr class="isShowApps:is-visible isHome:-home isDataEntry:-admin isAdmin:-admin"}}>
-		{{#if isHome}}
-			<button class="logo" {{action 'toggleApps' target="view"}}>
-				<img src="assets/images/observatorio-logo.svg">
-			</button>
-		{{/if}}
-
 		{{#if isAdmin}}
 			<button class="logo" {{action 'toggleApps' target="view"}}>
 				<img src="assets/images/observatorio-logo.svg">
@@ -136,70 +130,45 @@
 		</ul>
 	</div><!-- main-nav-wrap -->
 
-{{/if}}
-
-
-{{#if isData}}
-
-	
-	{{#link-to 'index' class="logo-home"}} 
-		<img src="assets/images/observatorio-logo.svg">
-	{{/link-to}}
-
-	{{#if session.isAuthenticated}}
-		<a class="btn-login" {{ action 'invalidateSession' }}>
-			{{session.user.fullName}}
-		</a>
 	{{else}}
-		{{#link-to 'login' class="btn-login"}} 
-			{{fa-icon 'lock'}}
-		{{/link-to}}
-	{{/if}}
 
+	<header {{bind-attr class=":welcome isHome:-home isDataEntry:-admin isAdmin:-admin"}}>
+		<div class="container-header">
+			<div class="logo-home">
+				<img src="assets/images/logo-oblat.svg">
+			</div>
+
+			<nav>
+				<ul>
+					<li>Paises</li>
+					<li>Elecciones</li>
+					<li>Quienes somos</li>
+					<li>Ingresar</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
 {{/if}}
+
 
 
 <div {{bind-attr class=":content isHome:-home isShowMenu:show isShowApps:is-visible isDataEntry:-admin isAdmin:-admin"}}>
-	
-	{{#liquid-if isHome class="country-menu"}}
-		<div menu-id="1">
-			{{scroll-to href='#intro' label='Nuestra Data'}}
-			{{scroll-to href='#paises' label='Latinoamerica'}}
-			{{scroll-to href='#quienes' label='Quienes somos'}}
-			{{scroll-to href='#contacto' label='Contacto'}}
-		</div>
-
-	{{else}}	
-		
-		<ul menu-id="1">
-			{{#each model.countries as |country|}}
-				{{#if country.flag.isFulfilled}}
-					<li>
-					{{#link-to 'country' country.id}}
-						{{country.name}}
-					{{/link-to}}
-					</li>
-				{{else}}
-					<div class="dummy">...</div>
-				{{/if}}
-			{{/each}}
-		</ul>
-	
-	{{/liquid-if}}
-	
-
-	{{#liquid-if isHome class="action-bar"}}
-		
-		<h5>Inicio</h5>
-
-	{{else}}	
-		
-		<h5>Detalle</h5>
-	
-	{{/liquid-if}}
-
-
-	{{liquid-outlet}}
+	{{#if isDataEntry}}
+		{{liquid-outlet}}
+	{{else}}
+		{{#if isAdmin}}
+			{{liquid-outlet}}
+		{{else}}
+			{{#pixel-map class="pixel-map"}}
+				<div class="modal-welcome">
+				<img src="assets/images/logo-oblat.svg" width="150px">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vel animi officiis facere illum doloremque!</p>
+				<a href="" class="btn">Explorar</a>
+				</div>
+			{{/pixel-map}}
+			{{liquid-outlet}}
+		{{/if}}
+	{{/if}}
 </div>
 
 

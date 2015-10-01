@@ -1,0 +1,170 @@
+.pixel-map {
+		height: calc(100vh - 80px);
+		overflow: hidden;
+		-webkit-transition: all 2s;
+		transition: all 2s;
+		-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+		transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+
+	svg {
+		height: 100%;
+		width: 100%;
+		-webkit-transition: all 2s;
+		transition: all 2s;
+		-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+		transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+		transform: translate(-180px, -45px) scale(1);
+		-webkit-transition-delay: 2s; /* Safari */
+    	transition-delay: 2s;
+    }
+
+
+    &.argentina {
+	    height: 300px;
+    	border-bottom: 1px solid #ddd;
+
+    	svg {
+			transform: translate(-300px, -150px) scale(2.8);
+	    }
+
+	    .country {
+	    	circle {
+	    		fill: #333;
+	    		opacity: 0.1;
+	    	}
+	    }
+
+	    .-argentina {
+	    	circle {
+	    		fill: #3FA9F5;
+	    		opacity: 1;
+	    	}
+	    }
+    }
+
+}
+
+.rest-world {
+
+}
+
+.-ecuador {
+	circle {
+		//fill: #333;
+		opacity: 0.5;
+	}
+	&:hover {
+		circle {
+			opacity: 1;
+		}
+	}
+}
+
+.-colombia {
+	circle {
+		//fill: #333;
+		opacity: 0.5;
+	}
+	&:hover {
+		circle {
+			opacity: 1;
+		}
+	}
+}
+
+.-paraguay {
+	circle {
+		//fill: #333;
+		opacity: 0.5;
+	}
+	&:hover {
+		circle {
+			opacity: 1;
+		}
+	}
+}
+
+.-bolivia {
+	circle {
+		//fill: #333;
+		opacity: 0.5;
+	}
+	&:hover {
+		circle {
+			opacity: 1;
+		}
+	}
+}
+
+.-peru {
+	circle {
+		//fill: #333;
+		opacity: 0.5;
+	}
+	&:hover {
+		circle {
+			opacity: 1;
+		}
+	}
+}
+
+.-venezuela {
+	circle {
+		//fill: #333;
+		opacity: 0.5;
+	}
+	&:hover {
+		circle {
+			opacity: 1;
+		}
+	}
+}
+
+.-chile {
+	circle {
+		//fill: #333;
+		opacity: 0.5;
+	}
+	&:hover {
+		circle {
+			opacity: 1;
+		}
+	}
+}
+
+.-argentina {
+	circle {
+		fill: #3FA9F5;
+		opacity: 0.5;
+	}
+
+	&:hover {
+		circle {
+			opacity: 1;
+		}
+	}
+}
+
+.-uruguay {
+	circle {
+		//fill: #333;
+		opacity: 0.5;
+	}
+	&:hover {
+		circle {
+			opacity: 1;
+		}
+	}
+}
+
+.-brasil {
+	circle {
+		//fill: #333;
+		opacity: 0.5;
+	}
+	&:hover {
+		circle {
+			opacity: 1;
+		}
+	}
+}
