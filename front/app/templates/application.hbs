@@ -135,7 +135,9 @@
 	<header {{bind-attr class=":welcome isHome:-home isDataEntry:-admin isAdmin:-admin"}}>
 		<div class="container-header">
 			<div class="logo-home">
-				<img src="assets/images/logo-oblat.svg">
+				{{#link-to 'index'}}
+					<img src="assets/images/logo-oblat.svg">
+				{{/link-to}}
 			</div>
 
 			<nav>
@@ -159,7 +161,7 @@
 		{{#if isAdmin}}
 			{{liquid-outlet}}
 		{{else}}
-			{{#pixel-map class="pixel-map"}}
+			{{#pixel-map class="pixel-map" country=model.country}}
 				<div class="modal-welcome">
 				<img src="assets/images/logo-oblat.svg" width="150px">
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vel animi officiis facere illum doloremque!</p>
