@@ -188,3 +188,23 @@ margin: 0 auto;
 		font-size: 23px;
 	}
 }
+
+$mobile: new-breakpoint(max-width 800px 6);
+
+.country {
+	float: left;
+	width: 100%;
+
+	.country-container {
+		max-width: 70vw;
+		margin: 0 auto;
+		    -webkit-transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+    -moz-transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+    transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+		
+		@include media($mobile) {
+			max-width: 100%;
+		}
+
+	}
+}

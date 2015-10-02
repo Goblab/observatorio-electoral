@@ -1,10 +1,17 @@
 .pixel-map {
-		height: calc(100vh - 80px);
-		overflow: hidden;
-		-webkit-transition: all 2s;
-		transition: all 2s;
-		-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-		transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+	height: calc(100vh - 80px);
+	overflow: hidden;
+	-webkit-transition: all 2s;
+	transition: all 2s;
+	-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    background: url("/assets/images/back-map.svg");
+    background-size: 138px;
+
+	g {
+	    pointer-events: bounding-box;
+	    cursor: pointer;
+	}
 
 
 	svg {
@@ -28,10 +35,10 @@
 
 
     &.argentina {
-	    height: 300px;
+	    height: 200px;
 
     	svg {
-			transform: translate(-300px, -250px) scale(1.2);
+			transform: translate(-340px, -70px) scale(2.2) rotate(-90deg);
 	    }
 
 	    .country {
@@ -51,10 +58,11 @@
     }
 
     &.peru {
-	    height: 300px;
+	    height: 200px;
+        background-color: #e74c3c;
 
     	svg {
-			transform: translate(-240px, -90px) scale(1.2);
+			transform: translate(-170px, -20px) scale(2.5);
 	    }
 
 	    .country {
@@ -67,17 +75,18 @@
 
 	    .-peru {
 	    	circle {
-	    		fill: #e74c3c;
+	    		fill: #fff;
 	    		opacity: 1;
 	    	}
 	    }
     }
 
     &.brasil {
-	    height: 300px;
+	    height: 200px;
+	    background-color: #27ae60;
 
     	svg {
-			transform: translate(-240px, -120px) scale(1);
+			transform: translate(-250px, -60px) scale(1.8);
 	    }
 
 	    .country {
@@ -90,18 +99,18 @@
 
 	    .-brasil {
 	    	circle {
-	    		fill: #2ecc71;
+	    		fill: #2980b9;
 	    		opacity: 1;
 	    	}
 	    }
     }
 
     &.venezuela {
-	    height: 300px;
-		background: #f1c40f;
+	    height: 200px;
+		background-color: #f1c40f;
 
     	svg {
-			transform: translate(-160px, 10px) scale(1.2);
+			transform: translate(-250px, 190px) scale(3.2);
 	    }
 
 	    .country {
@@ -121,11 +130,11 @@
     }
 
     &.colombia {
-	    height: 300px;
-		background: #3498db;
+	    height: 200px;
+		background-color: #3498db;
 
     	svg {
-			transform: translate(-170px, 0px) scale(1.2);
+			transform: translate(-170px, 90px) scale(2.2);
 	    }
 
 	    .country {
@@ -145,11 +154,11 @@
     }
 
     &.uruguay {
-	    height: 300px;
-		background: #3498db;
+	    height: 200px;
+		background-color: #3498db;
 
     	svg {
-			transform: translate(-240px, -320px) scale(1.8);
+			transform: translate(-310px, -350px) scale(3.8);
 	    }
 
 	    .country {
@@ -169,11 +178,11 @@
     }
 
     &.paraguay {
-	    height: 300px;
-	    background: #e74c3c;
+	    height: 200px;
+	    background-color: #e74c3c;
 
     	svg {
-			transform: translate(-390px, -240px) scale(2.8);
+			transform: translate(-300px, -190px) scale(2.8);
 	    }
 
 	    .country {
@@ -193,11 +202,11 @@
     }
 
     &.bolivia {
-	    height: 300px;
-		background: #2ecc71;
+	    height: 200px;
+		background-color: #2ecc71;
 
     	svg {
-			transform: translate(-240px, -140px) scale(1.2);
+			transform: translate(-240px, -90px) scale(3.2);
 	    }
 
 	    .country {
@@ -217,11 +226,11 @@
     }
 
      &.ecuador {
-	    height: 300px;
-		background: #f1c40f;
+	    height: 200px;
+		background-color: #f1c40f;
 
     	svg {
-			transform: translate(-170px, -40px) scale(1.2);
+			transform:translate(-170px, 220px) scale(5.2);
 	    }
 
 	    .country {
@@ -241,10 +250,10 @@
     }
 
      &.chile {
-	    height: 300px;
-		background: #2980b9;
+	    height: 200px;
+		background-color: #2980b9;
     	svg {
-			transform: translate(-240px, -300px) scale(1);
+			transform: translate(-320px, -120px) scale(2.8) rotate(-90deg);
 	    }
 
 	    .country {
@@ -266,7 +275,9 @@
 }
 
 .rest-world {
-
+	circle {
+	    opacity: 0.1;
+	}
 }
 
 .-ecuador {

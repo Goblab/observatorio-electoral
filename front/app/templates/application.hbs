@@ -161,12 +161,14 @@
 		{{#if isAdmin}}
 			{{liquid-outlet}}
 		{{else}}
-			{{#pixel-map class="pixel-map" countries=model.countries}}
-				<div class="modal-welcome">
-					<img src="assets/images/logo-oblat.svg" width="150px">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vel animi officiis facere illum doloremque!</p>
-				</div>
-			{{/pixel-map}}
+			{{pixel-map class="pixel-map" countries=model.countries}}
+			{{#if isHome}}
+			<div class="modal-welcome">
+				<img src="/assets/images/observatorio-logo.svg" alt="">
+				<h1>Observatorio electoral</h1>
+				<p>Somos una iniciativa impulsada por investigadores, en su mayoría de la Facultad de Ciencias Sociales de la UBA, que tiene por objetivo brindar un acervo de datos cuantitativos y cualitativos que permitan conocer más y mejor la realidad latinoamericana.</p>
+			</div>
+			{{/if}}
 			{{liquid-outlet}}
 		{{/if}}
 	{{/if}}

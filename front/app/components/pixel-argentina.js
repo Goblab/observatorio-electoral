@@ -3,5 +3,5 @@ import CountryPixel from '../components/pixel-country';
 
 
 export default CountryPixel.extend({
-	className: 'country -argentina',
+	classNames: ['country', '-argentina'],
 });

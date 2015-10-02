@@ -21,6 +21,10 @@ header {
 		@include display(flex);
 		@include justify-content(space-between);
 
+		@include media($mobile) {
+			max-width: 100%;
+		}
+
 		.logo-home {
 			@include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
 
