@@ -161,13 +161,10 @@
 		{{#if isAdmin}}
 			{{liquid-outlet}}
 		{{else}}
-			{{#pixel-map class="pixel-map" country=model.country}}
+			{{#pixel-map class="pixel-map" countries=model.countries}}
 				<div class="modal-welcome">
-				<img src="assets/images/logo-oblat.svg" width="150px">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vel animi officiis facere illum doloremque!</p>
-				{{#link-to 'country' 1 class="btn"}} 
-					pais
-				{{/link-to}}
+					<img src="assets/images/logo-oblat.svg" width="150px">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vel animi officiis facere illum doloremque!</p>
 				</div>
 			{{/pixel-map}}
 			{{liquid-outlet}}

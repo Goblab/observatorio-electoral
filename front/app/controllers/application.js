@@ -13,11 +13,9 @@ export default Ember.Controller.extend({
 	countryChanged: function () {
 		var _this = this;
 		Ember.run.next(function () {
+			$('.pixel-map').removeClass().addClass('pixel-map');
 			if (_this.get('model.country')) {
-				_this.set('oldClass', _this.get('model.country').get('name').toLowerCase());
-				$('.pixel-map').addClass(_this.get('oldClass'));
-			} else {
-				$('.pixel-map').removeClass(_this.get('oldClass'));
+				$('.pixel-map').addClass(_this.get('model.country').get('className'));
 			}
 		});
 	}.observes('model.country'),
