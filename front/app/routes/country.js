@@ -14,6 +14,11 @@ export default Ember.Route.extend({
 		model.elections = this.get('store').find('election', {country: model.country.get('id'), enabled: true, type: t.get('id')});
 	},
 
+	setupController: function (controller, model) {
+		this._super(controller, model);
+		this.controllerFor('application').set('model.country', model.country);
+	},
+
 	actions: {
 	    search: function (type, country) {
 	      var filter = { country: country.get('id'), enabled: true };

@@ -1,7 +1,66 @@
 $text-header-app: new-breakpoint(max-width 500px 6);
 
 header {
-	width: 100%;
+	
+	&.welcome {
+		    background: #fff;
+    position: fixed;
+    z-index: 2000;
+    right: 0;
+    left: 0;
+    height: 80px;
+	}
+
+	&.-home {
+		background: #fff;
+	}
+
+	.container-header {
+		max-width: 70vw;
+		margin: 15px auto;
+		@include display(flex);
+		@include justify-content(space-between);
+
+		@include media($mobile) {
+			max-width: 100%;
+		}
+
+		.logo-home {
+			@include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
+
+			img {
+				width: 130px;
+				margin: 0;
+			}
+		}
+
+		nav {
+
+			ul {
+			margin: 0;
+			padding: 0;
+			@include display(flex);
+			@include justify-content(center);
+			flex-wrap: wrap;
+			list-style: none;
+			}
+
+			li {
+				padding: 15px 10px;
+				font-size: 16px;
+				max-width: 140px;
+				font-weight: bold;
+				text-decoration: none;
+				display: flex;
+				align-items: flex-start;
+				color: #3FA9F5;
+			}
+		}
+	}
+
+	&.-admin {
+		background: #1EBCEF;
+		width: 100%;
 	height: 90px;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
@@ -14,14 +73,6 @@ header {
 	z-index: 4002;
 	top: 0;
 	@include box-shadow;
-
-	&.-home {
-		background: #1EBCEF;
-	}
-
-	
-	&.-admin {
-		background: #5EA4CA;
 	}
 
 	h3 {

@@ -4,10 +4,21 @@ export default Ember.Controller.extend({
 	isShowMenu: false,
 	isShowClick: false,
 	isShowApps: false,
+	oldClass: '',
 
 	init: function () {
 		this._super();
 	},
+
+	countryChanged: function () {
+		var _this = this;
+		Ember.run.next(function () {
+			$('.pixel-map').removeClass().addClass('pixel-map');
+			if (_this.get('model.country')) {
+				$('.pixel-map').addClass(_this.get('model.country').get('className'));
+			}
+		});
+	}.observes('model.country'),
 
 	getCurrentURL: function () {
 		this.set('isAdmin', false);
