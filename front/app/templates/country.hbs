@@ -1,29 +1,46 @@
 <div class="country">
 	<div class="country-container">
-		
-	<h1>Elecciones en {{country.name}}</h1>
 
-	<ul class="country-filter">
-	{{#each model.types as |type|}}
-		<li {{bind-attr class="type.isActive:active"}}>
-			<a {{action 'search' type model.country}} >{{type.name}}</a>
-		</li>
-	{{/each}}
-	</ul>
+		<ul class="country-filter" >
+			<li {{bind-attr class="allElections:active"}}>
+				<a {{action 'search' null model.country}} >Todas</a>
+			</li>		
+		{{#each model.types as |type|}}
+			<li {{bind-attr class="type.isActive:active"}}>
+				<a {{action 'search' type model.country}} >{{type.name}}</a>
+			</li>
+		{{/each}}
+		</ul>
 
-	<section class="section-content brief-container" style="width: 100%;">
-		<div class="country-list">
-			{{#if model.elections}}
-				{{#each model.elections as |election|}}
-					{{partial 'partials/election/brief'}}
-				{{/each}}
-			{{else}}
-				<div class="no-content">
-					{{fa-icon 'exclamation'}}
-					Todavia no se ha cargado el contenido
-				</div>
-			{{/if}}
-		</div>
-	</section>
+		<section class="country-content" style="width: 100%;">
+			<div class="country-list">
+				{{#if model.elections}}
+					<div class="list-header">
+						<div class="item-title">
+							Nombre de la eleccion
+						</div>
+						<div class="item-content">
+							<div class="item -banks">
+								Bancas en juego
+							</div>
+							<div class="item -voters">
+								Participación
+							</div>
+							<div class="item -date">
+								Fecha de la elección
+							</div>
+						</div>
+					</div>
+					{{#each model.elections as |election|}}
+						{{partial 'partials/election/brief'}}
+					{{/each}}
+				{{else}}
+					<div class="no-content">
+						{{fa-icon 'exclamation'}}
+						Todavia no se ha cargado el contenido
+					</div>
+				{{/if}}
+			</div>
+		</section>
 	</div>
 </div>

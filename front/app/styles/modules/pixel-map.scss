@@ -7,6 +7,7 @@
 	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     background: url("/assets/images/back-map.svg");
     background-size: 138px;
+    border-bottom: 1px solid transparent;
 
 	g {
 	    pointer-events: bounding-box;
@@ -36,7 +37,8 @@
 
     &.argentina {
 	    height: 200px;
-
+	    border-bottom: 4px solid #9edaff;
+	
     	svg {
 			transform: translate(-340px, -70px) scale(2.2) rotate(-90deg);
 	    }
