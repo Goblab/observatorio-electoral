@@ -20,4 +20,28 @@ export default DS.Model.extend({
   	//Legislative
   	provinceStatuses: DS.hasMany('province-status', {async: true}),
 
+    votesCount: Ember.computed('votes', function () {
+      if (this.get('assemblyman')) {
+        return parseInt(this.get('assemblyman').get('votes'));
+      } else {
+        if (this.get('diputies')) {
+          return parseInt(this.get('diputies').get('votes'));
+        } else {
+          if (this.get('senators')) {
+            return parseInt(this.get('senators').get('votes'));
+          } else {
+            if (this.get('positiveVotes')) {
+              return parseInt(this.get('positiveVotes').get('votes'));
+            } else {
+              if (this.get('negativeVotes')) {
+                return parseInt(this.get('negativeVotes').get('votes'));
+              } else {
+                return parseInt(this.get('votes'));
+              }
+            }
+          }
+        }
+      }
+    }),
+
 });

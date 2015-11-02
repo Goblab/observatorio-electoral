@@ -53,7 +53,7 @@
 					</div>
 					
 					<div class="formula-container">
-					{{#each election.formulas as |formula|}}
+					{{#each election.formulasSorted as |formula|}}
 					      {{#if election.isEjecutive}}
 					        {{partial 'partials/formula/ejecutive/brief'}}
 					      {{/if}}
