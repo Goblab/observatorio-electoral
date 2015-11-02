@@ -1,6 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+	beforeModel: function () {
+		if (!this.get('session.isAuthenticated')) {
+			this.transitionTo('index');
+		}
+	},	
+	
 	model: function (params) {
 		return Ember.RSVP.hash({
           election: this.get('store').find('election', params.election_id),
