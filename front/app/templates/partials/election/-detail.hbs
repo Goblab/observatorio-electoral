@@ -1,4 +1,4 @@
-<div class="country">
+<div class="country {{election.country.componentName}}">
 	<div class="country-container">
 		<div class="country-detail">
 			<div class="detail-header">
@@ -16,10 +16,10 @@
 							</div>
 							<div class="item-content ">
 								<div class="item -voters">
-									Participación
+									Electores
 								</div>
 								<div class="item -banks">
-									Bancas en juego
+									Porcentaje
 								</div>
 							</div>
 				        {{/if}}
@@ -29,7 +29,7 @@
 							</div>
 							<div class="item-content ">
 								<div class="item -voters">
-									Participación
+									Electores
 								</div>
 								<div class="item -banks">
 									Porcentaje
@@ -65,14 +65,83 @@
 					      {{/if}}			
 					{{/each}}
 					</div>
+
+					<div class="reference">
+						<h4>Referencia</h4>
+						<p>{{election.history}}</p>
+					</div>
+
 				</div>
 
 				<aside>
-					<h6 class="title">Participacion</h6>
-					<div class="election-participation">
-						<span>{{election.votersPercent}}%</span>
-						<small>{{election.voters}}</small>
+					<div class="data">
+						<div class="data-item">
+							{{#if election.votersPercent}}
+								<span>{{election.votersPercent}}%</span>
+								<small>{{election.voters}}</small>
+							{{else}}
+								<span>{{election.voters}}</span>
+							{{/if}}
+							<h6>Votantes</h6>
+						</div>
+
+						<div class="data-item">
+							{{#if election.positivesPercent}}
+								<span>{{election.positivesPercent}}%</span>
+								<small>{{election.positives}}</small>
+							{{else}}
+								<span>{{election.positives}}</span>
+							{{/if}}
+							<h6>Positivos</h6>
+						</div>
+
+						{{#if election.electors}}
+						<div class="data-item">
+							<span>{{election.electors}}</span>
+							<h6>Electores</h6>
+						</div>
+						{{/if}}
+
+						<div class="data-item">
+							{{#if election.blanksPercent}}
+								<span>{{election.blanksPercent}}%</span>
+								<small>{{election.blank}}</small>
+							{{else}}
+								<span>{{election.blank}}</span>
+							{{/if}}
+							<h6>Blancos</h6>
+						</div>
+
+						{{#if election.abstensPercent}}
+							<div class="data-item">
+								<span>{{election.abstensPercent}}%</span>
+								<small>{{election.abstens}}</small>
+								<h6>Abstenciones</h6>
+							</div>
+						{{/if}}
+
+						<div class="data-item">
+							<span>{{election.nullsPercent}}%</span>
+							<h6>Nulos</h6>
+						</div>
+
+						<div class="data-item">
+							{{#if election.validsPercent}}
+								<span>{{election.validsPercent}}%</span>
+								<small>{{election.valids}}</small>
+							{{else}}
+								<span>{{election.valids}}</span>
+							{{/if}}
+							<h6>Validos</h6>
+						</div>
+
+						{{#if election.unchecked}}			
+						<div class="data-item">
+							<label for="">Sin marcar</label> {{election.unchecked}} ({{election.uncheckedPercent}})
+						</div>				
+						{{/if}}
 					</div>
+
 					<div class="banks">
 						{{#if isLegislative}}
 							<h6>Bancas renovadas</h6>
@@ -89,43 +158,7 @@
 					</div>
 				</aside>
 			</div>
-			
-			<div class="detail-content">
-			
-				<h4>Datos</h4>
-				<div class="data-item">
-					<label for="">Electores</label> {{election.electors}}
-				</div>
-				<div class="data-item">
-					<label for="">Votantes</label> {{election.voters}} ({{election.votersPercent}}%)
-				</div>
-				<div class="data-item">
-					<label for="">Nulos</label> {{election.nulls}} ({{election.nullsPercent}}%)
-				</div>
-				<div class="data-item">
-					<label for="">Positivos</label> {{election.positives}} ({{election.positivesPercent}}%)
-				</div>
-				<div class="data-item">
-					<label for="">Blancos</label> {{election.blank}} ({{election.blanksPercent}}%)
-				</div>
-				<div class="data-item">
-					<label for="">Validos</label> {{election.valids}} ({{election.validsPercent}}%)
-				</div>
-				<div class="data-item">
-					<label for="">Abstenciones</label> {{election.abstens}} ({{election.abstensPercent}})
-				</div>
 
-				{{#if election.unchecked}}			
-				<div class="data-item">
-					<label for="">Sin marcar</label> {{election.unchecked}} ({{election.uncheckedPercent}})
-				</div>				
-				{{/if}}
-			</div>
-
-			<div class="detail-content">
-				<h4>Referencia</h4>
-				<p>{{election.history}}</p>
-			</div>
 		</div>
 	</div>
 </div>

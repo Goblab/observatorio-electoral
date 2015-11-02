@@ -185,6 +185,8 @@ Router.map(function() {
   this.route('candidate', {
    path: "candidate/:candidate_id",
   });
+  this.route('about', {});
+  this.route('contact', {});
 });
 
 export default Router;

@@ -27,33 +27,99 @@
 		</ul>
 	</nav> <!-- .change-app-container -->
 
-	<header {{bind-attr class="isShowApps:is-visible isHome:-home isDataEntry:-admin isAdmin:-admin"}}>
-		{{#if isAdmin}}
-			<button class="logo" {{action 'toggleApps' target="view"}}>
-				<img src="assets/images/observatorio-logo.svg">
-			</button>
-			<h3>Administración</h3>
-			<button {{bind-attr class=":menu-button :cbutton :cbutton--effect-nikola isShowClick:cbutton--click"}} {{action 'toggleMenu' target="view"}}>
-				{{fa-icon "bars"}}
-			</button>
-		{{/if}}
+	{{#unless isDataEntry}}
+		{{#unless isAdmin}}
+			<header {{bind-attr class=":welcome isHome:-home isDataEntry:-admin isAdmin:-admin"}}>
+				<div class="container-header">
+					<div class="logo-home">
+						{{#link-to 'index'}}
+							<img src="assets/images/logo-oblat.svg">
+						{{/link-to}}
+					</div>
 
-		{{#if isShowApps}}
-			<a class="log-out" {{ action 'invalidateSession' }}>
-				<span>Cerrar sesión</span> {{fa-icon "sign-out"}}
-			</a>
-		{{/if}}	
+					<nav>
+						<ul>
+							<li>
+							{{#link-to 'contact'}} 
+								Contacto
+							{{/link-to}}
+							</li>
+							<li>
+							{{#link-to 'about'}} 
+								Quienes somos
+							{{/link-to}}
+							</li>
+							<li>
+							{{#link-to 'data-entry'}} 
+								Administrador
+							{{/link-to}}
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+		{{else}}
 
-		{{#if isDataEntry}}
-			<button class="logo" {{action 'toggleApps' target="view"}}>
-				<img src="assets/images/observatorio-logo.svg">
-			</button>
-			<h3>Manejo de datos</h3>
-			<button {{bind-attr class=":menu-button :cbutton :cbutton--effect-nikola isShowClick:cbutton--click"}} {{action 'toggleMenu' target="view"}}>
-				{{fa-icon "bars"}}
-			</button>
-		{{/if}}
-	</header>
+			<header {{bind-attr class="isShowApps:is-visible isHome:-home isDataEntry:-admin isAdmin:-admin"}}>
+				{{#if isAdmin}}
+					<button class="logo" {{action 'toggleApps' target="view"}}>
+						<img src="assets/images/observatorio-logo.svg">
+					</button>
+					<h3>Administración</h3>
+					<button {{bind-attr class=":menu-button :cbutton :cbutton--effect-nikola isShowClick:cbutton--click"}} {{action 'toggleMenu' target="view"}}>
+						{{fa-icon "bars"}}
+					</button>
+				{{/if}}
+
+				{{#if isShowApps}}
+					<a class="log-out" {{ action 'invalidateSession' }}>
+						<span>Cerrar sesión</span> {{fa-icon "sign-out"}}
+					</a>
+				{{/if}}	
+
+				{{#if isDataEntry}}
+					<button class="logo" {{action 'toggleApps' target="view"}}>
+						<img src="assets/images/observatorio-logo.svg">
+					</button>
+					<h3>Manejo de datos</h3>
+					<button {{bind-attr class=":menu-button :cbutton :cbutton--effect-nikola isShowClick:cbutton--click"}} {{action 'toggleMenu' target="view"}}>
+						{{fa-icon "bars"}}
+					</button>
+				{{/if}}
+			</header>
+		{{/unless}}
+
+	{{else}}
+
+		<header {{bind-attr class="isShowApps:is-visible isHome:-home isDataEntry:-admin isAdmin:-admin"}}>
+			{{#if isAdmin}}
+				<button class="logo" {{action 'toggleApps' target="view"}}>
+					<img src="assets/images/observatorio-logo.svg">
+				</button>
+				<h3>Administración</h3>
+				<button {{bind-attr class=":menu-button :cbutton :cbutton--effect-nikola isShowClick:cbutton--click"}} {{action 'toggleMenu' target="view"}}>
+					{{fa-icon "bars"}}
+				</button>
+			{{/if}}
+
+			{{#if isShowApps}}
+				<a class="log-out" {{ action 'invalidateSession' }}>
+					<span>Cerrar sesión</span> {{fa-icon "sign-out"}}
+				</a>
+			{{/if}}	
+
+			{{#if isDataEntry}}
+				<button class="logo" {{action 'toggleApps' target="view"}}>
+					<img src="assets/images/observatorio-logo.svg">
+				</button>
+				<h3>Manejo de datos</h3>
+				<button {{bind-attr class=":menu-button :cbutton :cbutton--effect-nikola isShowClick:cbutton--click"}} {{action 'toggleMenu' target="view"}}>
+					{{fa-icon "bars"}}
+				</button>
+			{{/if}}
+		</header>	
+	{{/unless}}
+
 
 	<div {{bind-attr class=":menu-wrap isShowMenu:show isData:-data isHome:-home isDataEntry:-admin isRed:-red isCalendar:-calendar isAdmin:-admin"}}> 
 		<div class="menu-nav fa-ul">
@@ -132,28 +198,11 @@
 
 	{{else}}
 
-	<header {{bind-attr class=":welcome isHome:-home isDataEntry:-admin isAdmin:-admin"}}>
-		<div class="container-header">
-			<div class="logo-home">
-				{{#link-to 'index'}}
-					<img src="assets/images/logo-oblat.svg">
-				{{/link-to}}
-			</div>
 
-			<nav>
-				<ul>
-					<li>Paises</li>
-					<li>Elecciones</li>
-					<li>Quienes somos</li>
-					<li>Ingresar</li>
-				</ul>
-			</nav>
-		</div>
-	</header>
 {{/if}}
 
 
-
+{{#if session.isAuthenticated}}
 <div {{bind-attr class=":content isHome:-home isShowMenu:show isShowApps:is-visible isDataEntry:-admin isAdmin:-admin"}}>
 	{{#if isDataEntry}}
 		{{liquid-outlet}}
@@ -161,19 +210,37 @@
 		{{#if isAdmin}}
 			{{liquid-outlet}}
 		{{else}}
-			{{pixel-map class="pixel-map" countries=model.countries}}
-			<div class="modal-welcome">
-			{{#liquid-if isHome class="liquid-modal"}}
-				<img src="/assets/images/observatorio-logo.svg" alt="">
-				<h1>Observatorio electoral</h1>
-				<p>Somos una iniciativa impulsada por investigadores, en su mayoría de la Facultad de Ciencias Sociales de la UBA, que tiene por objetivo brindar un acervo de datos cuantitativos y cualitativos que permitan conocer más y mejor la realidad latinoamericana.</p>
+			{{#unless isHome}}
+				{{#if model.country}}
+					{{pixel-map class="pixel-map" countries=model.countries}}
+						<div class="modal-welcome">
+						{{#liquid-if isHome class="liquid-modal"}}
+							<img src="/assets/images/observatorio-logo.svg" alt="">
+							<h1>Observatorio electoral</h1>
+							<p>Somos una iniciativa impulsada por investigadores, en su mayoría de la Facultad de Ciencias Sociales de la UBA, que tiene por objetivo brindar un acervo de datos cuantitativos y cualitativos que permitan conocer más y mejor la realidad latinoamericana.</p>
+						{{else}}
+							<h1>Elecciones en {{model.country.name}} </h1>
+						{{/liquid-if}}
+						</div>
+				{{/if}}
 			{{else}}
-				<h1>Elecciones en {{model.country.name}} </h1>
-			{{/liquid-if}}
-			</div>
+				{{pixel-map class="pixel-map" countries=model.countries}}
+				<div class="modal-welcome">
+				{{#liquid-if isHome class="liquid-modal"}}
+					<img src="/assets/images/observatorio-logo.svg" alt="">
+					<h1>Observatorio electoral</h1>
+					<p>Somos una iniciativa impulsada por investigadores, en su mayoría de la Facultad de Ciencias Sociales de la UBA, que tiene por objetivo brindar un acervo de datos cuantitativos y cualitativos que permitan conocer más y mejor la realidad latinoamericana.</p>
+				{{else}}
+					<h1>Elecciones en {{model.country.name}} </h1>
+				{{/liquid-if}}
+				</div>
+			{{/unless}}
 			{{liquid-outlet}}
 		{{/if}}
 	{{/if}}
 </div>
+{{else}}
+	{{liquid-outlet}}
+{{/if}}
 
 

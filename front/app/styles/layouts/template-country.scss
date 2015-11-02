@@ -36,6 +36,46 @@
 	@include span-columns(12);
 }
 
+.reference {
+	margin: 50px 0;
+    float: left;
+    width: 100%;
+}
+
+.detail-content .data {
+	margin: 0;
+    float: left;
+    width: 100%;
+}
+
+.detail-content .data .data-item {
+	float: left;
+	display: block;
+	margin-right: 0;
+	width: 100%;
+	text-align: center;
+	min-height: 120px;
+	text-align: center;
+
+
+	span {
+		display: block;
+		font-size: 40px;
+		font-weight: 100;
+	}
+
+	small {
+		display: block;	
+		font-size: 16px;
+	}
+
+	h6 {
+		margin: 0;
+	    font-size: 16px;
+    	font-weight: 600;
+	}
+}
+
 
 
 .detail-content {
@@ -100,6 +140,9 @@
 
 .legislative-item, .ejecutive-item {
 	@include span-columns(12);
+	margin-top: 10px;
+	font-size: 23px;
+	color: #777;
 
 
 	.item-title {
@@ -112,12 +155,6 @@
 			@include span-columns(6);
 		}
 	}
-}
-
-.ejecutive-item {
-	margin-top: 10px;
-	font-size: 23px;
-	color: #777;
 }
 
 
@@ -144,7 +181,6 @@
 		text-align: right;
 
 		&:last-child {
-			margin-right: 15px !important;
 		}
 	}
 }
@@ -181,4 +217,61 @@ aside {
 			font-size: 16px;
 		}
 	}
+}
+
+
+.country {
+
+	&.pixel-bolivia {
+		.detail-content .data {
+			color: #2ecc71;
+		}
+
+		.country-item .item-title a {
+			color: #2ecc71;
+		}
+	}
+
+	&.pixel-brasil {
+		.detail-content .data {
+			color: #2980b9;
+		}
+
+		.country-item .item-title a {
+			color: #2980b9;
+		}
+
+		.list-header {
+			border-bottom: 2px solid #2ecc71;
+		}
+	}
+
+	&.pixel-peru {
+		.detail-content .data {
+			color: #e74c3c;
+		}
+
+		.country-item .item-title a {
+			color: #e74c3c;
+		}
+
+		.list-header {
+			border-bottom: 2px solid #e74c3c;
+		}
+	}
+
+	&.pixel-uruguay {
+		.detail-content .data {
+			color: #e74c3c;
+		}
+
+		.country-item .item-title a {
+			color: #e74c3c;
+		}
+
+		.list-header {
+			border-bottom: 2px solid #e74c3c;
+		}
+	}
+
 }
