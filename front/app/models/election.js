@@ -64,6 +64,10 @@ export default DS.Model.extend({
         return bf;
     }),
 
+    formulasSorted: Ember.computed('formulas.@each.votesCount', function () {
+        return this.get('formulas').sortBy('votesCount').reverse();
+    }),
+
     isEjecutive: Ember.computed('type.name', function () {
         return  this.get('type').get('name') === 'Ejecutiva';
     }),
