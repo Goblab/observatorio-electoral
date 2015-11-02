@@ -68,15 +68,16 @@
 				</div>
 
 				<aside>
-					<div class="participation">
-						<h6>Participacion</h6>
-						{{election.votersPercent}}% <small>{{election.voters}}</small>
-						
+					<h6 class="title">Participacion</h6>
+					<div class="election-participation">
+						<span>{{election.votersPercent}}%</span>
+						<small>{{election.voters}}</small>
 					</div>
 					<div class="banks">
 						{{#if isLegislative}}
-							{{election.cameraType.name}} 
-							Bancas en juego {{election.banks}}
+							<h6>Bancas renovadas</h6>
+							<span>{{election.banks}}</span>
+							<small>{{election.cameraType.name}} </small>
 						{{/if}}
 						{{#if isReferendum}}
 							{{#if election.vinculated}}
@@ -90,6 +91,7 @@
 			</div>
 			
 			<div class="detail-content">
+			
 				<h4>Datos</h4>
 				<div class="data-item">
 					<label for="">Electores</label> {{election.electors}}

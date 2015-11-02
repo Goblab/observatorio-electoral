@@ -50,4 +50,8 @@ export default function(){
 		this.reverse('toRight',  {duration: 800, delay: 400, easing: [ 0.7,0,0.3,1 ]})
 	  );
 
+	this.transition(
+	  this.childOf('#liquid-country-name'),
+	  this.use('toLeft',  {duration: 800, delay: 0, easing: [ 0.7,0,0.3,1 ]})
+	);
 };

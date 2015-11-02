@@ -1,6 +1,7 @@
 .country {
 	@include outer-container(100%);
 	background: #f7f7f7;
+	font-family: 'PT Sans', sans-serif;
 
 	.country-container {
 		@include span-columns(8);
@@ -21,7 +22,7 @@
     padding: 0;
 
 	li {
-		@include span-columns(1 of 5);
+		@include span-columns(1 of 6);
 		margin: 10px 15px; 
 
 		&.active {
@@ -100,6 +101,7 @@
 .legislative-item, .ejecutive-item {
 	@include span-columns(12);
 
+
 	.item-title {
 		@include span-columns(6);
 	}
@@ -112,6 +114,11 @@
 	}
 }
 
+.ejecutive-item {
+	margin-top: 10px;
+	font-size: 23px;
+	color: #777;
+}
 
 
 .item-title {
@@ -134,10 +141,44 @@
 
 	.item {
 		@include span-columns(4);
-		text-align: center;
+		text-align: right;
+
+		&:last-child {
+			margin-right: 15px !important;
+		}
 	}
 }
 
 .item {
 
+}
+
+
+aside {
+	.title {
+		margin: 0;
+		order: 0;
+		width: 100%;
+		font-family: 'PT Sans', sans-serif;
+		font-weight: 600;
+		color: #ffcb00;
+	}
+
+	.election-participation {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 1px solid #ddd;
+		margin: 15px 0px;
+
+		span {
+			color: #ffcb00;
+			font-size: 30px;
+		}
+
+		small {
+			align-self: flex-end;
+			margin: 5px;
+			font-size: 16px;
+		}
+	}
 }

@@ -29,7 +29,7 @@ export default Ember.Controller.extend({
 		if (RegExp('index').test(this.get('currentPath'))) {
 			this.set('isHome', true);
 		}
-		
+
 		if (RegExp('admin').test(this.get('currentPath'))) {
 			this.set('isAdmin', true);
 			this.set('isHome', false);

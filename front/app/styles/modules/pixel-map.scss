@@ -9,6 +9,8 @@
     background-size: 138px;
     border-bottom: 1px solid transparent;
 
+
+
 	g {
 	    pointer-events: bounding-box;
 	    cursor: pointer;
@@ -22,7 +24,7 @@
 		transition: all 2s;
 		-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 		transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-		transform: translate(-180px, -340px) scale(0.6);
+		transform: translate(-230px, -490px) scale(0.6);
 		-webkit-transition-delay: 1s; /* Safari */
     	transition-delay: 1s;
     }
@@ -255,7 +257,7 @@
 	    height: 200px;
 		background-color: #2980b9;
     	svg {
-			transform: translate(-320px, -120px) scale(2.8) rotate(-90deg);
+			transform: translate(-400px, -120px) scale(2.8) rotate(-90deg);
 	    }
 
 	    .country {

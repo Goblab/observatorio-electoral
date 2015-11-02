@@ -3,7 +3,7 @@
 
 		<ul class="country-filter" >
 			<li {{bind-attr class="allElections:active"}}>
-				<a {{action 'search' null model.country}} >Todas</a>
+				<a {{action 'search' null model.country}}> Ver Todas</a>
 			</li>		
 		{{#each model.types as |type|}}
 			<li {{bind-attr class="type.isActive:active"}}>

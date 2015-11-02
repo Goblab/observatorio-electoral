@@ -69,18 +69,79 @@
 
 
 .modal-welcome {
-	position: fixed;
-	z-index: 2000;
-	top: 20%;
-	right: 20%;
-	width: 300px;
-	background: #fff;
-	padding: 15px;
-	@include box-shadow;
-	text-align: center;
+    position: absolute;
+    z-index: 2000;
+    top: 25%;
+    right: 20%;
+    width: 350px;
+    padding: 15px;
+    text-align: center;
+	-webkit-transition: all 1.4s cubic-bezier(0.7, 0, 0.3, 1);
+	-moz-transition: all 1.4s cubic-bezier(0.7, 0, 0.3, 1);
+	transition: all 1.4s cubic-bezier(0.7, 0, 0.3, 1);
 
 	img {
 		margin: 0 auto;
 		display: block;
 	}
+}
+
+.pixel-map.argentina + .modal-welcome {
+	color: #888;
+    top: 120px;
+    width: 400px;
+}
+
+.pixel-map.chile + .modal-welcome {
+	color: #fff;
+    top: 120px;	
+    width: 400px;
+}
+
+.pixel-map.uruguay + .modal-welcome {
+	color: #fff;
+    top: 120px;	
+    width: 400px;
+}
+
+.pixel-map.brasil + .modal-welcome {
+	color: #fff;
+    top: 120px;	
+    width: 400px;
+}
+
+.pixel-map.paraguay + .modal-welcome {
+	color: #fff;
+    top: 120px;	
+    width: 400px;
+}
+
+.pixel-map.bolivia + .modal-welcome {
+	color: #fff;
+    top: 120px;	
+    width: 400px;
+}
+
+.pixel-map.peru + .modal-welcome {
+	color: #fff;
+    top: 120px;	
+    width: 400px;
+}
+
+.pixel-map.colombia + .modal-welcome {
+	color: #fff;
+    top: 120px;	
+    width: 400px;
+}
+
+.pixel-map.ecuador + .modal-welcome {
+	color: #fff;
+    top: 120px;	
+    width: 400px;
+}
+
+.pixel-map.venezuela + .modal-welcome {
+	color: #fff;
+    top: 120px;	
+    width: 400px;
 }
