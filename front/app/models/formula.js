@@ -21,19 +21,19 @@ export default DS.Model.extend({
   	provinceStatuses: DS.hasMany('province-status', {async: true}),
 
     votesCount: Ember.computed('votes', function () {
-      if (this.get('assemblyman')) {
+      if (this.get('assemblyman').get('votes') > 0) {
         return parseInt(this.get('assemblyman').get('votes'));
       } else {
-        if (this.get('diputies')) {
+        if (this.get('diputies').get('votes') > 0) {
           return parseInt(this.get('diputies').get('votes'));
         } else {
-          if (this.get('senators')) {
+          if (this.get('senators').get('votes') > 0) {
             return parseInt(this.get('senators').get('votes'));
           } else {
-            if (this.get('positiveVotes')) {
+            if (this.get('positiveVotes').get('votes') > 0) {
               return parseInt(this.get('positiveVotes').get('votes'));
             } else {
-              if (this.get('negativeVotes')) {
+              if (this.get('negativeVotes').get('votes') > 0) {
                 return parseInt(this.get('negativeVotes').get('votes'));
               } else {
                 return parseInt(this.get('votes'));
