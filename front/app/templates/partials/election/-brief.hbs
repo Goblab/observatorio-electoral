@@ -1,19 +1,42 @@
+
 {{#if election.country.flag.isFulfilled}}
 	<div class="country-item">
 		<div class="item-title">
 			{{#link-to 'election' election.id}}
-				<h2>{{election.type.name}} {{election.fixDate}} <br> <span>{{election.level.name}}</span> </h2>
+				{{election.type.name}}
 			{{/link-to}}
+			<p>{{election.level.name}}</p>
 		</div>
-		<div class="participation">
-			<div class="vote">
+		<div class="item-content">
+			<div class="item -banks">
+				&nbsp; {{election.banks}}
+			</div>
+			<div class="item -voters">
 				{{election.votersPercent}}%
 			</div>
-			<div class="percent">
-				Bancas en juego {{election.banks}}
+			<div class="item -date">
+				{{election.fixDate}}
 			</div>
 		</div>
+
 	</div>
 {{else}}
-	<div class="dummy"></div>
+	<div class="-dummy">
+		<div class="item-title">
+			<span class="dummy-title"></span>
+			<p class="dummy-level"></p>
+		</div>
+		<div class="dummy-content">
+			<div class="item-dummy">
+				&nbsp; 
+			</div>
+			<div class="item-dummy">
+				&nbsp; 
+			</div>
+			<div class="item-dummy">
+				&nbsp; 
+			</div>
+		</div>
+
+	</div>
 {{/if}}

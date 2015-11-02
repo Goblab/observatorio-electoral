@@ -1,0 +1,143 @@
+.country {
+	@include outer-container(100%);
+	background: #f7f7f7;
+
+	.country-container {
+		@include span-columns(8);
+		@include shift(2);
+		-webkit-transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+		-moz-transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+		transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+		
+		@include media($mobile) {
+			max-width: 100%;
+		}
+
+	}
+}
+
+.country-filter {
+	@include span-columns(12);
+    padding: 0;
+
+	li {
+		@include span-columns(1 of 5);
+		margin: 10px 15px; 
+
+		&.active {
+			font-weight: bold;
+			border-bottom: 2px solid #333;
+		}
+	}
+}
+
+.country-content, .detail-content, .formula-container {
+	@include span-columns(12);
+}
+
+
+
+.detail-content {
+	.results {
+		@include span-columns(8);
+	}
+
+	aside {
+		@include span-columns(4);
+	}
+}
+
+.list-header {
+	@include span-columns(12);
+	font-weight: 600;
+	border-bottom: 2px solid #ffcb00;
+    color: #999;
+    padding: 5px;
+
+    &.-brief {
+		.item-title {
+		@include span-columns(6);
+		}
+		.item-content {
+			@include span-columns(6);
+
+			.item {
+				@include span-columns(6);
+			}
+		}
+	}
+}
+
+.country-item {
+	@include span-columns(12);
+    padding: 15px 5px;
+    border-bottom: 1px solid #ddd;
+
+	.item-title {
+		a {
+			margin: 0;
+			font-size: 25px;
+			font-weight: 600;
+			color: #3FA9F5;
+		}
+
+		p {
+			margin: 2px 0;
+		    font-style: italic;
+		}
+	}
+
+	.-banks, .-voters {
+	    font-size: 25px;
+	}
+
+	.-date {
+    	font-style: italic;
+	}
+}
+
+
+.legislative-item, .ejecutive-item {
+	@include span-columns(12);
+
+	.item-title {
+		@include span-columns(6);
+	}
+	.item-content {
+		@include span-columns(6);
+
+		.item {
+			@include span-columns(6);
+		}
+	}
+}
+
+
+
+.item-title {
+	@include span-columns(4);
+
+	h5 {
+		font-size: 16px;
+		margin: 0;
+	}
+
+	p {
+		margin: 5px 0;
+		font-style: italic;
+	}
+
+}
+
+.item-content {
+	@include span-columns(8);
+
+	.item {
+		@include span-columns(4);
+		text-align: center;
+	}
+}
+
+.item {
+
+}

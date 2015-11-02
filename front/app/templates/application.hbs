@@ -162,13 +162,15 @@
 			{{liquid-outlet}}
 		{{else}}
 			{{pixel-map class="pixel-map" countries=model.countries}}
-			{{#if isHome}}
 			<div class="modal-welcome">
+			{{#liquid-if isHome class="liquid-modal"}}
 				<img src="/assets/images/observatorio-logo.svg" alt="">
 				<h1>Observatorio electoral</h1>
 				<p>Somos una iniciativa impulsada por investigadores, en su mayoría de la Facultad de Ciencias Sociales de la UBA, que tiene por objetivo brindar un acervo de datos cuantitativos y cualitativos que permitan conocer más y mejor la realidad latinoamericana.</p>
+			{{else}}
+				<h1>Elecciones en {{model.country.name}}</h1>
+			{{/liquid-if}}
 			</div>
-			{{/if}}
 			{{liquid-outlet}}
 		{{/if}}
 	{{/if}}
