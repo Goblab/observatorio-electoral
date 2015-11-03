@@ -1,3 +1,30 @@
-contacto
+<div class="welcome-friend -contact">
+	<h2>Contactanos</h2>
+	<div class="section-content">
+		<form class="create-event contact-form">
+			<fieldset>
+				<label>
+					Nombre
+					{{input type="text" placeholder="..."}}
+				</label>
+			</fieldset>
+			<fieldset>
+				<label>
+					Mail
+					{{input type="text" placeholder="..."}}
+				</label>
+			</fieldset>
+			<fieldset>
+				<label>
+					Mensaje
+					{{textarea type="text" value=model.history}}
+				</label>
+			</fieldset>
+			<fieldset>
+				<input type="submit" value="Guardar">
+			</fieldset>
+		</form>
+	</div>
+</div>
 
 {{outlet}}

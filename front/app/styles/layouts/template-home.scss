@@ -6,10 +6,34 @@
     z-index: 2001;
     height: 100vh;
 
+    &.-about, &.-contact {
+    	    max-width: 600px;
+    margin: 0 auto;
+    height: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    }
+
     img {
     	height: 350px;
     }
+
+    .contact-form {
+	    padding: 25px;
+
+
+	}
 }
+
+
 
 .content {
 	&.-admin {
