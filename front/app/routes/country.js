@@ -26,6 +26,7 @@ export default Ember.Route.extend({
 	setupController: function (controller, model) {
 		this._super(controller, model);
 		controller.set('allElections', true);
+		this.get('controller').get('model.types').setEach('isActive', false);
 		this.controllerFor('application').set('model.country', model.country);
 	},
 

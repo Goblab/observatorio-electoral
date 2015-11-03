@@ -60,11 +60,7 @@
 				<div class="country-menu">
 				<ul>
 				{{#each model.countries as |country|}}
-				<li>
-				{{#link-to 'country' country.id}}
-				<img {{bind-attr src=country.flag.url}} width="40%">
-				{{/link-to}}
-				</li>
+					{{country-flag country=country selected=model.country}}
 				{{/each}}
 				</ul>
 				</div>
