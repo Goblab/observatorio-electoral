@@ -18,17 +18,36 @@
 }
 
 .country-filter {
-	@include span-columns(12);
-    padding: 0;
+	padding: 15px 0 0 0;
+    background: #fff;
+    margin: 0;
 
 	li {
 		@include span-columns(1 of 6);
-		margin: 10px 15px; 
+		cursor: pointer;
+		text-align: center;
+		min-height: 60px;
 
 		&.active {
 			font-weight: bold;
-			border-bottom: 2px solid #333;
 		}
+
+		h5 {
+			margin: 0;
+			font-size: 19px;
+		}
+	}
+}
+
+.country-detail {
+	h1 {
+		margin: 0;
+	}
+
+	.detail-header {
+		margin: 0;
+		padding: 15px;
+		background: #fff;
 	}
 }
 
@@ -40,6 +59,17 @@
 	margin: 50px 0;
     float: left;
     width: 100%;
+
+    h4 {
+    	margin: 0 0 5px 0;
+    }
+
+    p {
+		margin: 0;
+		font-size: 19px;
+		color: #555;
+		line-height: 31px;
+    }
 }
 
 .detail-content .data {
@@ -81,6 +111,7 @@
 .detail-content {
 	.results {
 		@include span-columns(8);
+	    padding-top: 25px;
 	}
 
 	aside {
@@ -117,7 +148,7 @@
 	.item-title {
 		a {
 			margin: 0;
-			font-size: 25px;
+			font-size: 22px;
 			font-weight: 600;
 			color: #3FA9F5;
 		}
@@ -132,6 +163,18 @@
 	    font-size: 25px;
 	}
 
+	.-banks {
+
+		span {
+			display: block;
+		}
+
+		small {
+			display: block;
+			font-size: 16px;
+		}
+	}
+
 	.-date {
     	font-style: italic;
 	}
@@ -143,6 +186,8 @@
 	margin-top: 10px;
 	font-size: 23px;
 	color: #777;
+	border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
 
 
 	.item-title {
@@ -162,12 +207,12 @@
 	@include span-columns(4);
 
 	h5 {
-		font-size: 16px;
+		font-size: 20px;
 		margin: 0;
 	}
 
 	p {
-		margin: 5px 0;
+		margin: 0 0;
 		font-style: italic;
 	}
 
@@ -230,6 +275,46 @@ aside {
 		.country-item .item-title a {
 			color: #2ecc71;
 		}
+
+		.tabs-style-linemove nav li:last-child::before {
+			background: #2ecc71;
+		}
+	}
+
+	&.pixel-paraguay {
+		.detail-content .data {
+			color: #2980b9;
+		}
+
+		.country-item .item-title a {
+			color: #2980b9;
+		}
+
+		.list-header {
+			border-bottom: 2px solid #e74c3c;
+		}
+
+		.tabs-style-linemove nav li:last-child::before {
+			background: #2980b9;
+		}
+	}
+
+	&.pixel-chile {
+		.detail-content .data {
+			color: #2980b9;
+		}
+
+		.country-item .item-title a {
+			color: #2980b9;
+		}
+
+		.list-header {
+			border-bottom: 2px solid #e74c3c;
+		}
+
+		.tabs-style-linemove nav li:last-child::before {
+			background: #2980b9;
+		}
 	}
 
 	&.pixel-brasil {
@@ -243,6 +328,10 @@ aside {
 
 		.list-header {
 			border-bottom: 2px solid #2ecc71;
+		}
+
+		.tabs-style-linemove nav li:last-child::before {
+			background: #2980b9;
 		}
 	}
 
@@ -258,6 +347,10 @@ aside {
 		.list-header {
 			border-bottom: 2px solid #e74c3c;
 		}
+
+		.tabs-style-linemove nav li:last-child::before {
+			background: #e74c3c;
+		}
 	}
 
 	&.pixel-uruguay {
@@ -271,6 +364,10 @@ aside {
 
 		.list-header {
 			border-bottom: 2px solid #e74c3c;
+		}
+
+		.tabs-style-linemove nav li:last-child::before {
+			background: #e74c3c;
 		}
 	}
 

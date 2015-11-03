@@ -28,23 +28,26 @@
     position: fixed;
     overflow: hidden;
     left: 0;
-    width: 200px;
-    background: darken(#aae0ff, 10%);
+    width: 100%;
+    background: #f9f9f9;
     z-index: 1;
-    top: 0;
+    top: 80px;
     bottom: 0;
-    padding-top: 120px;
+    right: 0;
+    height: 75px;
     @include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
 
 	ul {
     padding: 0;
     margin: 0;
     @include outer-container(100%);
+    max-width: 1000px;
 	}
 
 	li {
-width: 100%;
-padding: 10px 0;
+    width: 10%;
+    padding: 10px 0;
+    float: left;
 	}
 
 	a {

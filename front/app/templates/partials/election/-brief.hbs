@@ -9,13 +9,18 @@
 		</div>
 		<div class="item-content">
 			<div class="item -banks">
-				&nbsp; {{election.banks}}
+				{{#if election.banks}}
+				<span>{{election.banks}}</span>
+				<small>Bancas en juego</small>
+				{{else}}
+				&nbsp;
+				{{/if}}
 			</div>
 			<div class="item -voters">
-				{{election.votersPercent}}%
+				&nbsp;{{election.votersPercent}}%
 			</div>
 			<div class="item -date">
-				{{election.fixDate}}
+				&nbsp;{{election.fixDate}}
 			</div>
 		</div>
 

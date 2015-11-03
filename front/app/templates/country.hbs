@@ -1,16 +1,21 @@
 <div class="country {{model.country.componentName}}">
 	<div class="country-container">
+		
+		<div class="country-filter tabs tabs-style-linemove">
+			<nav>
+				<ul>
+					<li {{bind-attr class="allElections:active"}}>
+						<h5 {{action 'search' null model.country}}> Ver Todas</h5>
+					</li>
+					{{#each model.types as |type|}}
+				<li {{bind-attr class="type.isActive:active"}}>
+					<h5 {{action 'search' type model.country}} >{{type.name}}</h5>
+				</li>
+			{{/each}}
+				</ul>
+			</nav>
+		</div>
 
-		<ul class="country-filter" >
-			<li {{bind-attr class="allElections:active"}}>
-				<a {{action 'search' null model.country}}> Ver Todas</a>
-			</li>		
-		{{#each model.types as |type|}}
-			<li {{bind-attr class="type.isActive:active"}}>
-				<a {{action 'search' type model.country}} >{{type.name}}</a>
-			</li>
-		{{/each}}
-		</ul>
 
 		<section class="country-content" style="width: 100%;">
 			<div class="country-list">
@@ -21,7 +26,7 @@
 						</div>
 						<div class="item-content">
 							<div class="item -banks">
-								Bancas en juego
+								&nbsp;
 							</div>
 							<div class="item -voters">
 								Participación
