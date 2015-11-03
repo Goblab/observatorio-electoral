@@ -1,4 +1,6 @@
 {{#link-to 'country' country.id}}
-	<img {{bind-attr src=country.flag.url}} width="100%">
+	{{#if country.flag.url}}
+		<img {{bind-attr src=country.flag.url}} width="100%">
+	{{/if}}
 {{/link-to}}
 					
