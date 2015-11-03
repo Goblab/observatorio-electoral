@@ -11,7 +11,7 @@ export default Ember.Route.extend({
 		return Ember.RSVP.hash({
 		  country: this.get('store').find('country', params.country_id),
           types: this.get('store').find('election-type'),
-          elections: this.get('store').find('election', {country:  params.country_id, enabled: true})
+          elections: this.get('store').find('election', {country:  params.country_id, enabled: true, sort: 'date DESC'})
      	});
 	},
 
@@ -31,7 +31,7 @@ export default Ember.Route.extend({
 
 	actions: {
 	    search: function (type, country) {
-	      var filter = { country: country.get('id'), enabled: true };
+	      var filter = { country: country.get('id'), enabled: true, sort: 'date DESC'};
 
 	      this.get('controller').get('model.types').setEach('isActive', false);
 	      this.get('controller').set('allElections', false);
