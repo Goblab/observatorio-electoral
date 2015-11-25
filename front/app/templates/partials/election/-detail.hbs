@@ -71,6 +71,20 @@
 						<p>{{election.history}}</p>
 					</div>
 
+					<div class="formula-container">
+					{{#each election.formulasSorted as |formula|}}
+					      {{#if election.isEjecutive}}
+					        {{partial 'partials/formula/ejecutive/detail'}}
+					      {{/if}}
+					      {{#if election.isLegislative}}
+					        {{partial 'partials/formula/legislative/detail'}}
+					      {{/if}}
+					      {{#if election.isReferendum}}
+					      	{{partial 'partials/formula/referendum/detail'}}
+					      {{/if}}			
+					{{/each}}
+					</div>
+
 				</div>
 
 				<aside>
@@ -78,26 +92,27 @@
 						<div class="data-item">
 							{{#if election.votersPercent}}
 								<span>{{election.votersPercent}}%</span>
-								<small>{{election.voters}}</small>
+								<small>{{format-number election.voters format="0.0"}}</small>
 							{{else}}
-								<span>{{election.voters}}</span>
+								<span>{{format-number election.voters format="0.0"}}</span>
 							{{/if}}
 							<h6>Votantes</h6>
+							
 						</div>
 
 						<div class="data-item">
 							{{#if election.positivesPercent}}
 								<span>{{election.positivesPercent}}%</span>
-								<small>{{election.positives}}</small>
+								<small>{{format-number election.positives format="0.0"}}</small>
 							{{else}}
-								<span>{{election.positives}}</span>
+								<span>{{format-number election.positives format="0.0"}}</span>
 							{{/if}}
 							<h6>Positivos</h6>
 						</div>
 
 						{{#if election.electors}}
 						<div class="data-item">
-							<span>{{election.electors}}</span>
+							<span>{{format-number election.electors format="0.0"}}</span>
 							<h6>Electores</h6>
 						</div>
 						{{/if}}
@@ -105,9 +120,9 @@
 						<div class="data-item">
 							{{#if election.blanksPercent}}
 								<span>{{election.blanksPercent}}%</span>
-								<small>{{election.blank}}</small>
+								<small>{{format-number election.blank format="0.0"}}</small>
 							{{else}}
-								<span>{{election.blank}}</span>
+								<span>{{format-number election.blank format="0.0"}}</span>
 							{{/if}}
 							<h6>Blancos</h6>
 						</div>
@@ -115,7 +130,7 @@
 						{{#if election.abstensPercent}}
 							<div class="data-item">
 								<span>{{election.abstensPercent}}%</span>
-								<small>{{election.abstens}}</small>
+								<small>{{format-number election.abstens format="0.0"}}</small>
 								<h6>Abstenciones</h6>
 							</div>
 						{{/if}}
@@ -128,9 +143,9 @@
 						<div class="data-item">
 							{{#if election.validsPercent}}
 								<span>{{election.validsPercent}}%</span>
-								<small>{{election.valids}}</small>
+								<small>{{format-number election.valids format="0.0"}}</small>
 							{{else}}
-								<span>{{election.valids}}</span>
+								<span>{{format-number election.valids format="0.0"}}</span>
 							{{/if}}
 							<h6>Validos</h6>
 						</div>

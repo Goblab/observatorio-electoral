@@ -1,7 +1,7 @@
 <div class="ejecutive-detail">
   
   <div class="brief-header">
-    <h5>{{formula.politicalForce.name}} {{formula.votes}} ({{formula.percent}}%)</h5>
+    <h5>{{formula.politicalForce.name}} {{format-number formula.votes format="0.0"}} ({{formula.percent}}%)</h5>
   </div>
 
   <div class="brief-content">
@@ -13,5 +13,24 @@
          {{/link-to}}
           <h5 style="margin: 0;">{{candidate.candidate.fullName}}  <i>{{candidate.charge.name}}</i></h5>
       {{/each}}
+
+        {{#each formula.provinceStatuses as |status|}}
+          <div class="brief-item">
+          <div class="item-name">
+            
+          Provincia | Estado  <!-- Select Obligatoria | Opcional -->
+          {{status.province.name}}
+          </div>
+          <div class="item-votes">
+
+           
+             {{format-number status.votes.votes format="0.0"}}
+           <small>Votos</small>
+          </div>
+          <div class="item-percent">
+             {{status.votes.percent}}%
+          </div>
+          </div>
+      {{/each}}   
   </div>
 </div>

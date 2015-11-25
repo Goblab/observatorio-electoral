@@ -14,12 +14,11 @@
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
+    float: left;
     background: #2980b9;
-    left: 0;
-    right: 0;
     text-align: center;
+    width: 100%;
+    height: 80px;
 }
 
 

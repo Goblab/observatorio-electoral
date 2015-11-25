@@ -30,6 +30,7 @@
     "spectrum": "~1.6.2",
     "matchMedia": "~0.2.0",
     "chartjs": "1.0.1",
-    "ember-data.model-fragments": "0.3.3"
+    "ember-data.model-fragments": "0.3.3",
+    "numeral": "~1.5.3"
   }
 }
