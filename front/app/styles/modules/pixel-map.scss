@@ -1,5 +1,5 @@
 .pixel-map {
-	height: calc(100vh - 230px);
+	height: calc(100vh - 160px);
 	overflow: hidden;
 	-webkit-transition: all 2s;
 	transition: all 2s;
@@ -8,6 +8,8 @@
     background: url("/assets/images/back-map.svg");
     background-size: 138px;
     border-bottom: 1px solid transparent;
+	
+
 
 
 

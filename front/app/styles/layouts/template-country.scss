@@ -4,11 +4,13 @@
 	font-family: 'PT Sans', sans-serif;
 
 	.country-container {
-		@include span-columns(8);
-		@include shift(2);
+		display: block;
+		margin: 0 auto;
 		-webkit-transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1);
 		-moz-transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1);
 		transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+		background: #fff;
+		max-width: 1200px;
 		
 		@include media($tablet) {
 			max-width: 100%;
@@ -20,10 +22,29 @@
 	}
 }
 
+.country-nav {
+	padding: 15px;
+	background: #fff;
+	border-bottom: 1px solid #ddd;
+
+	h1 {
+		margin: 0;
+
+		span {
+			color: #999;
+			font-size: 19px;
+			float: left;
+			line-height: 3px;
+			margin: 15px;
+		}
+	}
+}
+
 .country-filter {
-	padding: 15px 0 0 0;
+    padding: 35px 0 0 0;
     background: #fff;
     margin: 0;
+    border-bottom: 1px solid #eee;
 
 	li {
 		@include span-columns(1 of 6);
@@ -51,17 +72,29 @@
 		margin: 0;
 		padding: 15px;
 		background: #fff;
+		border-bottom: 1px solid #ddd;
 	}
 }
 
-.country-content, .detail-content, .formula-container {
+.country-content,
+.detail-content,
+.formula-container {
 	@include span-columns(12);
+	padding: 25px;
 }
 
+.country-content,
+.detail-content {
+	background: #fff;
+}
+
+
+
 .reference {
-	margin: 50px 0;
     float: left;
     width: 100%;
+    padding-left: 100px;
+    margin-bottom: 50px;
 
     h4 {
     	margin: 0 0 5px 0;
@@ -147,7 +180,7 @@
 .country-item {
 	@include span-columns(12);
     padding: 15px 5px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #eaeaea;
 
 	.item-title {
 		a {

@@ -1,6 +1,10 @@
 <div class="country {{model.country.componentName}}">
 	<div class="country-container">
+		<div class="country-nav">
 		
+			<h1> <span>{{fa-icon 'signal'}}</span> Elecciones en {{model.country.name}}</h1>	
+		</div>
+
 		<div class="country-filter tabs tabs-style-linemove">
 			<nav>
 				<ul>
@@ -8,21 +12,20 @@
 						<h5 {{action 'search' null model.country}}> Ver Todas</h5>
 					</li>
 					{{#each model.types as |type|}}
-				<li {{bind-attr class="type.isActive:active"}}>
-					<h5 {{action 'search' type model.country}} >{{type.name}}</h5>
-				</li>
-			{{/each}}
+						<li {{bind-attr class="type.isActive:active"}}>
+							<h5 {{action 'search' type model.country}} >{{type.name}}</h5>
+						</li>
+					{{/each}}
 				</ul>
 			</nav>
 		</div>
-
 
 		<section class="country-content" style="width: 100%;">
 			<div class="country-list">
 				{{#if model.elections}}
 					<div class="list-header">
 						<div class="item-title">
-							Nombre de la eleccion
+							Nombre de la elección
 						</div>
 						<div class="item-content">
 							<div class="item -banks">

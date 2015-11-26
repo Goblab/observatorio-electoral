@@ -2,13 +2,20 @@
 	<div class="country-container">
 		<div class="country-detail">
 			<div class="detail-header">
-				<h1>Eleccion {{election.level.name}}  en {{election.country.name}}</h1>
+				<h1>Elección {{election.level.name}} en {{election.country.name}}</h1>
 				<i>{{election.instance.name}} {{election.category.name}} y {{election.participation.name}}s 
 				del <time>{{election.fixDate}}</time></i>
 			</div>
 
 			<div class="detail-content">
 				<div class="results">
+					{{#if election.history}}
+					<div class="reference">
+						<h4>Referencia</h4>
+						<p>{{election.history}}</p>
+					</div>
+					{{/if}}
+
 					<div class="list-header -brief">
 						{{#if election.isEjecutive}}
 							<div class="item-title">
@@ -66,11 +73,7 @@
 					{{/each}}
 					</div>
 
-					<div class="reference">
-						<h4>Referencia</h4>
-						<p>{{election.history}}</p>
-					</div>
-
+					
 					<div class="formula-container">
 					{{#each election.formulasSorted as |formula|}}
 					      {{#if election.isEjecutive}}

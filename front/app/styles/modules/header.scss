@@ -2,6 +2,18 @@ $text-header-app: new-breakpoint(max-width 500px 6);
 
 header {
 	
+	.country-menu {
+		opacity: 0;
+	}
+
+	&:hover {
+		.country-menu {
+			opacity: 1;
+		}
+	}
+	
+	
+
 	&.welcome {
 		    background: #fff;
     position: fixed;
@@ -9,17 +21,24 @@ header {
     right: 0;
     left: 0;
     height: 80px;
+
+
 	}
 
 	&.-home {
 		background: #fff;
+
+		.country-menu {
+			//opacity: 1;
+		}
 	}
 
 	.container-header {
-		max-width: 70vw;
-		margin: 15px auto;
+		max-width: 1200px;
+		margin: 0 auto;
 		@include display(flex);
 		@include justify-content(space-between);
+	    padding: 15px;
 
 		@include media($mobile) {
 			max-width: 100%;
