@@ -1,17 +1,21 @@
 <div class="ejecutive-detail">
   <div class="brief-header">
-    <h5>{{formula.politicalForce.name}} {{format-number formula.votes format="0.0"}} ({{formula.percent}}%)</h5>
+    <h5>{{formula.politicalForce.name}}
+    </h5>
+    <div class="votes">
+      <span>{{formula.percent}}%</span> <br>
+      <small>{{format-number formula.votes format="0.0"}} </small>
+    </div>
   </div>
 
   <div class="brief-content">
     <div class="candidate-container">
     {{#each formula.candidates as |candidate|}}
         <div class="candidate-item">
-          <i>{{candidate.charge.name}}</i>
           {{#if candidate.candidate.picture.url}}
-            <img {{bind-attr src=candidate.candidate.picture.url}} width="50px">
+            <img {{bind-attr src=candidate.candidate.picture.url}} width="50px" style="display: none;">
           {{/if}}  
-          <h5 style="margin: 0;">{{candidate.candidate.name}} {{candidate.candidate.lastName}}</h5>
+          <h5 style="margin: 0;font-size: 20px; padding: 15px 0;"> {{candidate.candidate.name}} {{candidate.candidate.lastName}} <br> <small>{{candidate.charge.name}}</small></h5>
         </div>
     {{/each}}
     </div>

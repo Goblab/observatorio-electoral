@@ -3,16 +3,10 @@ $text-header-app: new-breakpoint(max-width 500px 6);
 header {
 	
 	.country-menu {
-		opacity: 0;
+		opacity: 1;
 	}
 
-	&:hover {
-		.country-menu {
-			opacity: 1;
-		}
-	}
-	
-	
+
 
 	&.welcome {
 		    background: #fff;

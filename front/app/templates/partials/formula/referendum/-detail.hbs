@@ -1,4 +1,4 @@
- <div class="brief-referendum">	
+ <div class="brief-referendum ejecutive-detail">	
     <p>{{formula.proposal}}</p> 
     <div class="referendum-item -yes">
     	{{fa-icon 'thumbs-o-up'}}
@@ -14,30 +14,27 @@
         <small>({{formula.negativeVotes.percent}}%)</small>
       </span>
   	</div>
-</div>
 
-{{#each formula.provinceStatuses as |status|}}
+    {{#each formula.provinceStatuses as |status|}}
       <div class="brief-item">
         <div class="item-name">
-          
-        Provincia | Estado  <!-- Select Obligatoria | Opcional -->
+         <!--Provincia | Estado  Select Obligatoria | Opcional -->
         {{status.province.name}}
         </div>
         <div class="item-votes">
-          {{format-number status.positiveVotes.votes format="0.0"}}
-         <small>Votos</small>
+           <b>{{status.positiveVotes.percent}}%</b> <br>
+           <span>{{format-number status.positiveVotes.votes format="0.0"}}</span> <br>
+           <small>Votos</small>
         </div>
         <div class="item-percent">
-           {{status.positiveVotes.percent}}%
+           <b>{{status.negativeVotes.percent}}%</b> <br>
+           <span>{{status.negativeVotes.votes}}</span> 
+           <small>Votos</small>
         </div>
-
-       <div class="item-votes">
-
-         {{status.negativeVotes.votes}}
-         <small>Votos</small>
-        </div>
-        <div class="item-percent">
-           {{status.negativeVotes.percent}}%
-        </div>      
       </div>
-  {{/each}} 
+      {{/each}} 
+</div>
+
+
+
+

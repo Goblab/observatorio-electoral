@@ -31,7 +31,7 @@ export default DS.Model.extend({
     votersPercent: DS.attr('string'),
     
     blank: DS.attr('string'),
-    blankPercents: DS.attr('string'),
+    blankPercent: DS.attr('string'),
     
     nulls: DS.attr('string'),
     nullsPercent: DS.attr('string'),

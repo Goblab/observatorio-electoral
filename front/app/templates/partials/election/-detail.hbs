@@ -2,96 +2,40 @@
 	<div class="country-container">
 		<div class="country-detail">
 			<div class="detail-header">
-				<h1>Elección {{election.level.name}} en {{election.country.name}}</h1>
+				<!--<h1>Elección {{election.level.name}} en {{election.country.name}}</h1>-->
+				<h1>{{election.name}}</h1>
 				<i>{{election.instance.name}} {{election.category.name}} y {{election.participation.name}}s 
 				del <time>{{election.fixDate}}</time></i>
+
+				
+				<div class="banks">
+					{{#if election.banks}}
+						<h6>Bancas renovadas</h6>
+						<span>{{election.banks}}</span>
+						<small>{{election.cameraType.name}} </small>
+					{{/if}}
+					{{#if isReferendum}}
+						{{#if election.vinculated}}
+							Vinculada
+						{{else}}
+							No Vinculada
+						{{/if}}
+					{{/if}}
+				</div>
+				
 			</div>
 
 			<div class="detail-content">
 				<div class="results">
-					{{#if election.history}}
-					<div class="reference">
-						<h4>Referencia</h4>
-						<p>{{election.history}}</p>
-					</div>
-					{{/if}}
 
-					<div class="list-header -brief">
-						{{#if election.isEjecutive}}
-							<div class="item-title">
-								Formulas
-							</div>
-							<div class="item-content ">
-								<div class="item -voters">
-									Electores
-								</div>
-								<div class="item -banks">
-									Porcentaje
-								</div>
-							</div>
-				        {{/if}}
-				        {{#if election.isLegislative}}
-							<div class="item-title">
-								Resultados
-							</div>
-							<div class="item-content ">
-								<div class="item -voters">
-									Electores
-								</div>
-								<div class="item -banks">
-									Porcentaje
-								</div>
-							</div>
-				        {{/if}}
-						{{#if election.isReferendum}}
-							<div class="item-title">
-								Propuesta
-							</div>
-							<div class="item-content ">
-								<div class="item -voters">
-									Participación
-								</div>
-								<div class="item -banks">
-									Bancas en juego
-								</div>
-							</div>
-						{{/if}}	
-						
-					</div>
-					
-					<div class="formula-container">
-					{{#each election.formulasSorted as |formula|}}
-					      {{#if election.isEjecutive}}
-					        {{partial 'partials/formula/ejecutive/brief'}}
-					      {{/if}}
-					      {{#if election.isLegislative}}
-					        {{partial 'partials/formula/legislative/brief'}}
-					      {{/if}}
-					      {{#if election.isReferendum}}
-					      	{{partial 'partials/formula/referendum/brief'}}
-					      {{/if}}			
-					{{/each}}
-					</div>
-
-					
-					<div class="formula-container">
-					{{#each election.formulasSorted as |formula|}}
-					      {{#if election.isEjecutive}}
-					        {{partial 'partials/formula/ejecutive/detail'}}
-					      {{/if}}
-					      {{#if election.isLegislative}}
-					        {{partial 'partials/formula/legislative/detail'}}
-					      {{/if}}
-					      {{#if election.isReferendum}}
-					      	{{partial 'partials/formula/referendum/detail'}}
-					      {{/if}}			
-					{{/each}}
-					</div>
-
-				</div>
-
-				<aside>
 					<div class="data">
+						{{#if election.electors}}
+						<div class="data-item" style="width: 100%;">
+							<span>{{format-number election.electors format="0.0"}}</span>
+							<h6>Electores</h6>
+						</div>
+						{{/if}}
+
 						<div class="data-item">
 							{{#if election.votersPercent}}
 								<span>{{election.votersPercent}}%</span>
@@ -100,34 +44,6 @@
 								<span>{{format-number election.voters format="0.0"}}</span>
 							{{/if}}
 							<h6>Votantes</h6>
-							
-						</div>
-
-						<div class="data-item">
-							{{#if election.positivesPercent}}
-								<span>{{election.positivesPercent}}%</span>
-								<small>{{format-number election.positives format="0.0"}}</small>
-							{{else}}
-								<span>{{format-number election.positives format="0.0"}}</span>
-							{{/if}}
-							<h6>Positivos</h6>
-						</div>
-
-						{{#if election.electors}}
-						<div class="data-item">
-							<span>{{format-number election.electors format="0.0"}}</span>
-							<h6>Electores</h6>
-						</div>
-						{{/if}}
-
-						<div class="data-item">
-							{{#if election.blanksPercent}}
-								<span>{{election.blanksPercent}}%</span>
-								<small>{{format-number election.blank format="0.0"}}</small>
-							{{else}}
-								<span>{{format-number election.blank format="0.0"}}</span>
-							{{/if}}
-							<h6>Blancos</h6>
 						</div>
 
 						{{#if election.abstensPercent}}
@@ -153,6 +69,26 @@
 							<h6>Validos</h6>
 						</div>
 
+						<div class="data-item">
+							{{#if election.positivesPercent}}
+								<span>{{election.positivesPercent}}%</span>
+								<small>{{format-number election.positives format="0.0"}}</small>
+							{{else}}
+								<span>{{format-number election.positives format="0.0"}}</span>
+							{{/if}}
+							<h6>Positivos</h6>
+						</div>
+
+						<div class="data-item">
+							{{#if election.blankPercent}}
+								<span>{{election.blankPercent}}%</span>
+								<small>{{format-number election.blank format="0.0"}}</small>
+							{{else}}
+								<span>{{format-number election.blank format="0.0"}}</span>
+							{{/if}}
+							<h6>Blancos</h6>
+						</div>
+
 						{{#if election.unchecked}}			
 						<div class="data-item">
 							<label for="">Sin marcar</label> {{election.unchecked}} ({{election.uncheckedPercent}})
@@ -160,20 +96,41 @@
 						{{/if}}
 					</div>
 
-					<div class="banks">
-						{{#if isLegislative}}
-							<h6>Bancas renovadas</h6>
-							<span>{{election.banks}}</span>
-							<small>{{election.cameraType.name}} </small>
-						{{/if}}
-						{{#if isReferendum}}
-							{{#if election.vinculated}}
-								Vinculada
-							{{else}}
-								No Vinculada
-							{{/if}}
-						{{/if}}
+
+					
+					<div class="formula-detail">
+					{{#each election.formulasSorted as |formula|}}
+					      {{#if election.isEjecutive}}
+					        {{partial 'partials/formula/ejecutive/detail'}}
+					      {{/if}}
+					      {{#if election.isLegislative}}
+					        {{partial 'partials/formula/legislative/detail'}}
+					      {{/if}}
+					      {{#if election.isReferendum}}
+					      	{{partial 'partials/formula/referendum/detail'}}
+					      {{/if}}			
+					{{/each}}
 					</div>
+
+				</div>
+
+				<aside>
+					<div class="formula-brief">
+					{{#each election.formulasSorted as |formula|}}
+					      {{#if election.isEjecutive}}
+					        {{partial 'partials/formula/ejecutive/brief'}}
+					      {{/if}}
+					{{/each}}
+					</div>
+
+					{{#if election.history}}
+					<div class="reference">
+						<h4>Referencia</h4>
+						<p>{{election.history}}</p>
+					</div>
+					{{/if}}
+
+					
 				</aside>
 			</div>
 

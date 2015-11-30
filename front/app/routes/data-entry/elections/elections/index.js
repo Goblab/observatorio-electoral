@@ -7,7 +7,7 @@ export default Ember.Route.extend(InfinityRoute, AuthenticatedRouteMixin, {
   _listName: 'model',
 
   model: function() {
-      return this.infinityModel("election", { perPage: 25, startingPage: 1});
+      return this.infinityModel("election", { perPage: 25, startingPage: 1, sort: 'date DESC'});
   },
 
   actions: {
@@ -19,7 +19,7 @@ export default Ember.Route.extend(InfinityRoute, AuthenticatedRouteMixin, {
     search: function () {
       this.set('_listName', 'model.content');
 
-      var filter = { perPage: 10, startingPage: 1};
+      var filter = { perPage: 10, startingPage: 1, sort: 'date DESC'};
 
       if (this.get('controller.country')) {
         filter.country = this.get('controller.country.id'); 

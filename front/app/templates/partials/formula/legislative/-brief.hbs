@@ -13,13 +13,9 @@
 	</div>
 
 	<div class="item-content">	
-	<div class="item">
-		&nbsp;
-		{{format-number formula.assemblyman.votes format="0.0"}}
-	</div>
-	<div class="item">
-		&nbsp;
-		{{formula.assemblyman.percent}}%
-	</div>
+		<div class="item">
+			{{formula.assemblyman.percent}}%
+			<small>{{format-number formula.assemblyman.votes format="0.0"}}</small>
+		</div>
 	</div> 
 </div> 	
