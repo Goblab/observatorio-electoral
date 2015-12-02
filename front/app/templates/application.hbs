@@ -27,105 +27,36 @@
 		</ul>
 	</nav> <!-- .change-app-container -->
 
-	{{#unless isDataEntry}}
-		{{#unless isAdmin}}
-			<header {{bind-attr class=":welcome isHome:-home isDataEntry:-admin isAdmin:-admin"}}>
-				<div class="container-header">
-					<div class="logo-home">
-						{{#link-to 'index'}}
-							<img src="assets/images/logo-oblat.svg">
-						{{/link-to}}
-					</div>
+	
 
-					<nav>
-						<ul>
-							<li>
-							{{#link-to 'contact'}} 
-								Contacto
-							{{/link-to}}
-							</li>
-							<li>
-							{{#link-to 'about'}} 
-								Quienes somos
-							{{/link-to}}
-							</li>
-							<li>
-							{{#link-to 'data-entry'}} 
-								Administrador
-							{{/link-to}}
-							</li>
-						</ul>
-					</nav>
-				</div>
-				<div class="country-menu">
-				<ul>
-				{{#each model.countries as |country|}}
-					{{country-flag country=country selected=model.country}}
-				{{/each}}
-				</ul>
-				</div>
-			</header>
-		{{else}}
+	<header {{bind-attr class="isShowApps:is-visible isHome:-home isDataEntry:-admin isAdmin:-admin"}}>
+		{{#if isAdmin}}
+			<button class="logo" {{action 'toggleApps' target="view"}}>
+				<img src="assets/images/observatorio-logo.svg">
+			</button>
+			<h3>Administración</h3>
+			<button {{bind-attr class=":menu-button :cbutton :cbutton--effect-nikola isShowClick:cbutton--click"}} {{action 'toggleMenu' target="view"}}>
+				{{fa-icon "bars"}}
+			</button>
+		{{/if}}
 
-			<header {{bind-attr class="isShowApps:is-visible isHome:-home isDataEntry:-admin isAdmin:-admin"}}>
-				{{#if isAdmin}}
-					<button class="logo" {{action 'toggleApps' target="view"}}>
-						<img src="assets/images/observatorio-logo.svg">
-					</button>
-					<h3>Administración</h3>
-					<button {{bind-attr class=":menu-button :cbutton :cbutton--effect-nikola isShowClick:cbutton--click"}} {{action 'toggleMenu' target="view"}}>
-						{{fa-icon "bars"}}
-					</button>
-				{{/if}}
+		{{#if isShowApps}}
+			<a class="log-out" {{ action 'invalidateSession' }}>
+				<span>Cerrar sesión</span> {{fa-icon "sign-out"}}
+			</a>
+		{{/if}}	
 
-				{{#if isShowApps}}
-					<a class="log-out" {{ action 'invalidateSession' }}>
-						<span>Cerrar sesión</span> {{fa-icon "sign-out"}}
-					</a>
-				{{/if}}	
+		{{#if isDataEntry}}
+			<button class="logo" {{action 'toggleApps' target="view"}}>
+				<img src="assets/images/observatorio-logo.svg">
+			</button>
+			<h3>Manejo de datos</h3>
+			<button {{bind-attr class=":menu-button :cbutton :cbutton--effect-nikola isShowClick:cbutton--click"}} {{action 'toggleMenu' target="view"}}>
+				{{fa-icon "bars"}}
+			</button>
+		{{/if}}
+	</header>
 
-				{{#if isDataEntry}}
-					<button class="logo" {{action 'toggleApps' target="view"}}>
-						<img src="assets/images/observatorio-logo.svg">
-					</button>
-					<h3>Manejo de datos</h3>
-					<button {{bind-attr class=":menu-button :cbutton :cbutton--effect-nikola isShowClick:cbutton--click"}} {{action 'toggleMenu' target="view"}}>
-						{{fa-icon "bars"}}
-					</button>
-				{{/if}}
-			</header>
-		{{/unless}}
-
-	{{else}}
-
-		<header {{bind-attr class="isShowApps:is-visible isHome:-home isDataEntry:-admin isAdmin:-admin"}}>
-			{{#if isAdmin}}
-				<button class="logo" {{action 'toggleApps' target="view"}}>
-					<img src="assets/images/observatorio-logo.svg">
-				</button>
-				<h3>Administración</h3>
-				<button {{bind-attr class=":menu-button :cbutton :cbutton--effect-nikola isShowClick:cbutton--click"}} {{action 'toggleMenu' target="view"}}>
-					{{fa-icon "bars"}}
-				</button>
-			{{/if}}
-
-			{{#if isShowApps}}
-				<a class="log-out" {{ action 'invalidateSession' }}>
-					<span>Cerrar sesión</span> {{fa-icon "sign-out"}}
-				</a>
-			{{/if}}	
-
-			{{#if isDataEntry}}
-				<button class="logo" {{action 'toggleApps' target="view"}}>
-					<img src="assets/images/observatorio-logo.svg">
-				</button>
-				<h3>Manejo de datos</h3>
-				<button {{bind-attr class=":menu-button :cbutton :cbutton--effect-nikola isShowClick:cbutton--click"}} {{action 'toggleMenu' target="view"}}>
-					{{fa-icon "bars"}}
-				</button>
-			{{/if}}
-		</header>	
-	{{/unless}}
 
 
 	<div {{bind-attr class=":menu-wrap isShowMenu:show isData:-data isHome:-home isDataEntry:-admin isRed:-red isCalendar:-calendar isAdmin:-admin"}}> 
@@ -202,14 +133,73 @@
 			</li>
 		</ul>
 	</div><!-- main-nav-wrap -->
-
-	{{else}}
-
-
 {{/if}}
 
 
-{{#if session.isAuthenticated}}
+
+{{#unless isAdmin}}
+	{{#unless isDataEntry}}
+		<header {{bind-attr class=":welcome isHome:-home isDataEntry:-admin isAdmin:-admin"}}>
+				<div class="container-header">
+					<div class="logo-home">
+						{{#link-to 'index'}}
+							<img src="assets/images/logo-oblat.svg">
+						{{/link-to}}
+					</div>
+
+					<nav>
+						<ul>
+							<li>
+							{{#link-to 'contact'}} 
+								Contacto
+							{{/link-to}}
+							</li>
+							<li>
+							{{#link-to 'about'}} 
+								Quienes somos
+							{{/link-to}}
+							</li>
+							{{#if session.isAuthenticated}}
+								{{#if (can 'view data-entry')}}							
+									<li>
+										{{#link-to 'data-entry'}} 
+											Manejo de Datos
+										{{/link-to}}
+									</li>
+								{{/if}}
+								{{#if (can 'view admin')}}							
+									<li>
+										{{#link-to 'admin.users.index'}} 
+											Administrador
+										{{/link-to}}
+									</li>
+								{{/if}}
+
+								<li>
+									<a {{ action 'invalidateSession' }}>
+										Salir {{fa-icon "sign-out"}}
+									</a>
+								</li>
+							{{else}}
+							<li>
+								{{#link-to 'login'}} 
+									{{fa-icon 'lock'}}
+								{{/link-to}}
+							</li>
+							{{/if}}
+						</ul>
+					</nav>
+				</div>
+				<div class="country-menu">
+				<ul>
+				{{#each model.countries as |country|}}
+					{{country-flag country=country selected=model.country}}
+				{{/each}}
+				</ul>
+			</div>
+		</header>
+	{{/unless}}
+{{/unless}}
 <div {{bind-attr class=":content isHome:-home isShowMenu:show isShowApps:is-visible isDataEntry:-admin isAdmin:-admin"}}>
 	{{#if isDataEntry}}
 		{{liquid-outlet}}
@@ -239,9 +229,6 @@
 	</footer>
 	{{/if}}
 </div>
-{{else}}
-	{{liquid-outlet}}
-{{/if}}
 
 
 
