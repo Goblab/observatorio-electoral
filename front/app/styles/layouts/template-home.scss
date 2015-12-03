@@ -7,7 +7,7 @@
     height: 100vh;
 
     &.-about, &.-contact {
-    	    max-width: 780px;
+    	    max-width: 1160px;
     margin: 0 auto;
     height: auto;
     display: -webkit-box;
@@ -22,6 +22,8 @@
     width: 100%;
     padding: 90px 15px 25px;
     background: #fff;
+        background-image: url("/assets/images/back-map.svg");
+    background-size: 12%;
     }
 
     img {
@@ -36,34 +38,31 @@
 }
 
 .-about {
-	dl {
-		float: left;
-		width: 100%;
 
+
+	
+
+	.intro-about {
 		p {
-			margin: 0;
-			padding-top: 5px;
+			font-size: 20px;
+			line-height: 36px;
+			color: #777;
+			padding: 0 75px 25px 75px;
+			text-align: center;
 		}
 	}
 
-	dt {
-    float: left;
-    width: 30%;
-    min-height: 70px;
-
-    	span {
-    float: left;
-    width: 100%;
-    border-top: 2px solid #efefef;
-    padding-top: 5px;
-    	}
+	.members,
+	.about-board {
+		p {
+			font-size: 20px;
+			line-height: 36px;
+			color: #777;
+			padding: 0 75px 0 75px;
+			text-align: center
+		}
 	}
 
-	dd {
-    float: left;
-    width: 60%;
-    min-height: 70px;
-	}
 }
 
 

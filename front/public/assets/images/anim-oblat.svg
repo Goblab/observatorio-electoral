@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 600 600" enable-background="new 0 0 600 600" xml:space="preserve">
+
+<style type="text/css" >
+       	#gear {
+		    animation-name: ckw;
+		    animation-iteration-count: infinite;
+		    display: inline-block;
+		}
+
+		.gear-1 { transform-origin: 50% 50%; opacity: 0.33; animation-duration: 10s; fill: #c60000; }
+		.gear-2 { transform-origin: 56% 50%; opacity: 0.5; animation-duration: 10s; fill: #c60000;}
+		.gear-3 { transform-origin: 46% 50%; opacity: 0.75; animation-duration: 10s; fill: #c60000;}
+		.gear-4 { transform-origin: 57% 47%;  opacity: 1;  animation-duration: 10s; fill: #fff !important;}
+
+		@keyframes ckw {
+		    0% {
+		        transform: rotate(0deg);
+		        fill: #9edaff;
+		    }
+
+		    20% {
+		        fill: #013696;
+		    }
+
+			40% {
+				fill: #007934;
+			}
+
+
+			60% {
+				fill: #ffcb00;
+			}
+
+			80% {
+				fill: #c60000;
+			}
+
+
+		    100% {
+		        transform: rotate(360deg);
+		        fill: #9edaff;
+		    }
+		}
+
+
+    
+	.logo {
+		width: 550px;
+		height: 550px;
+		float: left;
+	}
+
+    </style>
+
+<circle id="gear" class="gear-1" opacity="0.3" cx="301.1" cy="300" r="175.4"/>
+<circle id="gear" class="gear-2" opacity="0.5" cx="281.3" cy="300" r="157.4"/>
+<circle id="gear" class="gear-3" opacity="0.75" cx="328.1" cy="288.2" r="109.1"/>
+<circle class="gear-4" fill="#fff" cx="300.8" cy="300" r="80.2"/>
+</svg>
