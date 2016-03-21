@@ -103,6 +103,10 @@
 						<li>
 							{{#link-to 'data-entry.elections.candidates.index'}} {{fa-icon "user"}} <span>Candidatos</span> {{/link-to}}
 						</li>		
+						<li>
+							{{#link-to 'data-entry.elections.reports.index'}} {{fa-icon "user"}} <span>Reportes</span> {{/link-to}}
+						</li>		
+
 					{{/simple-accordion}}
 
 					{{#simple-accordion title="Elecciones" tagName="ul"}}
@@ -149,6 +153,11 @@
 
 					<nav>
 						<ul>
+							<li>
+							{{#link-to 'reports.index'}} 
+								Reportes
+							{{/link-to}}
+							</li>						
 							<li>
 							{{#link-to 'contact'}} 
 								Contacto

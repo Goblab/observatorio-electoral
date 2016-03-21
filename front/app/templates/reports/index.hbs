@@ -1,0 +1,14 @@
+<ul>
+{{#each model.reports as |report|}}
+	<li>
+		<h4>
+			{{#link-to 'reports.show' report}}
+		  		{{report.title}}
+		  	{{/link-to}}
+	  	</h4>
+	  	<p>
+	  		{{report.excerpt}}
+	  	</p>
+	  </li>
+{{/each}}
+</ul>

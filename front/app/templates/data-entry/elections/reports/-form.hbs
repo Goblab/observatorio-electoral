@@ -1,0 +1,36 @@
+<form {{action "save" on="submit"}} class="create-event">
+  <fieldset>
+    <label>
+      Titulo
+      {{input type="text" value=model.title}}
+    </label>
+  </fieldset>
+  <fieldset>
+    <label>
+      Contenido
+      {{input type="text" value=model.message}}
+    </label>
+  </fieldset> 
+  <fieldset>
+    <label>
+      Resumen
+      {{input type="text" value=model.excerpt}}
+    </label>
+  </fieldset> 
+
+  <fieldset>
+      <label class="election-publish">
+        {{input type="checkbox" name="isEnabled" checked=model.published}}  
+        {{#if model.enabled}}
+          Publicado <!-- Select Si | No  (Si es referendum) -->
+        {{else}}
+          Publicar en la web
+        {{/if}}
+      </label>
+  </fieldset>
+
+  <fieldset>
+    <input type="submit" value="Guardar">
+  </fieldset>
+</form>
+    

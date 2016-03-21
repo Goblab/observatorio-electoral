@@ -26,7 +26,7 @@ export default Ember.Controller.extend({
 		this.set('isHome', false);
 		this.set('isData', true);
 
-		if (RegExp('index').test(this.get('currentPath'))) {
+		if (RegExp('index').test(this.get('currentPath')) && !RegExp('reports').test(this.get('currentPath'))) {
 			this.set('isHome', true);
 		}
 

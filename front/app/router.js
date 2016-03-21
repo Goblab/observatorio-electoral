@@ -115,6 +115,17 @@ Router.map(function() {
           path: ":province_id/show",
         });
       });  
+
+      this.route('reports', function() {
+        this.route('new');
+        this.route('edit', {
+          path: ":report_id/edit",
+        });
+        this.route('show', {
+          path: ":report_id/show",
+        });
+      });  
+
       this.route('elections', function() {
         this.route('new');
         this.route('edit', {
@@ -187,6 +198,11 @@ Router.map(function() {
   });
   this.route('about', {});
   this.route('contact', {});
+  this.route('reports', function() {
+      this.route('show', {
+        path: ":report_id/show",
+      });
+  });
 });
 
 export default Router;
