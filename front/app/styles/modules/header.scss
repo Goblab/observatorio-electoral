@@ -4,6 +4,12 @@ header {
 	
 	.country-menu {
 		opacity: 1;
+
+		a {
+			@include media($mobile) {
+		padding: 10px;
+			}
+		}
 	}
 
 
@@ -15,6 +21,10 @@ header {
     right: 0;
     left: 0;
     height: 80px;
+
+	@include media($mobile) {
+		height: 120px;
+	}
 
 
 	}
@@ -36,6 +46,8 @@ header {
 
 		@include media($mobile) {
 			max-width: 100%;
+			text-align: center;
+			flex-direction: column;
 		}
 
 		.logo-home {
@@ -67,6 +79,10 @@ header {
 				display: flex;
 				align-items: flex-start;
 				color: #3FA9F5;
+
+				a.active {
+					color: #0076e6;
+				}
 			}
 		}
 	}

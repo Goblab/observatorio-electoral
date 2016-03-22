@@ -90,6 +90,11 @@ footer {
     background: rgba(255,255,255,0.9);
     max-width: 500px;
 
+    @include media($mobile) {
+    width: 90%;
+    background: rgba(255,255,255,0.6);
+    }
+
 	img {
 		margin: 0 auto;
 		display: none;

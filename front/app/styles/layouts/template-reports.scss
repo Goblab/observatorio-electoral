@@ -1,0 +1,60 @@
+.report-container {
+	@include span-columns(8);
+	@include shift(2);
+    margin-top: 80px;
+    background: #fff;
+        padding-bottom: 40px;
+
+	@include media($desktop) {
+	@include span-columns(10);
+	@include shift(1);
+		}
+
+    .report-head {
+		text-align: center;
+		border-bottom: 2px solid #ddd;
+		margin: 0 40px;
+    }
+
+    .report-content {
+		margin: 40px;
+
+		time {
+			color: #999;
+			font-style: italic;
+		}
+    }
+
+    .report-list {
+	    padding: 0;
+    }
+
+    .report-item {
+		padding: 15px;
+		@include transition(all 0.3s ease-in-out);
+	    border-bottom: 1px solid #ddd;
+
+		&:hover {
+			background: #f1f1f1;
+		}
+
+		.title {
+			margin: 10px 0 15px 0;
+			font-size: 30px;
+		    font-weight: 600;
+
+			a {
+				color: #0076e6;
+			}
+		}
+
+		.excerpt {
+
+		}
+
+		time {
+			color: #0076e6;
+			font-style: italic;
+		}
+    }
+}    

@@ -1,12 +1,13 @@
-<ul>
+<ul class="report-list">
 {{#each model.reports as |report|}}
-	<li>
-		<h4>
+	<li class="report-item">
+		<h4 class="title">
 			{{#link-to 'reports.show' report}}
 		  		{{report.title}}
 		  	{{/link-to}}
 	  	</h4>
-	  	<p>
+	  	<time>Publicado {{time-ago-in-words report.createdAt}}</time>
+	  	<p class="excerpt">
 	  		{{report.excerpt}}
 	  	</p>
 	  </li>

@@ -37,6 +37,10 @@
 		transform: translate(-230px, -420px) scale(0.6);
 		-webkit-transition-delay: 1s; /* Safari */
     	transition-delay: 1s;
+
+    	    @include media($mobile) {
+		    transform: translate(-40px, -420px) scale(0.6);
+		    }
     }
 
     circle {
