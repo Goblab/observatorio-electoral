@@ -1,3 +1,6 @@
+$mobile: new-breakpoint(max-width 800px 6);
+$phone: new-breakpoint(max-width 500px 4);
+
 .welcome-friend {
 	    display: flex;
     align-items: center;
@@ -24,6 +27,10 @@
     background: #fff;
         background-image: url("/assets/images/back-map.svg");
     background-size: 12%;
+
+    @include media($phone) {
+				padding: 120px 15px 25px;
+			}
     }
 
     img {
@@ -49,6 +56,12 @@
 			color: #777;
 			padding: 0 75px 25px 75px;
 			text-align: center;
+
+			@include media($phone) {
+				font-size: 16px;
+				line-height: 20px;
+				padding: 0 25px 25px 25px;
+			}
 		}
 	}
 
@@ -95,6 +108,12 @@
 
     	@include media($mobile) {
 	top: 80px;
+		}
+
+		$phone: new-breakpoint(max-width 500px 4);
+
+		@include media($phone) {
+			top: 120px;
 		}
 
 	ul {
@@ -256,5 +275,5 @@ margin: 0 auto;
 	}
 }
 
-$mobile: new-breakpoint(max-width 800px 6);
+
 

@@ -1,5 +1,12 @@
-<time>Publicado {{time-ago-in-words model.createdAt}}</time>
-<h2>{{model.title}}</h2>
-<p>
-	{{{model.message}}}
-</p>
+<article class="type-system-rounded">
+	{{#link-to 'reports' class="read-more"}}
+		Volver
+  	{{/link-to}}
+
+  	
+	<p class="date">Publicado {{time-ago-in-words model.createdAt}}</p>
+	<h1>{{model.title}}</h1>
+	<p>
+		{{{model.message}}}
+	</p>
+</article>
