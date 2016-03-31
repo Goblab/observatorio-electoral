@@ -115,5 +115,9 @@ export default Ember.View.extend({
 		toggleApps: function () {
 			this.toggleProperty('controller.isShowApps');
 		},
+
+		toggleCountry: function () {
+			this.toggleProperty('controller.isShowCountry');
+		},
 	},
 });

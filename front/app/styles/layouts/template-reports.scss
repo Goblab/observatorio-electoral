@@ -3,7 +3,7 @@ $phone: new-breakpoint(max-width 500px 4);
 .report-container {
 	@include span-columns(8);
 	@include shift(2);
-    margin-top: 80px;
+    margin-top: 30px;
     background: #fff;
     padding-bottom: 40px;
 
@@ -13,7 +13,7 @@ $phone: new-breakpoint(max-width 500px 4);
 	}
 
 	@include media($phone) {
-		margin-top: 120px;
+		margin-top: 80px;
 	}
 
     .report-head {
@@ -42,12 +42,36 @@ $phone: new-breakpoint(max-width 500px 4);
     }
 
     .report-item {
-		padding: 15px;
-		@include transition(all 0.3s ease-in-out);
-	    border-bottom: 1px solid #ddd;
+      padding: 15px 25px;
+      @include transition(all 0.3s ease-in-out);
+      border-bottom: 1px solid #ddd;
+      position: relative;
+      display: flex;
+
+      .img {
+          padding: 31px 0;
+      }
+
+      .item-data {
+            padding: 15px;
+      }
+
+      .report-share {
+        position: absolute;
+        right: 25px;
+        top: 40px;
+        font-size: 21px;
+        color: #ccc;
+
+        i {
+          padding: 0 10px;
+        }
+    }
+
+
 
 		&:hover {
-			background: #f1f1f1;
+			background: #f9f9f9;
 		}
 
 		.title {
@@ -93,6 +117,8 @@ article.type-system-rounded {
   $base-font-color: $dark-gray !default;
   $sans-serif: 'PT Sans', sans-serif;
   $sans-serif-2: 'PT Sans Narrow', sans-serif;
+
+
 
   @include clearfix;
   font-family: $sans-serif;
@@ -174,12 +200,7 @@ article.type-system-rounded {
     margin-bottom: 0.4em;
   }
 
-  p.date {
-    color: transparentize($base-font-color, 0.6);
-    font-family: $sans-serif;
-    font-size: 0.9em;
-    margin-bottom: 0.3em;
-  }
+  
 
   p {
     font-family: $sans-serif;
@@ -219,4 +240,47 @@ article.type-system-rounded {
   p.author {
     font-family: $sans-serif;
   }
+}
+
+
+.report-share {
+  top: 0;
+}
+
+.share-article {
+    position: relative;
+    font-size: 25px;
+
+    i {
+      padding: 0 10px;
+    }
+}
+
+.meta-section {
+  position: relative;
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+
+  .btn {
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+  float: right;
+}
+}
+
+
+
+
+.date {
+    float: left;
+    width: 100%;
+    margin: 20px 0 15px 0;
+    text-transform: uppercase;
+    color: #999;
+    font-size: 15px;
 }

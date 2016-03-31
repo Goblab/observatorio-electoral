@@ -1,6 +1,8 @@
 {{#link-to 'country' country.id}}
 	{{#if country.flag.url}}
+		{{#tool-tipster title=country.name position="bottom"}} 
 		<img {{bind-attr src=country.flag.url}} width="100%">
+	  {{/tool-tipster}}
 	{{/if}}
 {{/link-to}}
 					

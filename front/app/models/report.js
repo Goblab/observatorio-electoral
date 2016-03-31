@@ -8,4 +8,5 @@ export default DS.Model.extend({
   	createdAt: DS.attr('date'),
   	updatedAt: DS.attr('date'),
   	picture: DS.belongsTo('asset', {async: true}),
+  	attachment: DS.belongsTo('asset', {async: true}),
 });

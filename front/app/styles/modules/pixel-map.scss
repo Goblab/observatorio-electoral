@@ -16,6 +16,10 @@
 		}
 	}
 
+    @include media($mobile) {
+        height: 450px;
+    }
+
 
 
 
@@ -39,7 +43,7 @@
     	transition-delay: 1s;
 
     	    @include media($mobile) {
-		    transform: translate(-40px, -420px) scale(0.6);
+		    transform: translate(-40px, -250px) scale(0.8);
 		    }
     }
 

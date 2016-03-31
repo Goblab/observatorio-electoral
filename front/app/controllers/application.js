@@ -4,6 +4,7 @@ export default Ember.Controller.extend({
 	isShowMenu: false,
 	isShowClick: false,
 	isShowApps: false,
+	isShowCountry: false,
 	oldClass: '',
 
 	init: function () {
@@ -25,6 +26,9 @@ export default Ember.Controller.extend({
 		this.set('isDataEntry', false);
 		this.set('isHome', false);
 		this.set('isData', true);
+		this.set('isReport', false);
+		this.set('isContact', false);
+		this.set('isAbout', false);
 
 		if (RegExp('index').test(this.get('currentPath')) && !RegExp('reports').test(this.get('currentPath'))) {
 			this.set('isHome', true);
@@ -34,9 +38,38 @@ export default Ember.Controller.extend({
 			this.set('isAdmin', true);
 			this.set('isHome', false);
 			this.set('isData', false);
+			this.set('isReport', false);
+			this.set('isContact', false);
+			this.set('isAbout', false);
 		}		
 		if (RegExp('data-entry').test(this.get('currentPath'))) {
 			this.set('isDataEntry', true);
+			this.set('isHome', false);
+			this.set('isData', false);
+			this.set('isReport', false);
+			this.set('isContact', false);
+			this.set('isAbout', false);
+		}	
+
+		if (RegExp('reports').test(this.get('currentPath'))) {
+			this.set('isReport', true);
+			this.set('isDataEntry', false);
+			this.set('isHome', false);
+			this.set('isData', false);
+			this.set('isContact', false);
+			this.set('isAbout', false);
+		}	
+
+		if (RegExp('contact').test(this.get('currentPath'))) {
+			this.set('isReport', true);
+			this.set('isDataEntry', false);
+			this.set('isHome', false);
+			this.set('isData', false);
+		}	
+
+		if (RegExp('about').test(this.get('currentPath'))) {
+			this.set('isReport', true);
+			this.set('isDataEntry', false);
 			this.set('isHome', false);
 			this.set('isData', false);
 		}		

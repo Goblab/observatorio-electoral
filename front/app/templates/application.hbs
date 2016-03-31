@@ -143,7 +143,7 @@
 
 {{#unless isAdmin}}
 	{{#unless isDataEntry}}
-		<header {{bind-attr class=":welcome isHome:-home isDataEntry:-admin isAdmin:-admin"}}>
+		<header {{bind-attr class=":welcome isHome:-home isDataEntry:-admin isAdmin:-admin isReport:-report"}}>
 				<div class="container-header">
 					<div class="logo-home">
 						{{#link-to 'index'}}
@@ -199,12 +199,16 @@
 						</ul>
 					</nav>
 				</div>
-				<div class="country-menu">
+				<div {{bind-attr class=":country-menu isShowCountry:show"}}>
 				<ul>
 				{{#each model.countries as |country|}}
 					{{country-flag country=country selected=model.country}}
 				{{/each}}
 				</ul>
+				<button {{action 'toggleCountry' target="view"}} class="toogle-country" style="position: fixed;">
+					{{fa-icon 'globe'}}
+				</button>
+				
 			</div>
 		</header>
 	{{/unless}}

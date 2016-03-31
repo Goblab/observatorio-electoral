@@ -1,10 +1,19 @@
-<article class="type-system-rounded">
-	{{#link-to 'reports' class="read-more"}}
-		Volver
-  	{{/link-to}}
+<img src="{{model.picture.url}}" alt="" style="width: 100%; height: auto;">
 
-  	
-	<p class="date">Publicado {{time-ago-in-words model.createdAt}}</p>
+<div class="meta-section">
+	<div class="share-article">
+  		{{fa-icon 'facebook'}}
+  		{{fa-icon 'twitter'}}
+  	</div>
+	<a href="{{model.attachment.url}}" class="btn" target="_blank">
+		{{fa-icon 'file-pdf-o'}}
+		Descargar informe
+	</a>
+</div>
+
+<article class="type-system-rounded">
+	<small class="date">Publicado {{time-ago-in-words model.createdAt}}</small>
+
 	<h1>{{model.title}}</h1>
 	<p>
 		{{{model.message}}}

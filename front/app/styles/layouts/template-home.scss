@@ -23,7 +23,7 @@ $phone: new-breakpoint(max-width 500px 4);
     -ms-flex-direction: column;
     flex-direction: column;
     width: 100%;
-    padding: 90px 15px 25px;
+    padding: 40px 15px 25px;
     background: #fff;
         background-image: url("/assets/images/back-map.svg");
     background-size: 12%;
@@ -106,29 +106,34 @@ $phone: new-breakpoint(max-width 500px 4);
     height: 65px;
     @include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
 
-    	@include media($mobile) {
-	top: 80px;
-		}
+	@include media($mobile) {
+		top: 80px;
+	}
 
-		$phone: new-breakpoint(max-width 500px 4);
+	$phone: new-breakpoint(max-width 500px 4);
 
-		@include media($phone) {
-			top: 120px;
-		}
+	@include media($phone) {
+		top: 120px;
+		height: 0;
+	}
+
+	&.show {
+		height: 60px;
+	}
 
 	ul {
-    padding: 0;
-    margin: 0;
-    @include outer-container(100%);
-    max-width: 1000px;
+	    padding: 0;
+	    margin: 0;
+	    @include outer-container(100%);
+	    max-width: 1000px;
 	}
 
 	li {
-    width: 10%;
-    padding: 10px 0;
-    float: left;
-    opacity: 0.3;
-    @include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
+	    width: 10%;
+	    padding: 10px 0;
+	    float: left;
+	    opacity: 0.3;
+	    @include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
 
     	&.active,
     	&:hover {
@@ -143,14 +148,35 @@ $phone: new-breakpoint(max-width 500px 4);
 	}
 
 	img {
-position: relative;
-display: block;
-margin: 0 auto;
+		position: relative;
+		display: block;
+		margin: 0 auto;
 	}
 
 	span {
-position: relative;
-display: block;
+		position: relative;
+		display: block;
+	}
+}
+
+.toogle-country {
+	display: none;
+    position: fixed;
+    top: 19px;
+    left: 15px;
+    font-size: 30px;
+    color: #666;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    @include media($phone) {
+		display: block;
+	}
+
+	&:hover,
+	&:focus {
+		color: #333;
 	}
 }
 

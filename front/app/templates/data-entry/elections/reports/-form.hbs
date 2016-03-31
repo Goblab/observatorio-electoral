@@ -1,23 +1,5 @@
 <form {{action "save" on="submit"}} class="create-event">
-  <fieldset>
-    <label>
-      Titulo
-      {{input type="text" value=model.title}}
-    </label>
-  </fieldset>
-  <fieldset>
-    <label>
-      Contenido
-      {{simditor-editor value=model.message }}
-    </label>
-  </fieldset> 
-  <fieldset>
-    <label>
-      Resumen
-      {{input type="text" value=model.excerpt}}
-    </label>
-  </fieldset> 
-
+  
   <fieldset>
       <label class="election-publish">
         {{input type="checkbox" name="isEnabled" checked=model.published}}  
@@ -28,17 +10,50 @@
         {{/if}}
       </label>
   </fieldset>
+  
+  <fieldset>
+    <label>
+      Titulo
+      {{input type="text" value=model.title}}
+    </label>
+  </fieldset>
+
+
+  <fieldset>
+    <label>
+      Resumen
+      {{input type="text" value=model.excerpt}}
+    </label>
+  </fieldset> 
+
+  <fieldset>
+    <label>
+      Contenido
+      {{textarea value=model.message }}
+    </label>
+  </fieldset> 
+
+   <div class="upload-file">
+      {{#if model.attachment.url}}
+          {{model.attachment.url}}
+      {{/if}}
+      Adjunto
+      {{file-uploader file=model.attachment multiple=false}}
+  </div>
 
   <div class="upload-file">
-      {{#if model.flag.url}}
+      {{#if model.picture.url}}
         <div class="img-container">
-          <img {{bind-attr src=model.flag.url}}>
+          <img {{bind-attr src=model.picture.url}}>
         </div>
       {{/if}}
-      {{file-uploader file=model.flag multiple=false}}
-  </div>  
+      Imagen
+      {{file-uploader file=model.picture multiple=false}}
+  </div>
+
   <fieldset>
     <input type="submit" value="Guardar">
   </fieldset>
+
 </form>
     
