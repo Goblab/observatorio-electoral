@@ -31,6 +31,8 @@
     "matchMedia": "~0.2.0",
     "chartjs": "1.0.1",
     "ember-data.model-fragments": "0.3.3",
-    "numeral": "~1.5.3"
+    "numeral": "~1.5.3",
+    "medium-editor": "5.13.0",
+    "simditor": "~2.3.6"
   }
 }

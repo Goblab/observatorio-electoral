@@ -1,0 +1,16 @@
+<ul class="report-list">
+{{#each model.reports as |report|}}
+	<li class="report-item">
+		<h4 class="title">
+			{{#link-to 'reports.show' report}}
+		  		{{report.title}}
+		  	{{/link-to}}
+	  	</h4>
+	  	<time>Publicado {{time-ago-in-words report.createdAt}}</time>
+	  	<p class="excerpt">
+	  		{{report.excerpt}}
+	  		{{#link-to 'reports.show' report class="read-more"}}Leer más <span>&rsaquo;</span>{{/link-to}}
+	  	</p>
+	  </li>
+{{/each}}
+</ul>

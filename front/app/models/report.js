@@ -7,4 +7,5 @@ export default DS.Model.extend({
   	published: DS.attr('boolean'),
   	createdAt: DS.attr('date'),
   	updatedAt: DS.attr('date'),
+  	picture: DS.belongsTo('asset', {async: true}),
 });

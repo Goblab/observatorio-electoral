@@ -8,7 +8,7 @@
   <fieldset>
     <label>
       Contenido
-      {{textarea value=model.message}}
+      {{simditor-editor value=model.message }}
     </label>
   </fieldset> 
   <fieldset>
@@ -29,6 +29,14 @@
       </label>
   </fieldset>
 
+  <div class="upload-file">
+      {{#if model.flag.url}}
+        <div class="img-container">
+          <img {{bind-attr src=model.flag.url}}>
+        </div>
+      {{/if}}
+      {{file-uploader file=model.flag multiple=false}}
+  </div>  
   <fieldset>
     <input type="submit" value="Guardar">
   </fieldset>
