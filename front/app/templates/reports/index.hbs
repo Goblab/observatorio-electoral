@@ -12,8 +12,7 @@
 		  	</h4>
 		  	<time>Publicado {{time-ago-in-words report.createdAt}}</time>
 		  	<div class="report-share">
-		  		{{fa-icon 'facebook'}}
-		  		{{fa-icon 'twitter'}}
+		  		{{facebook-feed data-desc=report.excerpt data-title=report.title data-image=report.picture.url data-caption="Oblat" class="facebook-share-button"}}
 		  	</div>
 		  	<p class="excerpt">
 		  		{{report.excerpt}}
