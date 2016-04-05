@@ -3,12 +3,9 @@
 </div>
 
 <div class="meta-section">
-
 	<div class="share-article">
-	  {{#tool-tipster title="Comparti en facebook" position="right"}} 
-  			{{facebook-feed data-desc=model.excerpt data-title=model.title data-image=model.picture.url data-caption="Oblat" class="facebook-share-button"}}
-	  {{/tool-tipster}}
-	  {{twitter-share text=model.title}}
+		{{facebook-feed data-desc=model.excerpt data-title=model.title data-image=model.picture.url data-caption="Oblat" class="facebook-share-report"}}
+		{{twitter-share text=model.title}}
   	</div>
 
   	<div class="btn-groups">
@@ -16,11 +13,9 @@
 			{{fa-icon 'file-pdf-o'}}
 			Descargar informe
 		</a>
-
 		{{#link-to 'reports' class="btn back-btn"}}
 			{{fa-icon 'arrow-left'}} Volver
 		{{/link-to}}
-		
   	</div>
 </div>
 

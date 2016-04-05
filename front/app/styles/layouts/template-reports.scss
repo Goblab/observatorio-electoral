@@ -71,32 +71,18 @@ $phone: new-breakpoint(max-width 500px 4);
       }
 
       .report-share {
-        position: absolute;
-        right: 25px;
-        top: 40px;
-        font-size: 21px;
-        color: #fff;
-
-         @include media($phone) {
-           right: 45px;
-           }
-
-        
+    font-size: 16px;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
 
         i {
-            padding: 0;
-            background: #3b5998;
-            width: 40px;
-            height: 40px;
-            border-radius: 50px;
-            text-align: center;
-            line-height: 40px;
-            color: #fff;
-            cursor: pointer;
-
-           &:hover {
-            background: shade(#3b5998, 10%);
-          }
+                padding: 5px;
+    width: 22px;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+           
         }
     }
 
@@ -306,22 +292,22 @@ article.type-system-rounded {
 
 .share-article {
     position: relative;
-    font-size: 25px;
+    display: flex;
+
+    .facebook-share-report {
+    background: #3b5998;
+    color: #fff;
+    padding: 3px 12px;
+    margin-right: 15px;
+    border-radius: 3px;
+    position: relative;
+    top: -1px;
+    cursor: pointer;
+    font-size: 13px;
+    }
 
     i {
-      padding: 0;
-      background: #3b5998;
-      width: 50px;
-      height: 50px;
-      border-radius: 50px;
-      text-align: center;
-      line-height: 50px;
-      cursor: pointer;
-      color: #fff;
 
-      &:hover {
-        background: shade(#3b5998, 10%);
-      }
     }
 }
 
@@ -367,3 +353,50 @@ article.type-system-rounded {
         background: shade(#2ecc71, 10%);
       }
   }
+
+
+.facebook-share-button {
+    background: #3b5998;
+    border-radius: 5px;
+    font-size: 13px;
+    margin: 0 15px 0 0;
+    width: 92px;
+    cursor: pointer;
+
+  span {
+    color: #fff;
+  }
+}
+
+.twitter-share-button {
+    position: relative;
+    top: 4px;
+    transform: scale(1.1);
+
+}
+
+.home-report-list {
+    padding: 10px 20px 60px 20px;
+    width: 740px;
+    margin: 0 auto;
+    background: #fff;
+
+    .title {
+      margin: 5px 0 0 0;
+      line-height: 29px;
+
+      a {
+        color: #0076e6;
+
+        &:hover {
+          color: shade(#0076e6, 10%);
+        }
+      }
+    }
+
+    li {
+      margin: 0;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+}

@@ -1,9 +1,6 @@
 <ul class="report-list">
 {{#each model.reports as |report|}}
 	<li class="report-item">
-		<div class="img">
-			<img src="{{report.picture.url}}" alt="" style="width: 150px; height: auto;">
-		</div>
 		<div class="item-data">
 			<h4 class="title">
 				{{#link-to 'reports.show' report}}
@@ -11,16 +8,14 @@
 			  	{{/link-to}}
 		  	</h4>
 		  	<time>Publicado {{time-ago-in-words report.createdAt}}</time>
-		  	<div class="report-share">
-		  		{{#tool-tipster title="Comparti en facebook" position="bottom"}} 
-  					{{facebook-feed data-desc=report.excerpt data-title=report.title data-image=report.picture.url data-caption="Oblat" class="facebook-share-button"}}
-	 			 {{/tool-tipster}}
-	 			 {{twitter-share text=report.title urlFix=report.id}}
-		  	</div>
 		  	<p class="excerpt">
 		  		{{report.excerpt}}
 		  		{{#link-to 'reports.show' report class="read-more"}}Leer más <span>&rsaquo;</span>{{/link-to}}
 		  	</p>
+		  	<div class="report-share">
+					{{facebook-feed data-desc=report.excerpt data-title=report.title data-image=report.picture.url data-caption="Oblat" class="facebook-share-button"}}
+		  		 {{twitter-share text=report.title urlFix=report.id class="twitter-share-button"}}
+		  	</div>
 		</div>
 	  </li>
 {{/each}}
