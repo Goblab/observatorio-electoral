@@ -1,19 +1,33 @@
-<img src="{{model.picture.url}}" alt="" style="width: 100%; height: auto;">
-
-<div class="meta-section">
-	<div class="share-article">
-  	{{facebook-feed data-desc=model.term.excerpt data-title=model.title data-image=model.picture.url data-caption="Oblat" class="facebook-share-button"}}
-  	</div>
-	<a href="{{model.attachment.url}}" class="btn" target="_blank">
-		{{fa-icon 'file-pdf-o'}}
-		Descargar informe
-	</a>
+<div class="report-img">
+	<img src="{{model.picture.url}}" alt="" style="width: 100%; height: auto;">
 </div>
 
-<article class="type-system-rounded">
-	<small class="date">Publicado {{time-ago-in-words model.createdAt}}</small>
+<div class="meta-section">
 
-	<h1>{{model.title}}</h1>
+	<div class="share-article">
+	  {{#tool-tipster title="Comparti en facebook" position="right"}} 
+  			{{facebook-feed data-desc=model.term.excerpt data-title=model.title data-image=model.picture.url data-caption="Oblat" class="facebook-share-button"}}
+	  {{/tool-tipster}}
+  	</div>
+
+  	<div class="btn-groups">
+		<a href="{{model.attachment.url}}" class="btn" target="_blank">
+			{{fa-icon 'file-pdf-o'}}
+			Descargar informe
+		</a>
+
+		{{#link-to 'reports' class="btn back-btn"}}
+			{{fa-icon 'arrow-left'}} Volver
+		{{/link-to}}
+		
+  	</div>
+</div>
+
+<article class="type-system-rounded report-text">
+	<div class="report-header">
+		<small class="date">Publicado {{time-ago-in-words model.createdAt}}</small>
+		<h1>{{model.title}}</h1>
+	</div>
 	<p>
 		{{{model.message}}}
 	</p>

@@ -1,20 +1,19 @@
 $phone: new-breakpoint(max-width 500px 4);
 
 .report-container {
-	@include span-columns(8);
-	@include shift(2);
-    margin-top: 30px;
+  	@include outer-container(100%);
+    //margin-top: 30px;
     background: #fff;
     padding-bottom: 40px;
 
-	@include media($desktop) {
-		@include span-columns(10);
-		@include shift(1);
-	}
+  	@include media($desktop) {
+  		@include span-columns(12);
+  		@include shift(0);
+  	}
 
-	@include media($phone) {
-		margin-top: 80px;
-	}
+  	@include media($phone) {
+  		margin-top: 80px;
+  	}
 
     .report-head {
 		text-align: center;
@@ -23,22 +22,22 @@ $phone: new-breakpoint(max-width 500px 4);
     }
 
     .report-content {
-		margin: 40px;
+		//margin: 40px;
 
-		
+  		@include media($phone) {
+  			margin: 10px;
+  		}
 
-		@include media($phone) {
-			margin: 10px;
-		}
-
-		time {
-			color: #999;
-			font-style: italic;
-		}
+  		time {
+  			color: #999;
+  			font-style: italic;
+  		}
     }
 
     .report-list {
 	    padding: 0;
+    max-width: 900px;
+    margin: 0 auto;
     }
 
     .report-item {
@@ -48,8 +47,23 @@ $phone: new-breakpoint(max-width 500px 4);
       position: relative;
       display: flex;
 
+      @include media($phone) {
+           flex-direction: column;
+      }
+
       .img {
           padding: 31px 0;
+
+         @include media($phone) {
+           padding: 10px 0;
+
+        img {
+            width: 100% !important;
+          }
+
+           }
+
+          
       }
 
       .item-data {
@@ -61,12 +75,32 @@ $phone: new-breakpoint(max-width 500px 4);
         right: 25px;
         top: 40px;
         font-size: 21px;
-        color: #ccc;
+        color: #fff;
+
+         @include media($phone) {
+           right: 45px;
+           }
+
+        
 
         i {
-          padding: 0 10px;
+            padding: 0;
+            background: #3b5998;
+            width: 40px;
+            height: 40px;
+            border-radius: 50px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            cursor: pointer;
+
+           &:hover {
+            background: shade(#3b5998, 10%);
+          }
         }
     }
+
+
 
 
 
@@ -75,10 +109,11 @@ $phone: new-breakpoint(max-width 500px 4);
 		}
 
 		.title {
-			margin: 10px 0 5px 0;
-			font-size: 30px;
-		    font-weight: 600;
-	        line-height: 34px;
+      margin: 10px 0 5px 0;
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 34px;
+      padding-right: 60px;
 
 			a {
 				color: #0076e6;
@@ -204,9 +239,9 @@ article.type-system-rounded {
 
   p {
     font-family: $sans-serif;
-    font-size: 1.05em;
+    font-size: 1.1em;
     font-weight: 300;
-    line-height: 1.4em;
+    line-height: 1.5em;
     margin-bottom: 1.5em;
 
     span {
@@ -242,6 +277,28 @@ article.type-system-rounded {
   }
 }
 
+.report-img {
+    height: 60vh;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      position: relative;
+
+      @include media($desktop) {
+        width: auto;
+        height: 100%;
+      }
+    }
+}
+
+.report-header {
+    float: left;
+    width: 100%;
+    margin: 0 auto;
+    padding: 55px 0 5px 0;
+}
 
 .report-share {
   top: 0;
@@ -252,7 +309,19 @@ article.type-system-rounded {
     font-size: 25px;
 
     i {
-      padding: 0 10px;
+      padding: 0;
+      background: #3b5998;
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+      color: #fff;
+
+      &:hover {
+        background: shade(#3b5998, 10%);
+      }
     }
 }
 
@@ -261,26 +330,40 @@ article.type-system-rounded {
   float: left;
   width: 100%;
   border-bottom: 1px solid #ddd;
-  padding: 15px 0;
+  padding: 15px 25px;
   display: flex;
   justify-content: space-between;
+  background-color: #f1f1f1;
+      align-items: center;
 
   .btn {
-  color: #fff;
-  font-size: 16px;
-  margin: 0;
-  float: right;
-}
+    color: #fff;
+    font-size: 16px;
+    float: right;
+  }
 }
 
-
+.report-text {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 0 20px;
+}
 
 
 .date {
-    float: left;
     width: 100%;
-    margin: 20px 0 15px 0;
+    padding: 20px 0;
     text-transform: uppercase;
-    color: #999;
-    font-size: 15px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
 }
+
+  .back-btn {
+    background: #2ecc71;
+    margin-right: 25px;
+
+     &:hover {
+        background: shade(#2ecc71, 10%);
+      }
+  }
