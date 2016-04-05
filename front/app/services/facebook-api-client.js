@@ -23,7 +23,7 @@ export default Ember.Object.extend({
    *   <meta property="fb:app_id" content="[FB_APP_ID]" />
    */
   appId: function(){
-    return Ember.$("meta[property='fb:app_id']").attr('content') || window.FACEBOOK_APP_ID || 570211946345492;
+    return Ember.$("meta[property='fb:app_id']").attr('content') || window.FACEBOOK_APP_ID || 555502871277304;
   },
 
   load: function() {
