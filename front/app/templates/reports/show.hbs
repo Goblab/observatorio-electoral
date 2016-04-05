@@ -6,8 +6,9 @@
 
 	<div class="share-article">
 	  {{#tool-tipster title="Comparti en facebook" position="right"}} 
-  			{{facebook-feed data-desc=model.term.excerpt data-title=model.title data-image=model.picture.url data-caption="Oblat" class="facebook-share-button"}}
+  			{{facebook-feed data-desc=model.excerpt data-title=model.title data-image=model.picture.url data-caption="Oblat" class="facebook-share-button"}}
 	  {{/tool-tipster}}
+	  {{twitter-share text=model.title}}
   	</div>
 
   	<div class="btn-groups">

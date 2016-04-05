@@ -49,7 +49,7 @@ export default Ember.Object.extend({
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
       });
-    }
+    }    
     return facebookScriptPromise;
   },
 

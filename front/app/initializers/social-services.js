@@ -5,5 +5,7 @@ export default {
     facebookPluginComponents.forEach(function(plugin) {
       application.inject('component:facebook-' + plugin, 'socialApiClient', 'service:facebook-api-client');
     });
+    
+    application.inject('component:twitter-share', 'socialApiClient', 'service:twitter-api-client');
   }
 };
