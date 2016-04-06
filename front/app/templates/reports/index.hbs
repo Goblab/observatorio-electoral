@@ -1,6 +1,9 @@
 <ul class="report-list">
 {{#each model.reports as |report|}}
 	<li class="report-item">
+		<div class="img">
+ 			<img src="{{report.picture.url}}" alt="" style="width: 150px; height: auto;">
+ 		</div>
 		<div class="item-data">
 			<h4 class="title">
 				{{#link-to 'reports.show' report}}
