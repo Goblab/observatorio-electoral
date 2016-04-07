@@ -155,6 +155,10 @@ module.exports = function(environment) {
         session: 'session:custom'
       }
     }; 
+
+    ENV.googleAnalytics = {
+      webPropertyId: 'UA-76112745-1'
+    };
   }
 
   return ENV;
