@@ -119,18 +119,19 @@ module.exports = function(environment) {
     ENV['adapter'] = {
       'host': 'http://oblat.am',
       'namespace': 'api',
-      'fileUrl': 'http://irreversible:1337/',
-      'upload': 'http://irreversible:1337/upload-file',      
+      'fileUrl': 'http://oblat.am/',
+      'upload': 'http://oblat.am/upload-file',      
     };
 
+
     ENV['contentSecurityPolicy'] = {
-        'default-src': "*",
-        'script-src': "*",
-        'font-src': "*",
-        'connect-src': "'self' http://oblat.am ws://irreversible.cc:1337/ ws://irreversible.cc:35729/livereload http://nominatim.openstreetmap.org/",
-        'img-src': "*",
-        'style-src': "*",
-        'media-src': "*",
+        'default-src': "* 'unsafe-inline' 'unsafe-eval'",
+        'script-src': "* 'unsafe-inline' 'unsafe-eval'",
+        'font-src': "* 'unsafe-inline' 'unsafe-eval'",
+        'connect-src': "*",
+        'img-src': "* 'unsafe-inline' 'unsafe-eval'",
+        'style-src': "* 'unsafe-inline' 'unsafe-eval'",
+        'media-src': "* 'unsafe-inline' 'unsafe-eval'",
         'report-uri': 'http://irreversible.cc'
     };
 
@@ -154,7 +155,7 @@ module.exports = function(environment) {
       inject: {
         session: 'session:custom'
       }
-    }; 
+    };  
 
     ENV.googleAnalytics = {
       webPropertyId: 'UA-76112745-1'
