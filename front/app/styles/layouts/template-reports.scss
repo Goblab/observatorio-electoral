@@ -272,9 +272,9 @@ article.type-system-rounded {
       height: auto;
       position: relative;
 
-      @include media($desktop) {
-        width: auto;
-        height: 100%;
+      @include media($phone) {
+    width: auto !important;
+    height: 100% !important;
       }
     }
 }
@@ -398,10 +398,12 @@ article.type-system-rounded {
       margin: 0;
       border-bottom: 1px solid #ddd;
       padding: 10px 0;
-      display: flex;
+       @include display(flex);
+
+      
 
       @include media($phone) {
-       flex-direction: column;
+       @include flex-direction(column);
       }
     }
 
