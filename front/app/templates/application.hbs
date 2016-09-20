@@ -154,20 +154,16 @@
 					<nav>
 						<ul>
 							<li>
-							{{#link-to 'reports.index'}} 
-								Informes
-							{{/link-to}}
-							</li>						
-							<li>
-							{{#link-to 'contact'}} 
-								Contacto
-							{{/link-to}}
+								{{#link-to 'about'}}Quienes somos{{/link-to}}
 							</li>
 							<li>
-							{{#link-to 'about'}} 
-								Quienes somos
-							{{/link-to}}
+								{{#link-to 'reports.index'}}Informes{{/link-to}}
 							</li>
+						
+							<li>
+								{{#link-to 'contact'}}Contacto{{/link-to}}
+							</li>
+							
 							{{#if session.isAuthenticated}}
 								{{#if (can 'view data-entry')}}							
 									<li>
@@ -226,12 +222,29 @@
 				{{/if}}
 			{{else}}
 				{{pixel-map class="pixel-map" countries=model.countries}}
-				<div class="modal-welcome">
-					<img src="/assets/images/observatorio-logo.svg" alt="">
-					<h1>Observatorio electoral</h1>
-					<p>OBLAT tiene por objetivo contribuir con los debates sobre los procesos democráticos de América Latina, a partir de la recopilación y divulgación de los procesos electorales desde 1998 hasta la actualidad. En la plataforma se puede encontrar: historia de los partidos, perfiles de candidatos, legislación electoral, normativas, padrones electorales, resultados electorales históricos y análisis de coyuntura, entre otros temas. El OBLAT es un espacio de investigación y actualización de información constante, creado con la convicción de que una América Latina integrada sólo es posible sobre la base de un conocimiento profundo de nuestras democracias.
-					</p>
-				</div>
+				<ul class="home-report-list">
+					<h2 style="border-bottom: 1px solid #333; padding-bottom: 13px;margin: 10px 0 0 0;">Últimos informes
+					{{#link-to 'reports' class="heading-link"}}ver todos{{/link-to}}
+					</h2>
+					{{#each model.reports as |report|}}
+					<li class="report-item">
+						<div class="img">
+				 			<img src="{{report.picture.url}}" alt="" style="width: 150px; height: auto;">
+				 		</div>
+				 		<div class="item-data">
+						<time>Publicado {{time-ago-in-words report.createdAt}}</time>
+						<h4 class="title">
+							{{#link-to 'reports.show' report}}
+								{{report.title}}
+							{{/link-to}}
+						</h4>
+						<p class="excerpt">
+							{{#link-to 'reports.show' report class="read-more"}}Leer más <span>&rsaquo;</span>{{/link-to}}
+						</p>
+						</div>
+					</li>
+					{{/each}}
+				</ul> 
 			{{/unless}}
 			{{liquid-outlet}}
 		{{/if}}

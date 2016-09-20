@@ -1,0 +1,17 @@
+.electoral-system {
+	max-width: 1160px;
+	margin: 0 auto;
+	background: #fff;
+	width: 100%;
+	padding: 40px 15px 25px;
+	background: #fff;
+	background-image: url(/assets/images/back-map.svg);
+	background-size: 12%;
+	
+	.electoral-content {
+		.js-accordion-trigger {
+			width: 100%;
+			position: relative;
+		}
+	}
+}

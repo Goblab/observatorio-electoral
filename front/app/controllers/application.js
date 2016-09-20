@@ -60,6 +60,24 @@ export default Ember.Controller.extend({
 			this.set('isAbout', false);
 		}	
 
+		if (RegExp('electoral-system').test(this.get('currentPath'))) {
+			this.set('isReport', true);
+			this.set('isDataEntry', false);
+			this.set('isHome', false);
+			this.set('isData', false);
+			this.set('isContact', false);
+			this.set('isAbout', false);
+		}
+
+		if (RegExp('agenda').test(this.get('currentPath'))) {
+			this.set('isReport', true);
+			this.set('isDataEntry', false);
+			this.set('isHome', false);
+			this.set('isData', false);
+			this.set('isContact', false);
+			this.set('isAbout', false);
+		}
+
 		if (RegExp('contact').test(this.get('currentPath'))) {
 			this.set('isReport', true);
 			this.set('isDataEntry', false);

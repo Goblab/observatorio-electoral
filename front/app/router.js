@@ -204,6 +204,8 @@ Router.map(function() {
         path: ":report_id/show",
       });
   });
+  this.route('electoral-system');
+  this.route('agenda');
 });
 
 export default Router;

@@ -370,6 +370,21 @@ aside {
 }
 
 
+.candidate-item {
+    position: relative;
+    padding-left: 90px;
+
+    .image {
+    	position: absolute;
+    	top: 17px;
+    	left: 10px;
+    	width: 50px;
+    	overflow: hidden;
+    	border-radius: 50px;
+    	height: 50px;
+    }
+}
+
 
 .country {
 

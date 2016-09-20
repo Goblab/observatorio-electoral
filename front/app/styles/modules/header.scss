@@ -85,9 +85,9 @@ header {
 			}
 
 			li {
-				padding: 15px 10px;
-				font-size: 16px;
-				max-width: 140px;
+				padding: 15px 15px;
+				font-size: 17px;
+				min-width: auto;
 				font-weight: bold;
 				text-decoration: none;
 				display: flex;
@@ -96,6 +96,11 @@ header {
 
 				a.active {
 					color: #0076e6;
+				}
+
+				.disabled {
+					pointer-events: none;
+					cursor: progress;
 				}
 			}
 		}

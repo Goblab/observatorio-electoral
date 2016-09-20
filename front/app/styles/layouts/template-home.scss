@@ -2,31 +2,31 @@ $mobile: new-breakpoint(max-width 800px 6);
 $phone: new-breakpoint(max-width 500px 4);
 
 .welcome-friend {
-	    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 2001;
-    height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 2001;
+	height: 100vh;
 
     &.-about, &.-contact {
-    	    max-width: 1160px;
-    margin: 0 auto;
-    height: auto;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    width: 100%;
-    padding: 40px 15px 25px;
-    background: #fff;
-        background-image: url("/assets/images/back-map.svg");
-    background-size: 12%;
+		max-width: 1160px;
+		margin: 0 auto;
+		height: auto;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		width: 100%;
+		padding: 40px 15px 25px;
+		background: #fff;
+		background-image: url("/assets/images/back-map.svg");
+		background-size: 12%;
 
     @include media($phone) {
 				padding: 120px 15px 25px;
@@ -98,7 +98,7 @@ $phone: new-breakpoint(max-width 500px 4);
     overflow: hidden;
     left: 0;
     width: 100%;
-    background: #f9f9f9;
+    background: #2980b9;
     z-index: 1;
     top: 80px;
     bottom: 0;
@@ -132,7 +132,7 @@ $phone: new-breakpoint(max-width 500px 4);
 	    width: 10%;
 	    padding: 10px 0;
 	    float: left;
-	    opacity: 0.3;
+	    opacity: 0.5;
 	    @include transition(all 0.4s cubic-bezier(0.7,0,0.3,1));
 
     	&.active,

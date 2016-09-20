@@ -13,7 +13,9 @@
     {{#each formula.candidates as |candidate|}}
         <div class="candidate-item">
           {{#if candidate.candidate.picture.url}}
-            <img {{bind-attr src=candidate.candidate.picture.url}} width="50px" style="display: none;">
+            <div class="image">
+              <img {{bind-attr src=candidate.candidate.picture.url}} width="70px">
+            </div>
           {{/if}}  
           <h5 style="margin: 0;font-size: 20px; padding: 15px 0;"> {{candidate.candidate.name}} {{candidate.candidate.lastName}} <br> <small>{{candidate.charge.name}}</small></h5>
         </div>
