@@ -40,8 +40,8 @@
 		-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 		transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 		transform: translate(-450px, -560px) scale(0.7);
-		-webkit-transition-delay: 1s; /* Safari */
-    	transition-delay: 1s;
+		-webkit-transition-delay: .5s; /* Safari */
+    	transition-delay: .5s;
 
     	    @include media($mobile) {
 		    transform: translate(-40px, -250px) scale(0.8);
@@ -51,8 +51,8 @@
     circle {
     	-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 		transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-		-webkit-transition: all 2.1s;
-		transition: all 2.1s;
+		-webkit-transition: all 0.8s;
+		transition: all 0.8s;
 	    stroke-width: 25px;
 	    stroke: transparent;
     }
