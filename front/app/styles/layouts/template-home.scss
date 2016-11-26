@@ -78,6 +78,31 @@ $phone: new-breakpoint(max-width 500px 4);
 
 }
 
+.members, .about-member {
+	padding: 0 2em;
+
+	.card {
+		width: 210px !important;
+
+		.content {
+			height: auto !important;
+			text-align: center;
+		}
+	}
+
+	.comite-academico {
+		.header {
+			font-size: 18px !important;
+		}
+	}
+
+	.director {
+	}
+
+	.subdirector {
+
+	}
+}
 
 
 .content {
